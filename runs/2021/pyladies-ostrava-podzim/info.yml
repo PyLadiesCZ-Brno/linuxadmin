@@ -18,11 +18,9 @@ plan:
   title: 'Úvodní informace'
   serial: 0
   date: 2021-09-01
-#   materials:
-#   - url: https://youtu.be/so10Ud-YlKE
-#     title: (16:07) Úvod a pozvánka – video
-#   - lesson: adm/intro
-#     title: Úvod a pozvánka – text
+  materials:
+  - lesson: adm/intro
+    title: Úvodní informace
 
 - slug: install
   title: 'Instalace'
