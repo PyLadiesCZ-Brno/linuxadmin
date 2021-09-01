@@ -6,7 +6,10 @@ default_time:
   end: '19:00'
 place: Tieto Towers, 28. října 3346/91, Moravská Ostrava, Ostrava
 description: Naučte se Python vážně od začátku. Žádné předchozí znalosti nejsou potřeba.
-# long_description: |
+long_description: |
+    Týmový kurz pro začátečníky a začátečnice!
+
+    Více informací o kurzu najdeš v nulté lekci.
 
 # derives: pyladies
 vars:
