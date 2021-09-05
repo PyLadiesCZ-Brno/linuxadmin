@@ -1,8 +1,7 @@
 # Instalace editoru
 
-Editor, program na úpravu textu, je základní pomůcka
-každého programátora,
-takže je dobré do něj investovat trochu času.
+Editor, program na úpravu textu, je základní pomůckou každého programátora.
+A tak je dobré do něj investovat trochu času.
 
 Je víceméně jedno, který programátorský editor budeš používat.
 Pokud už nějaký oblíbený máš, stačí ho jen nastavit;
@@ -15,20 +14,21 @@ Stejně tak nejsou vhodné programy jako Word či Writer.
 
 ## Co programátorský editor umí
 
-Editor pro programátory nám umožňuje upravovat *prostý text* – písmenka.
+Editor pro programátory ti umožňí upravovat *prostý text* – písmenka.
 Na rozdíl od programů jako Word, Writer či Pages neumožňuje text *formátovat*,
-tedy dělat nadpisy, obarvovat, zvětšovat font, vkládat obrázky a podobně.
+tedy dělat nadpisy, obarvovat, zvětšovat font pro jednotlivá slova,
+vkládat obrázky a podobně.
 
-Pomocí editoru budeme zadávat počítači příkazy, takže formátování nepotřebujeme.
+Pomocí editoru budeš zadávat počítači příkazy, takže formátování nepotřebuješ.
 Porovnej {{ gnd('sám', 'sama') }}, jaký je rozdíl mezi následujícími příkazy
 pro někoho, kdo se jimi má řídit:
 
 * Nakresli mi beránka!
 * <font color="green">Nakresli <big><big>mi</big> <u>beránka</u>!</big></font>
 
-To, že neumí formátování, neznamená že jsou naše editory úplně „hloupé“
+Naše editory neumí formátování, ale neznamená že to jsou úplně „hloupé“
 nástroje.
-Aby se nám programy upravovaly pohodlněji, mají několik vychytávek:
+Aby se ti programy upravovaly pohodlněji, mají několik vychytávek:
 
 Podpora více souborů
 :   Větší projekty sestávají z více souborů, které můžeš mít v editoru
@@ -79,6 +79,10 @@ a nastavení.
   Nabízí mnoho funkcí a má velkou základnu uživatelů a vývojářů,
   takže se neustále vylepšuje.
 
+  V poslední době toho umí víc a víc – a dokonce i věci,
+  které ze začátku trochu překážejí.
+  Neboj se editor přizpůsobit nebo něco vypnout.
+
 Na Linuxu budeš mít pravděpodobně už nainstalovaný Gedit nebo Kate.
 Zkus se podívat do systémové nabídky, jestli jeden z nich máš (případně je
 spusť z příkazové řádky jako `gedit`, resp. `kate`).
@@ -114,10 +118,10 @@ Na začátek ale nejsou moc vhodné.
 
 Chceš-li takový editor přesto použít, měl{{a}} bys ho už poměrně dobře znát:
 vědět, co za tebe dělá editor a jak to spravit, až něco udělá špatně.
-{% if var('coach-present') -%}
+
 Koučové většinou znají jen jeden editor – ten, který používají –
 takže nemusí být schopní s pokročilým IDE rychle pomoct.
-{%- endif %}
+
 
 [PyCharm]: https://www.jetbrains.com/pycharm/
 [Eclipse]: https://eclipse.org/
