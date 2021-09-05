@@ -28,40 +28,40 @@ plan:
 - slug: install
   title: 'Instalace'
   date: 2021-09-15
-#  materials:
+  materials:
 #   - url: https://youtu.be/i2QupnsdktU
 #     title: (7:12) Úvod k instalaci – video
 #   - lesson: adm/whats
 #     title: Úvod k instalaci – text
-#
-#   - url: https://youtu.be/GGMg8O4hE0c
-#     title: (13:50) Příkazová řádka – Linux & macOS – video
-#   - url: https://youtu.be/kriVWJmXpZc
-#     title: (22:34) Příkazová řádka – Windows – video
-#   - lesson: beginners/cmdline
-#
-#   - url: https://youtu.be/7Qi7cSkoBA0
-#     title: (8:15) Instalace Pythonu – Linux – video
-#   - url: https://youtu.be/Xr6liKJzRGA
-#     title: (4:48) Instalace Pythonu – Windows – video
-#   - lesson: beginners/install
-#
-#   - url: https://youtu.be/AFVvpfQB0V0
-#     title: (7:48) Nastavení prostředí – video
-#   - lesson: beginners/venv-setup
-#
-#   - url: https://youtu.be/JcXUCuneX04
-#     title: (8:01) Instalace editoru – video
-#   - lesson: beginners/install-editor
-#
-#   - url: https://youtu.be/0Poe25XdKIA
-#     title: (7:23) První příkazy v Pythonu – video
-#   - lesson: beginners/first-steps
-#     title: První příkazy v Pythonu
-#
-#   - title: Tahák na klávesnici (PDF)
-#     url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
-#     type: cheatsheet
+
+  - url: https://youtu.be/GGMg8O4hE0c
+    title: (13:50) Příkazová řádka – Linux & macOS – video
+  - url: https://youtu.be/kriVWJmXpZc
+    title: (22:34) Příkazová řádka – Windows – video
+  - lesson: beginners/cmdline
+
+  - url: https://youtu.be/7Qi7cSkoBA0
+    title: (8:15) Instalace Pythonu – Linux – video
+  - url: https://youtu.be/Xr6liKJzRGA
+    title: (4:48) Instalace Pythonu – Windows – video
+  - lesson: beginners/install
+
+  - url: https://youtu.be/AFVvpfQB0V0
+    title: (7:48) Nastavení prostředí – video
+  - lesson: beginners/venv-setup
+
+  - url: https://youtu.be/JcXUCuneX04
+    title: (8:01) Instalace editoru – video
+  - lesson: beginners/install-editor
+
+  - url: https://youtu.be/0Poe25XdKIA
+    title: (7:23) První příkazy v Pythonu – video
+  - lesson: beginners/first-steps
+    title: První příkazy v Pythonu
+
+  - title: Tahák na klávesnici (PDF)
+    url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
+    type: cheatsheet
 #   - title: 'Úkoly (🧮)'
 #     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=preparation
 #     type: homework
