@@ -12,7 +12,7 @@ Vyber si stránku podle svého systému:
 Pokud máš jiný systém než Linux, Windows nebo macOS,
 nebo pokud ke svému počítači neznáš administrátorské heslo,
 {% if var('coach-present') -%}
-poraď se s koučem hned, jinak se ptej, až bude něco nejasné.
+poraď se s koučem hned. Jinak se ptej, až bude něco nejasné.
 {%- else -%}
 napiš nám prosím e-mail. {# XXX vyřešit kam poslat samostudenty co mají problém #}
 {%- endif %}

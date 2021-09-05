@@ -8,7 +8,7 @@ Nezalekni se – většinu sekcí pravděpodobně přeskočíš. :)
 ## Instalace Pythonu 3
 
 Na Linuxu většinou Python 3 už bývá. Abys to zkontroloval{{a}}, spusť
-v [příkazové řádce]({{ lesson_url('beginners/cmdline') }}) příkaz:
+v příkazové řádce příkaz:
 
 ```console
 $ python3 --version
@@ -108,6 +108,3 @@ alternativu, Virtualenv:
   {% endfilter %}
 
 Používáš-li jinou distribuci, doufám, že instalovat programy už umíš.
-
-Instaluješ-li Virtualenv, **zapamatuj si**, že ho budeš muset použít později
-při vytváření virtuálního prostředí.
