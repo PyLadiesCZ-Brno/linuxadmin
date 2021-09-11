@@ -37,17 +37,36 @@ vysledek =    9    / 4
 vysledek =        2.25
 ```
 
-Funguje to i u složitých výrazů.
-Python se složitými výrazy nemá problém.
-Jen člověk, který program čte či píše, se v nich může lehce ztratit.
+Python dodržuje *prioritu operátorů*: např. násobení vyhodnotí dřív než
+sečítání.
+Záleží přitom vždy na operátoru (znaménku).
+Násobení čísel (`*`) a opakování řetězců (taky `*`) má vyšší prioritu;
+sečítání čísel (`+`) a spojování řetězců (taky `+`) ji má nižší.
+
+```python
+vysledek = 4 + 2 * 3
+#              ╰─┬─╯
+vysledek = 4 +   6
+#          ╰──┬──╯
+vysledek =  10
+
+vyzva = "Volejte třikrát: " + "Sláva! " * 3
+#                             ╰─────┬─────╯
+vyzva = "Volejte třikrát: " + "Sláva! Sláva! Sláva! "
+#       ╰────────────────────┬──────────────────────╯
+vyzva = "Volejte třikrát: Sláva! Sláva! Sláva! "
+```
+
+Python nemá problém se složitými výrazy – vyhodnocování funguje vždy stejně.
+Jen člověk, který program čte či píše, se ve výrazech může lehce ztratit.
 Když opravdu potřebuješ napsat složitý výraz, je dobré jej rozdělit na několik
 menších nebo vysvětlit pomocí komentáře.
 
 Je ale dobré mít povědomí o tom, jak složité výrazy „fungují“,
 aby ses jich nemusel{{a}} bát.
 Měl{{a}} bys být schopn{{gnd('ý', 'á')}} vysvětlit, co se stane,
-když se Pythonu zeptáš, kolik je -<var>b</var> + (<var>b</var>² +
-4<var>a</var><var>c</var>)⁰·⁵ / (2<var>a</var>), abys pak věděl{{a}}, co za
+když se Pythonu zeptáš, kolik je (-<var>b</var> + (<var>b</var>² -
+4<var>a</var><var>c</var>)⁰·⁵) / (2<var>a</var>), abys pak věděl{{a}}, co za
 tebe Python dělá.
 
 ```python
@@ -56,37 +75,24 @@ b = 5
 c = 3
 
 
-x = -b + (b ** 2 + 4 * a * c) ** 0.5 / (2 * a)
-#    |    |            |   |                |
-x = -5 + (5 ** 2 + 4 * 2 * 3) ** 0.5 / (2 * 2)
-#         ╰──┬─╯   ╰─┬─╯               ╰──┬──╯
-x = -5 + (  25   +   8   * 3) ** 0.5 /    4
-#                   ╰────┬─╯
-x = -5 + (  25   +      24  ) ** 0.5 /    4
-#        ╰───────┬──────────╯
-x = -5 +         49           ** 0.5 /    4
-#                ╰──────┬──────────╯
-x = -5 +               7.0           /    4
-#                      ╰─────────────┬────╯
-x = -5 +                            1.75
-#   ╰──────────────┬───────────────────╯
-x =              -3.25
+x = (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+#     |    |            |   |                 |
+x = (-5 + (5 ** 2 - 4 * 2 * 3) ** 0.5) / (2 * 2)
+#          ╰──┬─╯   ╰─┬─╯                ╰──┬──╯
+x = (-5 + (  25   -   8   * 3) ** 0.5) /    4
+#                     ╰───┬─╯
+x = (-5 + (  25   -      24  ) ** 0.5) /    4
+#         ╰───────┬──────────╯
+x = (-5 +         1            ** 0.5) /    4
+#                 ╰──────┬──────────╯
+x = (-5 +                1)            /    4
+#    ╰────────────┬──────╯
+x =              -4                    /    4
+#                 ╰────────────┬────────────╯
+x =                           -1.0
 ```
 
 Výrazy se používají na více místech Pythonu než jen v přiřazování
 do proměnných.
-Třeba podmínka u `if` je taky výraz a vyhodnocuje se stejně jako ostatní
-výrazy:
-
-```python
-strana = -5
-
-if strana <= 0:
-    print("Strana musí být kladná!")
-```
-
-```python
-if strana <= 0:
-#  ╰──────┬──╯
-if      True  :
-```
+Třeba pro porovnání dvou hodnot.
+Ale o tom zase příště.
