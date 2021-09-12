@@ -95,8 +95,8 @@ plan:
   - lesson: beginners/comparisons
   
   - title: Tahák na debuggování (PDF)
-      url: https://pyvec.github.io/cheatsheets/errors/errors-cs.pdf
-      type: cheatsheet
+    url: https://pyvec.github.io/cheatsheets/errors/errors-cs.pdf
+    type: cheatsheet
 #
 #   - title: 'Úkoly (✊✌✋)'
 #     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=expressions
