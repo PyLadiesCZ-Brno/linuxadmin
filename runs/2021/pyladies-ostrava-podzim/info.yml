@@ -30,31 +30,39 @@ plan:
   date: 2021-09-15
   materials:
 #   - url: https://youtu.be/i2QupnsdktU
+#     type: lesson
 #     title: (7:12) Úvod k instalaci – video
 #   - lesson: adm/whats
 #     title: Úvod k instalaci – text
 
   - url: https://youtu.be/GGMg8O4hE0c
+    type: lesson
     title: (13:50) Příkazová řádka – Linux & macOS – video
   - url: https://youtu.be/kriVWJmXpZc
+    type: lesson
     title: (22:34) Příkazová řádka – Windows – video
   - lesson: beginners/cmdline
 
   - url: https://youtu.be/7Qi7cSkoBA0
+    type: lesson
     title: (8:15) Instalace Pythonu – Linux – video
   - url: https://youtu.be/Xr6liKJzRGA
+    type: lesson
     title: (4:48) Instalace Pythonu – Windows – video
   - lesson: beginners/install
 
   - url: https://youtu.be/AFVvpfQB0V0
+    type: lesson
     title: (7:48) Nastavení prostředí – video
   - lesson: beginners/venv-setup
 
   - url: https://youtu.be/JcXUCuneX04
+    type: lesson
     title: (8:01) Instalace editoru – video
   - lesson: beginners/install-editor
 
   - url: https://youtu.be/0Poe25XdKIA
+    type: lesson
     title: (7:23) První příkazy v Pythonu – video
   - lesson: beginners/first-steps
     title: První příkazy v Pythonu
@@ -71,26 +79,32 @@ plan:
   date: 2021-09-22
   materials:
   - url: https://youtu.be/r0esiaghzrY
+    type: lesson
     title: (9:52) Neuzavřená závorka – video (+ domácí úkoly v první části videa)
   - lesson: adm/close-paren
 
   - url: https://youtu.be/9aJcvOfleFs
+    type: lesson
     title: (7:50) První program – video
   - lesson: beginners/hello-world
 
   - url: https://youtu.be/14-LVG9Edng
+    type: lesson
     title: (12:38) Print a chybové hlášky – video
   - lesson: beginners/print
 
   - url: https://youtu.be/-zKws24FmCg
+    type: lesson
     title: (15:08) Proměnné – video
   - lesson: beginners/variables
 
   - url: https://youtu.be/nNXDXuN6Smg
+    type: lesson
     title: (8:32) Vyhodnocování výrazů – video
   - lesson: beginners/expressions
 
   - url: https://youtu.be/Q1YJqWzfnck
+    type: lesson
     title: (17:27) Porovnání – video
   - lesson: beginners/comparisons
   
@@ -108,26 +122,32 @@ plan:
   date: 2021-09-29
 #   materials:
 #   - url: https://youtu.be/w_d8VKS8i48
+#     type: lesson
 #     title: (17:26) Funkce – video
 #   - lesson: beginners/functions
 #
 #   - url: https://youtu.be/udEOvGIuZrs
+#     type: lesson
 #     title: (15:51) Užitečné funkce – video
 #   - lesson: beginners/basic-functions
 #
 #   - url: https://youtu.be/A__45ibnsnc
+#     type: lesson
 #     title: (33:02) Želva a cykly – video
 #   - lesson: intro/turtle
 #
 #   - url: https://youtu.be/I_mkND45dB0
+#     type: lesson
 #     title: (6:57) Cyklus While – video
 #   - lesson: beginners/while
 #
 #   - url: https://youtu.be/fFh1LiksgdA
+#     type: lesson
 #     title: (9:28) Přepisování proměnných – video
 #   - lesson: beginners/reassignment
 #
 #   - url: https://youtu.be/5Mc-cgoaM10
+#     type: lesson
 #     title: (7:58) Nebo anebo a – video
 #   - lesson: beginners/and-or
 #
@@ -145,18 +165,22 @@ plan:
   date: 2021-10-06
 #   materials:
 #   - url: https://youtu.be/xdZWIvryP20
+#     type: lesson
 #     title: (19:54) Zápis řetězců – video
 #   - lesson: beginners/str
 #
 #   - url: https://youtu.be/QOamCtzLPAo
+#     type: lesson
 #     title: (16:12) Výběr z řetězců – video
 #   - lesson: beginners/str-index-slice
 #
 #   - url: https://youtu.be/I3CB2YihRh8
+#     type: lesson
 #     title: (9:19) Řetězcové funkce a metody – video
 #   - lesson: beginners/str-methods
 #
 #   - url: https://youtu.be/2-r2e9aM1HU
+#     type: lesson
 #     title: (11:52) Šablony (formátovací řetězce) – video
 #   - lesson: beginners/fstring
 #
@@ -174,22 +198,27 @@ plan:
 #   materials:
 #
 #   - url: https://youtu.be/6a-RjR9fNBY
+#     type: lesson
 #     title: (17:01) Definice funkcí – video
 #   - lesson: beginners/def
 #
 #   - url: https://youtu.be/4M6Yq9ZyObs
+#     type: lesson
 #     title: (8:54) Vrátit nebo vypsat? – video
 #   - lesson: beginners/prefer-return
 #
 #   - url: https://youtu.be/I_DpjBDQy_k
+#     type: lesson
 #     title: (3:58) Chybové hlášky ze zanořených funkcí – video
 #   - lesson: beginners/nested-traceback
 #
 #   - url: https://youtu.be/gbjXnMmuAxw
+#     type: lesson
 #     title: (14:25) Lokální proměnné – video
 #   - lesson: beginners/local-variables
 #
 #   - url: https://youtu.be/Vu6_jK8OiAI
+#     type: lesson
 #     title: (12:23) Rekurze – video
 #   - lesson: beginners/recursion
 #
@@ -206,14 +235,17 @@ plan:
 #   materials:
 #
 #   - url: https://youtu.be/s-P5mBjUJBw
+#     type: lesson
 #     title: (17:11) Výjimky – video
 #   - lesson: beginners/exceptions
 #
 #   - url: https://youtu.be/LFp_x7OgCBU
+#     type: lesson
 #     title: (10:32) Moduly – video
 #   - lesson: beginners/modules
 #
 #   - url: https://youtu.be/bZ4iiSDe_4g
+#     type: lesson
 #     title: (5:56) Cyklické importy – video
 #   - lesson: beginners/circular-imports
 #
@@ -232,16 +264,20 @@ plan:
 #
 #
 #   - url: https://youtu.be/xQ7J_R8VAJQ
+#     type: lesson
 #     title: (6:51) Rozhraní – video
 #   - lesson: beginners/interfaces
 #
 #   - url: https://youtu.be/-KS_VRerZQ0
+#     type: lesson
 #     title: (15:25) Testování – video
 #   - lesson: beginners/testing
 #
 #   - url: https://youtu.be/S6HyFIUyPTw
+#     type: lesson
 #     title: (10:12) Spouštěcí moduly – video
 #   - url: https://youtu.be/s-KPxX5ZcMs
+#     type: lesson
 #     title: (3:53) Negativní testy – video
 #   - lesson: beginners/main-module
 #
@@ -256,12 +292,15 @@ plan:
 #   materials:
 #
 #   - url: https://youtu.be/abIMJjb9Nxw
+#     type: lesson
 #     title: (11:10) Seznamy – Úvod – video
 #   - url: https://youtu.be/-gINX_pOtQo
+#     type: lesson
 #     title: (32:52) Co všechno umí seznamy – video
 #   - lesson: beginners/list
 #
 #   - url: https://youtu.be/dObtA75Ouzk
+#     type: lesson
 #     title: (9:51) N-tice – video
 #   - lesson: beginners/tuple
 #
@@ -281,14 +320,17 @@ plan:
 #   materials:
 #
 #   - url: https://youtu.be/UtyIKgsnLmk
+#     type: lesson
 #     title: (5:02) Range – video
 #   - lesson: beginners/range
 #
 #   - url: https://youtu.be/JUCb7iiGsW4
+#     type: lesson
 #     title: (16:39) Iterátory n-tic (enum & zip) – video
 #   - lesson: beginners/zip-enumerate
 #
 #   - url: https://youtu.be/1X4TU_thg7s
+#     type: lesson
 #     title: (13:17) Soubory – video
 #   - lesson: beginners/files
 #
@@ -307,14 +349,17 @@ plan:
 #   materials:
 #
 #   - url: https://youtu.be/OVnUhWwd2C0
+#     type: lesson
 #     title: (19:23) Slovníky – video
 #   - lesson: beginners/dict
 #
 #   - url: https://youtu.be/pQ268T2IZCo
+#     type: lesson
 #     title: (4:42) Více hodnot v jednom záznamu slovníku – video
 #   - lesson: beginners/dict-with-list-values
 #
 #   - url: https://youtu.be/nPUSH7gSI4o
+#     type: lesson
 #     title: (12:54) Kódování dat – JSON – video
 #   - lesson: intro/json
 #
@@ -331,10 +376,12 @@ plan:
 #   materials:
 #
 #   - url: https://youtu.be/x4iJDPOSv4A
+#     type: lesson
 #     title: (22:26) Třídy – video
 #   - lesson: beginners/class
 #
 #   - url: https://youtu.be/mqxMmSFiASw
+#     type: lesson
 #     title: (12:58) Dědičnost – video
 #   - lesson: beginners/inheritance
 #
@@ -348,6 +395,7 @@ plan:
 #   materials:
 #
 #   - url: https://youtu.be/N90FxVr4H-M
+#     type: lesson
 #     title: (6:03) Závěr – video
 #   - lesson: adm/bye
 #
