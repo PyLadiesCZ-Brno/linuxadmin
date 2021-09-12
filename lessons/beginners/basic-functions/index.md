@@ -22,7 +22,7 @@ která z funkcí by se dala použít.
 
 Tyhle funkce už známe.
 `print` vypíše nepojmenované argumenty, oddělené mezerou.
-Pojmenovaný argument `end` určuje, co se vypíše na konci (místo přechodu
+Pojmenovaný argument `end` určuje co se vypíše na konci (místo přechodu
 na nový řádek);
 `sep` udává, co se vypíše mezi jednotlivými argumenty (místo mezery).
 
