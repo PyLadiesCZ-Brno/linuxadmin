@@ -171,8 +171,8 @@ Zkus si, jestli zvládneš předpovědět výsledek těchto výrazů:
 
 
 Znaků, které se zadávají sekvencí se zpětným lomítkem, je více.
-Jedna ze zajímavějších je `\t`, představující tabulátor – jediný znak, který
-se, když ho vypíšeš, „roztáhne“ na víc mezer.
+Jedním ze zajímavějších je `\t`, představující tabulátor.
+Je to jen jeden znak, ale když ho vypíšeš „roztáhne“ se na víc mezer.
 
 ```pycon
 >>> print("a\tb")   # Výpis "pro lidi"
@@ -229,9 +229,9 @@ je zápis pro jedno zpětné lomítko.
 Někdy potřebuješ řetězce, které obsahují více řádků.
 Pythonní řetězce ale můžeš normálně napsat jen na *jeden* řádek.
 (Python se tak snaží ulehčit hledání chyby, kdybys koncovou uvozovku
-zapoměl{{a}}.)
+zapomněl{{a}}.)
 
-Můžeš ale do řetězce znak pro nový řádek vložit pomocí sekvence `\n`:
+Znak pro nový řádek ale můžeš do řetězce vložit pomocí sekvence `\n`:
 
 ```pycon
 >>> print('Haló haló!\nCo se stalo?')
@@ -254,7 +254,7 @@ jako jakýkoli jiný znak:
 
 ## Trojité uvozovky
 
-Kromě `\n` je i druhý způsob, jak zadat řetězec se znakem nového řádku:
+Kromě `\n` existuje i druhý způsob jak zadat řetězec se znakem nového řádku:
 ohraničit ho *třemi* uvozovkami (jednoduchými nebo dvojitými)
 na každé straně.
 Dají se tak zadávat delší víceřádkové řetězce:
@@ -268,7 +268,6 @@ Prase kozu potrkalo!'''
 Pozor na to, že pokud je tenhle řetězec
 v odsazeném kódu, každý jeho řádek bude začínat
 několika mezerami.
-(V dokumentačních řetězcích tohle nevadí, tam se s odsazením počítá.)
 
 ```python
 cislo = 4
