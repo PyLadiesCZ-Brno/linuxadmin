@@ -120,40 +120,40 @@ plan:
 - slug: loops
   title: 'Funkce a cykly'
   date: 2021-09-29
-#   materials:
-#   - url: https://youtu.be/w_d8VKS8i48
-#     type: lesson
-#     title: (17:26) Funkce – video
-#   - lesson: beginners/functions
-#
-#   - url: https://youtu.be/udEOvGIuZrs
-#     type: lesson
-#     title: (15:51) Užitečné funkce – video
-#   - lesson: beginners/basic-functions
-#
-#   - url: https://youtu.be/A__45ibnsnc
-#     type: lesson
-#     title: (33:02) Želva a cykly – video
-#   - lesson: intro/turtle
-#
-#   - url: https://youtu.be/I_mkND45dB0
-#     type: lesson
-#     title: (6:57) Cyklus While – video
-#   - lesson: beginners/while
-#
-#   - url: https://youtu.be/fFh1LiksgdA
-#     type: lesson
-#     title: (9:28) Přepisování proměnných – video
-#   - lesson: beginners/reassignment
-#
-#   - url: https://youtu.be/5Mc-cgoaM10
-#     type: lesson
-#     title: (7:58) Nebo anebo a – video
-#   - lesson: beginners/and-or
-#
-#   - title: Tahák na užitečné funkce (PDF)
-#     url: https://pyvec.github.io/cheatsheets/basic-functions/basic-functions-cs.pdf
-#     type: cheatsheet
+  materials:
+  - url: https://youtu.be/w_d8VKS8i48
+    type: lesson
+    title: (17:26) Funkce – video
+  - lesson: beginners/functions
+
+  - url: https://youtu.be/udEOvGIuZrs
+    type: lesson
+    title: (15:51) Užitečné funkce – video
+  - lesson: beginners/basic-functions
+
+  - url: https://youtu.be/A__45ibnsnc
+    type: lesson
+    title: (33:02) Želva a cykly – video
+  - lesson: intro/turtle
+
+  - url: https://youtu.be/I_mkND45dB0
+    type: lesson
+    title: (6:57) Cyklus While – video
+  - lesson: beginners/while
+
+  - url: https://youtu.be/fFh1LiksgdA
+    type: lesson
+    title: (9:28) Přepisování proměnných – video
+  - lesson: beginners/reassignment
+
+  - url: https://youtu.be/5Mc-cgoaM10
+    type: lesson
+    title: (7:58) Nebo anebo a – video
+  - lesson: beginners/and-or
+
+  - title: Tahák na užitečné funkce (PDF)
+    url: https://pyvec.github.io/cheatsheets/basic-functions/basic-functions-cs.pdf
+    type: cheatsheet
 #
 #   - title: "Úkol (\U0001f422 \U0001f0b2\U0001f0b1)"
 #     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=loops

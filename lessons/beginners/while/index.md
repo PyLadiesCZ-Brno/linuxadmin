@@ -36,13 +36,51 @@ while True:
 
 Program se dá přerušit zmáčknutím
 <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+Tahle klávesová zkratka vyvolá v programu chybu
+a program se – jako po každé chybě – ukončí.
 
-> [note]
-> Tahle klávesová zkratka vyvolá v programu chybu
-> a program se – jako po každé chybě – ukončí.
+> [note] Pro macOS
+> I na Macu je to opravdu <kbd>Ctrl</kbd>+<kbd>C</kbd>, nikoli
+> <kbd>⌘ Cmd</kbd>+<kbd>C</kbd>.
+
+> [note] Pro ostatní systémy
+> <kbd>Ctrl</kbd>+<kbd>C</kbd> je velice stará zkratka, zavedená ještě před
+> grafickými programy které ji začaly používat pro kopírování.
+> Když dnes používáš textové programy v okýnku,
+> musíš pro kopírování použít složitější zkratky:
+>
+> * Kopírovat:
+>   <kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>C</kbd> nebo
+>   <kbd>Ctrl</kbd>+<kbd>Insert</kbd>
+>
+> * Vložit:
+>   <kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>V</kbd> nebo
+>   <kbd>Shift</kbd>+<kbd>Insert</kbd>
+>
+> Případně můžeš najít příslušné operace v menu.
+> Na Windows se menu skrývá pod ikonkou v levém horním rohu okýnka;
+> funkce pro kopírování jsou v podmenu Edit.
+> Na starších Windows tam najdeš i *Mark*, způsob jak označit text.
+>
+> A na Linuxu jde jen označit text a pak ho (bez <kbd>Ctrl</kbd>+<kbd>C</kbd>)
+> vložit prostředním tlačítkem myši.
+
+## Break
 
 A nakonec, existuje příkaz `break`, který z cyklu „vyskočí“:
 začnou se hned vykonávat příkazy za cyklem.
+
+Cyklus `while` se dívá na podmínku jen na začátku každého průchodu cyklem.
+Občas ale chceš podmínku uprostřed nebo na konci.
+Třeba „zubařský“ program výše by se dal napsat i takto:
+
+* Opakuj:
+  * Zeptej se na odpověd
+  * Je-li odpověď „Ááá“, zavtipkuj a ukonči cyklus
+  * Vynadej uživateli. (Sem se program dostane jen při špatné odpovědi.)
+* Dokonči operaci
+
+V překladu do Pythonu využiješ kombinace `if` a `break`:
 
 ```python
 while True:
@@ -66,43 +104,3 @@ for i in range(10):  # Vnější cyklus
             break
     print()
 ```
-
-Ale zpátky k `while`!
-Dokážeš napsat tenhle program?
-
-## Oko bere
-
-* Začínáš s 0 body.
-* Počítač v každém kole vypíše, kolik máš bodů,
-  a zeptá se tě, jestli chceš pokračovat.
-* Pokud odpovíš „ne“, hra končí.
-* Pokud odpovíš „ano“, počítač „otočí kartu“
-  (náhodně vybere číslo od 2 do 10), vypíše její hodnotu a přičte ji k bodům.
-* Pokud máš víc než 21 bodů, prohráváš.
-* Cílem hry je získat co nejvíc bodů, ideálně 21.
-
-{% filter solution %}
-```python
-from random import randrange
-
-soucet = 0
-while soucet < 21:
-    print('Máš', soucet, 'bodů')
-    odpoved = input('Otočit kartu? ')
-    if odpoved == 'ano':
-        karta = randrange(2, 11)
-        print('Otočil{{a}} jsi', karta)
-        soucet = soucet + karta
-    elif odpoved == 'ne':
-        break
-    else:
-        print('Nerozumím! Odpovídej "ano", nebo "ne"')
-
-if soucet == 21:
-    print('Gratuluji! Vyhrál{{a}} jsi!')
-elif soucet > 21:
-    print('Smůla!', soucet, 'bodů je moc!')
-else:
-    print('Chybělo jen', 21 - soucet, 'bodů!')
-```
-{% endfilter %}
