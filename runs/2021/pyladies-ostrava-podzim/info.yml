@@ -163,30 +163,30 @@ plan:
 - slug: str
   title: 'Řetězce'
   date: 2021-10-06
-#   materials:
-#   - url: https://youtu.be/xdZWIvryP20
-#     type: lesson
-#     title: (19:54) Zápis řetězců – video
-#   - lesson: beginners/str
-#
-#   - url: https://youtu.be/QOamCtzLPAo
-#     type: lesson
-#     title: (16:12) Výběr z řetězců – video
-#   - lesson: beginners/str-index-slice
-#
-#   - url: https://youtu.be/I3CB2YihRh8
-#     type: lesson
-#     title: (9:19) Řetězcové funkce a metody – video
-#   - lesson: beginners/str-methods
-#
-#   - url: https://youtu.be/2-r2e9aM1HU
-#     type: lesson
-#     title: (11:52) Šablony (formátovací řetězce) – video
-#   - lesson: beginners/fstring
-#
-#   - title: Řetězcový tahák (PDF)
-#     url: https://pyvec.github.io/cheatsheets/strings/strings-cs.pdf
-#     type: cheatsheet
+  materials:
+  - url: https://youtu.be/xdZWIvryP20
+    type: lesson
+    title: (19:54) Zápis řetězců – video
+  - lesson: beginners/str
+
+  - url: https://youtu.be/QOamCtzLPAo
+    type: lesson
+    title: (16:12) Výběr z řetězců – video
+  - lesson: beginners/str-index-slice
+
+  - url: https://youtu.be/I3CB2YihRh8
+    type: lesson
+    title: (9:19) Řetězcové funkce a metody – video
+  - lesson: beginners/str-methods
+
+  - url: https://youtu.be/2-r2e9aM1HU
+    type: lesson
+    title: (11:52) Šablony (formátovací řetězce) – video
+  - lesson: beginners/fstring
+
+  - title: Řetězcový tahák (PDF)
+    url: https://pyvec.github.io/cheatsheets/strings/strings-cs.pdf
+    type: cheatsheet
 #   - title: "Úkol (|‾)"
 #     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=str
 #     type: homework
