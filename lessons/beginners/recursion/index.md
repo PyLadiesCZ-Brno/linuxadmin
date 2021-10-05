@@ -3,8 +3,8 @@
 *Rekurze* (angl. *recursion*) je programátorská technika,
 kdy funkce volá sebe sama.
 
-Taková rekurze skončí nekonečným voláním.
-Když zadáš tento program:
+Jednoduchá rekurze skončí nekonečným voláním.
+Zkus zadat tento program:
 
 ```python
 def rekurzivni_funkce():

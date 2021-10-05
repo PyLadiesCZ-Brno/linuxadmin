@@ -93,10 +93,9 @@ Co je to přiřazení? Všechno, co *nastavuje* nějakou proměnnou. Například
 > * Přiřazují i speciální přiřazovací operátory jako `+=`, `*=`, `:=`.
 
 
-## Zakrývání jména
+## Skrývání jména
 
 Jak to funguje, když ve funkci přiřadíš do proměnné, která existuje i globálně?
-Pak tu máme problém.
 
 Vytvoří se *úplně nová* lokální proměnná, která má stejné jméno jako
 ta globální.
@@ -116,7 +115,7 @@ print('Venku: x =', x)
 ```
 
 V tomto programu existují *dvě* proměnné jménem `x`.
-Jedna je globální. Jedna je lokální pro funkci `nastav_x`.
+Jedna je globální. Druhá je lokální pro funkci `nastav_x`.
 Jmenují se stejně, ale jsou to dvě různé proměnné.
 
 
