@@ -1,0 +1,41 @@
+title: Začátečnický kurz PyLadies
+subtitle: Olomouc – podzim 2021
+time: 17:30–19:30
+default_time:
+  start: '17:30'
+  end: '19:30'
+place: Fakultní základní škola a Mateřská škola Olomouc, Holečkova 10, 779 00 Olomouc
+description: |
+    Naučte se Python vážně od začátku. Žádné předchozí programátorské znalosti nejsou potřeba.
+long_description: |
+    Tady najdeš všechny materiály k olomoucké verzi začátečnického kurzu PyLadies.
+
+    Stránky samotných PyLadies Olomouc jsou na [https://pyladies.cz/olomouc][PyLadies-Olomouc].
+
+    Jednotlivé lekce jsou určeny naprostým začátečnicím. Instrukce jsou uvedeny pro
+    operační systémy Linux, Windows a macOS.
+
+    [PyLadies-Olomouc]: https://pyladies.cz/olomouc
+derives: pyladies
+vars:
+  user-gender: f
+  pyladies: true
+  coach-present: true
+plan:
+- title: Instalace
+  slug: install
+  date: 2021-10-07
+  materials:
+    - lesson: beginners/cmdline
+      type: lesson
+    - lesson: beginners/install
+      type: lesson
+    - lesson: beginners/venv-setup
+      type: lesson
+    - lesson: beginners/first-steps
+      type: lesson
+    - lesson: beginners/install-editor
+      type: lesson
+    - title: Tahák na klávesnici (PDF)
+      url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
+      type: cheatsheet
