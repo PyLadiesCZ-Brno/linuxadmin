@@ -1,6 +1,7 @@
 title: Začátečnický kurz PyLadies
 subtitle: Olomouc – podzim 2021
 time: 17:30–19:30
+end_date: 2022-01-20
 default_time:
   start: '17:30'
   end: '19:30'
@@ -18,7 +19,7 @@ long_description: |
     [PyLadies-Olomouc]: https://pyladies.cz/olomouc
 derives: pyladies
 vars:
-  user-gender: f
+#  user-gender: f
   pyladies: true
   coach-present: true
 plan:
@@ -30,12 +31,35 @@ plan:
       type: lesson
     - lesson: beginners/install
       type: lesson
-    - lesson: beginners/venv-setup
-      type: lesson
     - lesson: beginners/first-steps
-      type: lesson
-    - lesson: beginners/install-editor
       type: lesson
     - title: Tahák na klávesnici (PDF)
       url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
       type: cheatsheet
+
+- title: První program
+  slug: hello-world
+  date: 2021-10-14
+  materials:
+    - lesson: beginners/install-editor
+      type: lesson
+    - lesson: beginners/venv-setup
+      type: lesson
+    - lesson: beginners/hello-world
+      type: lesson
+    - lesson: beginners/print
+      type: lesson
+    - lesson: beginners/variables
+      type: lesson
+    - lesson: beginners/expressions
+      type: lesson
+    - lesson: beginners/comparisons
+      type: lesson
+    - lesson: beginners/and-or
+      type: lesson
+    - title: Tahák na ladění kódu (PDF)
+      url: https://pyvec.github.io/cheatsheets/errors/errors-cs.pdf
+      type: cheatsheet
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=hello-world
+      type: homework
