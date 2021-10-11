@@ -36,6 +36,9 @@ plan:
     - title: Tahák na klávesnici (PDF)
       url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
       type: cheatsheet
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=install
+      type: homework
 
 - title: První program
   slug: hello-world
