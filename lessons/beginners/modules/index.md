@@ -1,12 +1,13 @@
 # Moduly
 
-Modul je v Pythonu něco, z čeho můžeme importovat.
-Třeba z modulu `math` můžeš importovat funkci `sqrt`:
+Modul je v Pythonu něco, z čeho můžeš importovat.
+Třeba z modulu `math` můžeš importovat funkci `sqrt` nebo číslo `pi`:
 
 ```python
-from math import sqrt
+from math import sqrt, pi
 
 print(sqrt(2))
+print(pi * 2)
 ```
 
 Kromě importování jednotlivých proměnných z modulu
@@ -38,8 +39,7 @@ print(math.cos(math.pi))
 > s hvězdičkou (`*`).
 > Pokud ano, v rámci tohoto kurzu na hvězdičku prosím
 > zapomeň a importuj místo toho radši celý modul.
-> Až začneš psát větší programy, zjednoduší ti
-> to práci.
+> Až začneš psát větší programy, zjednoduší ti to práci.
 
 
 ## Vlastní moduly
@@ -58,8 +58,8 @@ barva_travy = 'zelená'
 pocet_kotatek = 28
 
 def popis_stav():
-    return 'Tráva je {barva}. Prohání se po ní {pocet} koťátek'.format(
-        barva=barva_travy, pocet=pocet_kotatek)
+    """Vrátí popis stavu louky"""
+    return f'Tráva je {barva_travy}. Prohání se po ní {pocet_kotatek} koťátek'
 ```
 
 
@@ -112,17 +112,26 @@ a zadej v něm:
 ```
 
 Výpis se objeví jen poprvé.
+Co víc, když teď soubor `louka.py` změníš, změny se do naimportovaného modulu
+nepromítnou.
+Aby se promítly, musíš Python zavřít a spustit znovu.
+(I proto je dobré pouštět programy ze souborů – při každém spuštění se
+znovu načte aktuální verze modulů.)
 
-Když takhle modul při importu „dělá“ něco víc, než jen nastavuje proměnné
-a funkce, říká se, že má *vedlejší efekt* (angl. *side effect*).
+Ale zpátky k volání `print`.
+Přijde ti trochu divné, že příkaz `import louka` něco vypíše na obrazovku?
+
+Když takhle modul při importu „dělá“ něco víc než jen nastavení proměnných
+a funkcí, říká se, že má *vedlejší efekt* (angl. *side effect*).
 Vedlejší efekt může být vypsání něčeho na obrazovku nebo do souboru,
 vykreslení okýnka na obrazovku, otázka na uživatele pomocí `input`, atp.
 
-V modulech připravených na importování se vedlejším efektům vyhýbáme:
+V modulech připravených na importování se vedlejším efektům vyhýbej:
 úloha takového modulu je dát k dispozici *funkce*, které něco dělají,
 ne to udělat přímo.
 Všimni si například, že `import turtle` neukáže okýnko – to se objeví až po
 zavolání `turtle.forward()`.
+Importem si programátor připravuje nástroje; teprve zavoláním funkce je používá.
 
 Příkaz `print` proto radši z modulu zase smaž.
 
