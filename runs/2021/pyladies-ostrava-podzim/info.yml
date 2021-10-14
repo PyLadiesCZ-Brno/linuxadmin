@@ -232,26 +232,26 @@ plan:
 - slug: exc
   title: 'Chyby a moduly'
   date: 2021-10-20
-#   materials:
-#
-#   - url: https://youtu.be/s-P5mBjUJBw
-#     type: lesson
-#     title: (17:11) Výjimky – video
-#   - lesson: beginners/exceptions
-#
-#   - url: https://youtu.be/LFp_x7OgCBU
-#     type: lesson
-#     title: (10:32) Moduly – video
-#   - lesson: beginners/modules
-#
-#   - url: https://youtu.be/bZ4iiSDe_4g
-#     type: lesson
-#     title: (5:56) Cyklické importy – video
-#   - lesson: beginners/circular-imports
-#
-#   - title: Výjimkový tahák (PDF)
-#     url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
-#     type: cheatsheet
+  materials:
+
+  - url: https://youtu.be/s-P5mBjUJBw
+    type: lesson
+    title: (17:11) Výjimky – video
+  - lesson: beginners/exceptions
+
+  - url: https://youtu.be/LFp_x7OgCBU
+    type: lesson
+    title: (10:32) Moduly – video
+  - lesson: beginners/modules
+
+  - url: https://youtu.be/bZ4iiSDe_4g
+    type: lesson
+    title: (5:56) Cyklické importy – video
+  - lesson: beginners/circular-imports
+
+  - title: Výjimkový tahák (PDF)
+    url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
+    type: cheatsheet
 #   - title: "Úkol (×○×○)"
 #     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=exc
 #     type: homework
