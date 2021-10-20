@@ -260,26 +260,26 @@ plan:
 - slug: test
   title: 'Rozhraní a testy'
   date: 2021-10-27
-#   materials:
-#
-#
-#   - url: https://youtu.be/xQ7J_R8VAJQ
-#     type: lesson
-#     title: (6:51) Rozhraní – video
-#   - lesson: beginners/interfaces
-#
-#   - url: https://youtu.be/-KS_VRerZQ0
-#     type: lesson
-#     title: (15:25) Testování – video
-#   - lesson: beginners/testing
-#
-#   - url: https://youtu.be/S6HyFIUyPTw
-#     type: lesson
-#     title: (10:12) Spouštěcí moduly – video
-#   - url: https://youtu.be/s-KPxX5ZcMs
-#     type: lesson
-#     title: (3:53) Negativní testy – video
-#   - lesson: beginners/main-module
+  materials:
+
+
+  - url: https://youtu.be/xQ7J_R8VAJQ
+    type: lesson
+    title: (6:51) Rozhraní – video
+  - lesson: beginners/interfaces
+
+  - url: https://youtu.be/-KS_VRerZQ0
+    type: lesson
+    title: (15:25) Testování – video
+  - lesson: beginners/testing
+
+  - url: https://youtu.be/S6HyFIUyPTw
+    type: lesson
+    title: (10:12) Spouštěcí moduly – video
+  - url: https://youtu.be/s-KPxX5ZcMs
+    type: lesson
+    title: (3:53) Negativní testy – video
+  - lesson: beginners/main-module
 #
 #   - title: "Úkol (✕✕✕)"
 #     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=test
