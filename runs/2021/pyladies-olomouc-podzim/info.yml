@@ -75,7 +75,7 @@ plan:
       type: lesson
     - lesson: beginners/basic-functions
       type: lesson
-    - lesson: beginners/turtle
+    - lesson: intro/turtle
       type: lesson
     - lesson: beginners/while
       type: lesson
