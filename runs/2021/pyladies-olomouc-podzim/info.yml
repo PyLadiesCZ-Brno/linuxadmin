@@ -66,3 +66,21 @@ plan:
     - title: Úkoly (🧮)
       url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=hello-world
       type: homework
+
+- title: Funkce a cykly
+  slug: loops
+  date: 2021-10-21
+  materials:
+    - lesson: beginners/functions
+      type: lesson
+    - lesson: beginners/basic-functions
+      type: lesson
+    - lesson: beginners/turtle
+      type: lesson
+    - lesson: beginners/while
+      type: lesson
+    - lesson: beginners/reassignment
+      type: lesson
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=loops
+      type: homework
