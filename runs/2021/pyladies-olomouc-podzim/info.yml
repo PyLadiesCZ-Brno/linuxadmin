@@ -77,10 +77,18 @@ plan:
       type: lesson
     - lesson: intro/turtle
       type: lesson
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=loops
+      type: homework
+
+- title: Jeden nový cyklus a procvičování
+  slug: while
+  date: 2021-11-04
+  materials:
     - lesson: beginners/while
       type: lesson
     - lesson: beginners/reassignment
       type: lesson
     - title: Úkoly (🧮)
-      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=loops
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=while
       type: homework
