@@ -289,26 +289,26 @@ plan:
 - slug: list
   title: 'Seznamy a n-tice'
   date: 2021-11-10
-#   materials:
-#
-#   - url: https://youtu.be/abIMJjb9Nxw
-#     type: lesson
-#     title: (11:10) Seznamy – Úvod – video
-#   - url: https://youtu.be/-gINX_pOtQo
-#     type: lesson
-#     title: (32:52) Co všechno umí seznamy – video
-#   - lesson: beginners/list
-#
-#   - url: https://youtu.be/dObtA75Ouzk
-#     type: lesson
-#     title: (9:51) N-tice – video
-#   - lesson: beginners/tuple
-#
-#   #- lesson: beginners/nested-list
-#
-#   - title: Tahák na seznamy (PDF)
-#     url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
-#     type: cheatsheet
+  materials:
+
+  - url: https://youtu.be/abIMJjb9Nxw
+    type: lesson
+    title: (11:10) Seznamy – Úvod – video
+  - url: https://youtu.be/-gINX_pOtQo
+    type: lesson
+    title: (32:52) Co všechno umí seznamy – video
+  - lesson: beginners/list
+
+  - url: https://youtu.be/dObtA75Ouzk
+    type: lesson
+    title: (9:51) N-tice – video
+  - lesson: beginners/tuple
+
+  #- lesson: beginners/nested-list
+
+  - title: Tahák na seznamy (PDF)
+    url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
+    type: cheatsheet
 #   - title: "Úkol – [\U0001f436\U0001f431\U0001f430\U0001f40d]"
 #     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=list
 #     type: homework
