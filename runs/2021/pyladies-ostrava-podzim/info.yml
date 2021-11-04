@@ -288,7 +288,7 @@ plan:
 #
 - slug: list
   title: 'Seznamy a n-tice'
-  date: 2021-11-03
+  date: 2021-11-10
 #   materials:
 #
 #   - url: https://youtu.be/abIMJjb9Nxw
@@ -316,7 +316,7 @@ plan:
 #
 - slug: file
   title: 'Sekvence a soubory'
-  date: 2021-11-10
+  date: 2021-11-17
 #   materials:
 #
 #   - url: https://youtu.be/UtyIKgsnLmk
@@ -345,7 +345,7 @@ plan:
 #
 - slug: dict
   title: 'Slovníky'
-  date: 2021-11-17
+  date: 2021-11-24
 #   materials:
 #
 #   - url: https://youtu.be/OVnUhWwd2C0
@@ -372,7 +372,7 @@ plan:
 #
 - slug: class
   title: 'Třídy a dědičnost'
-  date: 2021-11-24
+  date: 2021-12-01
 #   materials:
 #
 #   - url: https://youtu.be/x4iJDPOSv4A
@@ -391,7 +391,7 @@ plan:
 #
 - slug: end
   title: 'Závěr'
-  date: 2021-12-01
+  date: 2021-12-08
 #   materials:
 #
 #   - url: https://youtu.be/N90FxVr4H-M
