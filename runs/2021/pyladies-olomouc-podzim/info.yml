@@ -92,3 +92,22 @@ plan:
     - title: Úkoly (🧮)
       url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=while
       type: homework
+
+- title: Řetězce
+  slug: strings
+  date: 2021-11-11
+  materials:
+    - lesson: beginners/str
+      type: lesson
+    - lesson: beginners/str-index-slice
+      type: lesson
+    - lesson: beginners/str-methods
+      type: lesson
+    - lesson: beginners/fstring
+      type: lesson
+    - title: Řetězcový tahák
+      url: https://pyvec.github.io/cheatsheets/strings/strings-cs.pdf
+      type: cheatsheet
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=strings
+      type: homework
