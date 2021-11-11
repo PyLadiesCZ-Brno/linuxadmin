@@ -317,27 +317,27 @@ plan:
 - slug: file
   title: 'Sekvence a soubory'
   date: 2021-11-17
-#   materials:
-#
-#   - url: https://youtu.be/UtyIKgsnLmk
-#     type: lesson
-#     title: (5:02) Range – video
-#   - lesson: beginners/range
-#
-#   - url: https://youtu.be/JUCb7iiGsW4
-#     type: lesson
-#     title: (16:39) Iterátory n-tic (enum & zip) – video
-#   - lesson: beginners/zip-enumerate
-#
-#   - url: https://youtu.be/1X4TU_thg7s
-#     type: lesson
-#     title: (13:17) Soubory – video
-#   - lesson: beginners/files
-#
-#   #- url:
-#   #  title: (:)  – video
-#   - title: "Kontext: `with` a `finally` (bonus)"
-#     lesson: beginners/with
+  materials:
+
+  - url: https://youtu.be/UtyIKgsnLmk
+    type: lesson
+    title: (5:02) Range – video
+  - lesson: beginners/range
+
+  - url: https://youtu.be/JUCb7iiGsW4
+    type: lesson
+    title: (16:39) Iterátory n-tic (enum & zip) – video
+  - lesson: beginners/zip-enumerate
+
+  - url: https://youtu.be/1X4TU_thg7s
+    type: lesson
+    title: (13:17) Soubory – video
+  - lesson: beginners/files
+
+  #- url:
+  #  title: (:)  – video
+  - title: "Kontext: `with` a `finally` (bonus)"
+    lesson: beginners/with
 #
 #   - title: Úkol (⚔️)
 #     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=file
