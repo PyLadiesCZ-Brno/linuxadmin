@@ -111,3 +111,24 @@ plan:
     - title: Úkoly (🧮)
       url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=strings
       type: homework
+
+- title: Vlastní funkce
+  slug: functions
+  date: 2021-11-18
+  materials:
+    - lesson: beginners/def
+      type: lesson
+    - lesson: beginners/prefer-return
+      type: lesson
+    - lesson: beginners/nested-traceback
+      type: lesson
+    - lesson: beginners/local-variables
+      type: lesson
+    - lesson: beginners/recursion
+      title: Rekurze (bonus)
+      type: lesson
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=functions
+      type: homework
+    - title: Python Tutor
+      url: https://pythontutor.com/visualize.html#mode=edit
