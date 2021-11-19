@@ -132,3 +132,18 @@ plan:
       type: homework
     - title: Python Tutor
       url: https://pythontutor.com/visualize.html#mode=edit
+
+- title: Soubory a výjimky
+  slug: files
+  date: 2021-11-25
+  materials:
+    - lesson: beginners/exceptions
+      type: lesson
+    - lesson: beginners/files
+      type: lesson
+    - lesson: beginners/with
+      title: "Kontext: `with` a `finally` (bonus)"
+      type: lesson
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=files
+      type: homework
