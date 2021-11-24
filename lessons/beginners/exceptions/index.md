@@ -3,10 +3,11 @@
 Pojďme si prohloubit znalosti o chybách, neboli odborně o *výjimkách*
 (angl. *exceptions*).
 
-Vezmi následující funkci:
+Podívej se na následující funkci:
 
 ```python
 def nacti_cislo():
+    """Získá od uživatele celé číslo a vrátí ho"""
     odpoved = input('Zadej číslo: ')
     return int(odpoved)
 ```
@@ -17,7 +18,7 @@ odpovídající chybovou hlášku.
 
 ```pycon
 Traceback (most recent call last):
-  File "ukazka.py", line 3, in nacti_cislo
+  File "ukazka.py", line 4, in nacti_cislo
     cislo = int(odpoved)
 ValueError: invalid literal for int() with base 10: 'cokolada'
 ```
@@ -35,6 +36,7 @@ mohlo by to fungovat nějak takhle:
 
 ```python
 def nacti_cislo():
+    """Získá od uživatele celé číslo a vrátí ho"""
     while True:
         odpoved = input('Zadej číslo: ')
         if obsahuje_jen_cislice(odpoved):
@@ -47,7 +49,7 @@ def nacti_cislo():
 Kde ale vzít funkci `obsahuje_jen_cislice`?
 Nemá smysl ji psát znovu – funkce `int` sama nejlíp pozná, co se dá převést na
 číslo a co ne.
-A dokonce nám to dá vědět – chybou, kterou můžeš *zachytit*.
+A dokonce nám to dá vědět – výjimkou, kterou můžeš *zachytit*.
 
 > [note]
 > Ono „obsahuje_jen_cislice“ v Pythonu existuje. Dokonce několikrát.
@@ -73,6 +75,7 @@ Pro zachycení chyby má Python příkaz `try`/`except`.
 
 ```python
 def nacti_cislo():
+    """Získá od uživatele celé číslo a vrátí ho"""
     while True:
         odpoved = input('Zadej číslo: ')
         try:
@@ -83,7 +86,7 @@ def nacti_cislo():
 
 Jak to funguje?
 Příkazy v bloku uvozeném příkazem `try` se normálně provádějí, ale když
-nastane uvedená výjimka, Python přeskočí zbytek bloku `try` a provede všechno 
+nastane uvedená výjimka, Python přeskočí zbytek bloku `try` a provede všechno
 v bloku `except`.
 Pokud výjimka nenastala, přeskočí se celý blok `except`.
 
@@ -141,10 +144,10 @@ V našem příkladu to platí pro `ValueError` z funkce `int`: víš že uživ
 nemusí vždy zadat číslo ve správném formátu a víš že správná
 reakce na tuhle situaci je problém vysvětlit a zeptat se znovu.
 
-Co ale dělat, kdyš uživatel chce ukončit program a zmáčkne
+Co ale dělat, když uživatel chce ukončit program a zmáčkne
 <kbd>Ctrl</kbd>+<kbd>C</kbd>?
 Nebo když se mu porouchá klávesnice a selže funkce `input`?
-Nejlepší reakce na takovou nečekanou situaci ukončit program a informovat
+Nejlepší reakce na takovou nečekanou situaci je ukončit program a informovat
 uživatele (nebo lépe, programátora), že (a kde) je něco špatně.
 Neboli vypsat chybovou hlášku.
 A to se stane normálně, bez `try`.
@@ -213,6 +216,7 @@ Za příkaz dáš druh výjimky a pak do závorek nějaký popis toho, co je šp
 
 ```python
 def obsah_ctverce(strana):
+    """Vrátí obsah čtverce s danou délkou strany"""
     if strana > 0:
         return strana ** 2
     else:
