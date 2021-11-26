@@ -56,7 +56,3 @@ Podobných „samozavíracích“ objektů které se dají použít s `with` ex
 v různých knihovnách víc.
 Typické jsou objekty, které se starají o připojení např. k jinému počítači
 nebo k databázi, kdy je po práci dobré spojení ukončit a „uklidit po sobě“.
-
-Z lekce o testování si možná pamatuješ `with pytest.raises(...):`.
-Výsledek `pytest.raises` na konci bloku `with` kontroluje, že v rámci bloku
-nastala správná výjimka.
