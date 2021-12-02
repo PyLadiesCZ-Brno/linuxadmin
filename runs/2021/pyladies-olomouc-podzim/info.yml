@@ -147,3 +147,25 @@ plan:
     - title: Úkoly (🧮)
       url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=files
       type: homework
+
+- title: Seznamy a n-tice
+  slug: lists
+  date: 2021-12-02
+  materials:
+    - lesson: beginners/list
+      type: lesson
+    - lesson: beginners/tuple
+      type: lesson
+    - lesson: beginners/range
+      type: lesson
+    - lesson: beginners/zip-enumerate
+      type: lesson
+    - lesson: beginners/nested-list
+      type: lesson
+      title: Vnořené seznamy (bonus)
+    - title: Tahák na seznamy (PDF)
+      url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
+      type: cheatsheet
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=lists
+      type: homework
