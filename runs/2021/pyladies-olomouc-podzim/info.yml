@@ -169,3 +169,23 @@ plan:
     - title: Úkoly (🧮)
       url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=lists
       type: homework
+
+- title: Slovníky
+  slug: dicts
+  date: 2021-12-09
+  materials:
+    - lesson: beginners/dict
+      type: lesson
+    - lesson: beginners/dict-with-list-values
+      type: lesson
+    - lesson: intro/json
+      type: lesson
+    - title: Ukázka jednoduchého API
+      type: lesson
+      url: https://pyladies.cz/v1/s011-dicts/simple-api.html
+    - title: Slovníkový tahák (PDF)
+      url: https://pyvec.github.io/cheatsheets/dicts/dicts-cs.pdf
+      type: cheatsheet
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=dicts
+      type: homework
