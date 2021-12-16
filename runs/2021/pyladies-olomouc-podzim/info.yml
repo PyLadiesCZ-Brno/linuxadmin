@@ -189,3 +189,19 @@ plan:
     - title: Úkoly (🧮)
       url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=dicts
       type: homework
+
+- title: Moduly a testování
+  slug: modules-testing
+  date: 2021-12-16
+  materials:
+    - lesson: beginners/modules
+      type: lesson
+    - lesson: beginners/circular-imports
+      type: lesson
+    - lesson: beginners/testing
+      type: lesson
+    - lesson: beginners/main-module
+      type: lesson
+    - title: Úkoly (🧮)
+      url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=modules-testing
+      type: homework
