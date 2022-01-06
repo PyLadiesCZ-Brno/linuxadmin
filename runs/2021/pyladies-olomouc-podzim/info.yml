@@ -205,3 +205,17 @@ plan:
     - title: Úkoly (🧮)
       url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=modules-testing
       type: homework
+
+- title: Grafika
+  slug: pyglet
+  date: 2022-01-06
+  materials:
+    - lesson: intro/pyglet
+      type: lesson
+    - title: "Praktické cvičení: Pong – mimo kurz navíc"
+      lesson: projects/pong
+    - title: Kód celé hry Pong
+      url: http://pyladies.cz/v1/s012-pyglet/pong.py
+    - title: Tahák na Pyglet
+      url: https://pyvec.github.io/cheatsheets/pyglet/pyglet-basics-cs.pdf
+      type: cheatsheet
