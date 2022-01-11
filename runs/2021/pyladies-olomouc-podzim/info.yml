@@ -5,6 +5,7 @@ end_date: 2022-01-20
 default_time:
   start: '17:30'
   end: '19:30'
+timezone: Europe/Prague
 place: Fakultní základní škola a Mateřská škola Olomouc, Holečkova 10, 779 00 Olomouc
 description: |
     Naučte se Python vážně od začátku. Žádné předchozí programátorské znalosti nejsou potřeba.
