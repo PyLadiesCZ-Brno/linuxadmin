@@ -223,3 +223,15 @@ plan:
       - title: Úkoly (🧮)
         url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=pyglet
         type: homework
+
+  - title: Třídy
+    slug: class
+    date: 2022-01-13
+    materials:
+      - lesson: beginners/class
+        type: lesson
+      - lesson: beginners/inheritance
+        type: lesson
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=class
+        type: homework
