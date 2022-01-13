@@ -36,7 +36,7 @@ jobs:
       name: Publish compiled courses
       run: |
         git fetch origin compiled || :
-        poetry run python -m ghp_import -m "Compiled" -b compiled/${{ github.ref_name }}  --push _compiled/
+        poetry run python -m ghp_import -m "Compiled" -b compiled/${{ github.ref_name }} --force --push _compiled/
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GIT_AUTHOR_NAME: ghp_import
