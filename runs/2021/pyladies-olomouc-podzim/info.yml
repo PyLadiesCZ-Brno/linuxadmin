@@ -235,3 +235,38 @@ plan:
       - title: Úkoly (🧮)
         url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=class
         type: homework
+
+  - title: Závěrečný projekt
+    slug: asteroids
+    date: 2022-01-20
+    materials:
+      - lesson: projects/asteroids
+        type: lesson
+      - lesson: projects/snake
+        type: lesson
+      - title: Množinový tahák
+        url: https://pyvec.github.io/cheatsheets/sets/sets-cs.pdf
+        type: cheatsheet
+      - title: Tahák na geometrii a fyziku 2D her
+        url: https://pyvec.github.io/cheatsheets/game-physics/game-physics-cs.pdf
+        type: cheatsheet
+
+  - title: Pokračování závěrečného projektu I.
+    slug: asteroids2
+    date: 2022-01-27
+    description: V této lekci budeme pokračovat v dalších fázích závěrečného projektu.
+    materials: []
+
+  - title: Pokračování závěrečného projektu II.
+    slug: asteroids3
+    date: 2022-02-03
+    description: V této lekci budeme pokračovat v dalších fázích závěrečného projektu.
+    materials: []
+
+  - title: Závěrečná hodina
+    slug: asteroids4
+    date: 2022-02-10
+    description: |
+      Během závěrečné hodiny si předáme diplomy a seznámíme se s možnostmi
+      pokračování studia.
+    materials: []
