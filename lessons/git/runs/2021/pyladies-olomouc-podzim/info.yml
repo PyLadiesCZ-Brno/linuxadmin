@@ -1,0 +1,272 @@
+---
+title: Začátečnický kurz PyLadies
+subtitle: Olomouc – podzim 2021
+time: 17:30–19:30
+end_date: 2022-01-20
+default_time:
+  start: '17:30'
+  end: '19:30'
+timezone: Europe/Prague
+place: Fakultní základní škola a Mateřská škola Olomouc, Holečkova 10, 779 00 Olomouc
+description: |
+  Naučte se Python vážně od začátku. Žádné předchozí programátorské znalosti nejsou potřeba.
+long_description: |
+  Tady najdeš všechny materiály k olomoucké verzi začátečnického kurzu PyLadies.
+
+  Stránky samotných PyLadies Olomouc jsou na [https://pyladies.cz/olomouc][PyLadies-Olomouc].
+
+  Jednotlivé lekce jsou určeny naprostým začátečnicím. Instrukce jsou uvedeny pro
+  operační systémy Linux, Windows a macOS.
+
+  [PyLadies-Olomouc]: https://pyladies.cz/olomouc
+derives: pyladies
+vars:
+  pyladies: true
+  coach-present: true
+plan:
+  - title: Instalace
+    slug: install
+    date: 2021-10-07
+    materials:
+      - lesson: beginners/cmdline
+        type: lesson
+      - lesson: beginners/install
+        type: lesson
+      - lesson: beginners/first-steps
+        type: lesson
+      - title: Tahák na klávesnici (PDF)
+        url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
+        type: cheatsheet
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=install
+        type: homework
+
+  - title: První program
+    slug: hello-world
+    date: 2021-10-14
+    materials:
+      - lesson: beginners/install-editor
+        type: lesson
+      - lesson: beginners/venv-setup
+        type: lesson
+      - lesson: beginners/hello-world
+        type: lesson
+      - lesson: beginners/print
+        type: lesson
+      - lesson: beginners/variables
+        type: lesson
+      - lesson: beginners/expressions
+        type: lesson
+      - lesson: beginners/comparisons
+        type: lesson
+      - lesson: beginners/and-or
+        type: lesson
+      - title: Tahák na ladění kódu (PDF)
+        url: https://pyvec.github.io/cheatsheets/errors/errors-cs.pdf
+        type: cheatsheet
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=hello-world
+        type: homework
+
+  - title: Funkce a cykly
+    slug: loops
+    date: 2021-10-21
+    materials:
+      - lesson: beginners/functions
+        type: lesson
+      - lesson: beginners/basic-functions
+        type: lesson
+      - lesson: intro/turtle
+        type: lesson
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=loops
+        type: homework
+
+  - title: Jeden nový cyklus a procvičování
+    slug: while
+    date: 2021-11-04
+    materials:
+      - lesson: beginners/while
+        type: lesson
+      - lesson: beginners/reassignment
+        type: lesson
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=while
+        type: homework
+
+  - title: Řetězce
+    slug: strings
+    date: 2021-11-11
+    materials:
+      - lesson: beginners/str
+        type: lesson
+      - lesson: beginners/str-index-slice
+        type: lesson
+      - lesson: beginners/str-methods
+        type: lesson
+      - lesson: beginners/fstring
+        type: lesson
+      - title: Řetězcový tahák
+        url: https://pyvec.github.io/cheatsheets/strings/strings-cs.pdf
+        type: cheatsheet
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=strings
+        type: homework
+
+  - title: Vlastní funkce
+    slug: functions
+    date: 2021-11-18
+    materials:
+      - lesson: beginners/def
+        type: lesson
+      - lesson: beginners/prefer-return
+        type: lesson
+      - lesson: beginners/nested-traceback
+        type: lesson
+      - lesson: beginners/local-variables
+        type: lesson
+      - lesson: beginners/recursion
+        title: Rekurze (bonus)
+        type: lesson
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=functions
+        type: homework
+      - title: Python Tutor
+        url: https://pythontutor.com/visualize.html#mode=edit
+
+  - title: Soubory a výjimky
+    slug: files
+    date: 2021-11-25
+    materials:
+      - lesson: beginners/exceptions
+        type: lesson
+      - lesson: beginners/files
+        type: lesson
+      - lesson: beginners/with
+        title: "Kontext: `with` a `finally` (bonus)"
+        type: lesson
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=files
+        type: homework
+
+  - title: Seznamy a n-tice
+    slug: lists
+    date: 2021-12-02
+    materials:
+      - lesson: beginners/list
+        type: lesson
+      - lesson: beginners/tuple
+        type: lesson
+      - lesson: beginners/range
+        type: lesson
+      - lesson: beginners/zip-enumerate
+        type: lesson
+      - lesson: beginners/nested-list
+        type: lesson
+        title: Vnořené seznamy (bonus)
+      - title: Tahák na seznamy (PDF)
+        url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
+        type: cheatsheet
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=lists
+        type: homework
+
+  - title: Slovníky
+    slug: dicts
+    date: 2021-12-09
+    materials:
+      - lesson: beginners/dict
+        type: lesson
+      - lesson: beginners/dict-with-list-values
+        type: lesson
+      - lesson: intro/json
+        type: lesson
+      - title: Ukázka jednoduchého API
+        type: lesson
+        url: https://pyladies.cz/v1/s011-dicts/simple-api.html
+      - title: Slovníkový tahák (PDF)
+        url: https://pyvec.github.io/cheatsheets/dicts/dicts-cs.pdf
+        type: cheatsheet
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=dicts
+        type: homework
+
+  - title: Moduly a testování
+    slug: modules-testing
+    date: 2021-12-16
+    materials:
+      - lesson: beginners/modules
+        type: lesson
+      - lesson: beginners/circular-imports
+        type: lesson
+      - lesson: beginners/testing
+        type: lesson
+      - lesson: beginners/main-module
+        type: lesson
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=modules-testing
+        type: homework
+
+  - title: Grafika
+    slug: pyglet
+    date: 2022-01-06
+    materials:
+      - lesson: intro/pyglet
+        type: lesson
+      - title: "Praktické cvičení: Pong – mimo kurz navíc"
+        lesson: projects/pong
+      - title: Kód celé hry Pong
+        url: http://pyladies.cz/v1/s012-pyglet/pong.py
+      - title: Tahák na Pyglet
+        url: https://pyvec.github.io/cheatsheets/pyglet/pyglet-basics-cs.pdf
+        type: cheatsheet
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=pyglet
+        type: homework
+
+  - title: Třídy
+    slug: class
+    date: 2022-01-13
+    materials:
+      - lesson: beginners/class
+        type: lesson
+      - lesson: beginners/inheritance
+        type: lesson
+      - title: Úkoly (🧮)
+        url: https://projekty.pyladies.cz/session?course=pyladies-2021-olomouc-podzim&session=class
+        type: homework
+
+  - title: Závěrečný projekt
+    slug: asteroids
+    date: 2022-01-20
+    materials:
+      - lesson: projects/asteroids
+        type: lesson
+      - lesson: projects/snake
+        type: lesson
+      - title: Množinový tahák
+        url: https://pyvec.github.io/cheatsheets/sets/sets-cs.pdf
+        type: cheatsheet
+      - title: Tahák na geometrii a fyziku 2D her
+        url: https://pyvec.github.io/cheatsheets/game-physics/game-physics-cs.pdf
+        type: cheatsheet
+
+  - title: Pokračování závěrečného projektu I.
+    slug: asteroids2
+    date: 2022-01-27
+    description: V této lekci budeme pokračovat v dalších fázích závěrečného projektu.
+    materials: []
+
+  - title: Pokračování závěrečného projektu II.
+    slug: asteroids3
+    date: 2022-02-03
+    description: V této lekci budeme pokračovat v dalších fázích závěrečného projektu.
+    materials: []
+
+  - title: Závěrečná hodina
+    slug: asteroids4
+    date: 2022-02-10
+    description: |
+      Během závěrečné hodiny si předáme diplomy a seznámíme se s možnostmi
+      pokračování studia.
+    materials: []

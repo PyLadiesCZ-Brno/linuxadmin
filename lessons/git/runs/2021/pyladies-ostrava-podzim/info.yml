@@ -1,0 +1,403 @@
+title: Týmový začátečnický kurz PyLadies
+subtitle: Ostrava - podzim 2021
+time: 17:00–19:00
+default_time:
+  start: '17:00'
+  end: '19:00'
+place: Tieto Towers, 28. října 3346/91, Moravská Ostrava, Ostrava
+description: Naučte se Python vážně od začátku. Žádné předchozí znalosti nejsou potřeba.
+long_description: |
+    Týmový kurz pro začátečníky a začátečnice!
+
+    Více informací o kurzu najdeš v nulté lekci.
+
+# derives: pyladies
+vars:
+  # user-gender: f
+  # pyladies: true
+  coach-present: true
+plan:
+- slug: intro
+  title: 'Úvodní informace'
+  serial: 0
+  date: 2021-09-01
+  materials:
+  - lesson: adm/intro
+    title: Úvodní informace
+
+- slug: install
+  title: 'Instalace'
+  date: 2021-09-15
+  materials:
+#   - url: https://youtu.be/i2QupnsdktU
+#     type: lesson
+#     title: (7:12) Úvod k instalaci – video
+#   - lesson: adm/whats
+#     title: Úvod k instalaci – text
+
+  - url: https://youtu.be/GGMg8O4hE0c
+    type: lesson
+    title: (13:50) Příkazová řádka – Linux & macOS – video
+  - url: https://youtu.be/kriVWJmXpZc
+    type: lesson
+    title: (22:34) Příkazová řádka – Windows – video
+  - lesson: beginners/cmdline
+
+  - url: https://youtu.be/7Qi7cSkoBA0
+    type: lesson
+    title: (8:15) Instalace Pythonu – Linux – video
+  - url: https://youtu.be/Xr6liKJzRGA
+    type: lesson
+    title: (4:48) Instalace Pythonu – Windows – video
+  - lesson: beginners/install
+
+  - url: https://youtu.be/AFVvpfQB0V0
+    type: lesson
+    title: (7:48) Nastavení prostředí – video
+  - lesson: beginners/venv-setup
+
+  - url: https://youtu.be/JcXUCuneX04
+    type: lesson
+    title: (8:01) Instalace editoru – video
+  - lesson: beginners/install-editor
+
+  - url: https://youtu.be/0Poe25XdKIA
+    type: lesson
+    title: (7:23) První příkazy v Pythonu – video
+  - lesson: beginners/first-steps
+    title: První příkazy v Pythonu
+
+  - title: Tahák na klávesnici (PDF)
+    url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
+    type: cheatsheet
+#   - title: 'Úkoly (🧮)'
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=preparation
+#     type: homework
+#
+- slug: expressions
+  title: 'Výrazy a podmínky'
+  date: 2021-09-22
+  materials:
+  - url: https://youtu.be/r0esiaghzrY
+    type: lesson
+    title: (9:52) Neuzavřená závorka – video (+ domácí úkoly v první části videa)
+  - lesson: adm/close-paren
+
+  - url: https://youtu.be/9aJcvOfleFs
+    type: lesson
+    title: (7:50) První program – video
+  - lesson: beginners/hello-world
+
+  - url: https://youtu.be/14-LVG9Edng
+    type: lesson
+    title: (12:38) Print a chybové hlášky – video
+  - lesson: beginners/print
+
+  - url: https://youtu.be/-zKws24FmCg
+    type: lesson
+    title: (15:08) Proměnné – video
+  - lesson: beginners/variables
+
+  - url: https://youtu.be/nNXDXuN6Smg
+    type: lesson
+    title: (8:32) Vyhodnocování výrazů – video
+  - lesson: beginners/expressions
+
+  - url: https://youtu.be/Q1YJqWzfnck
+    type: lesson
+    title: (17:27) Porovnání – video
+  - lesson: beginners/comparisons
+
+  - title: Tahák na debuggování (PDF)
+    url: https://pyvec.github.io/cheatsheets/errors/errors-cs.pdf
+    type: cheatsheet
+#
+#   - title: 'Úkoly (✊✌✋)'
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=expressions
+#     type: homework
+#
+#
+- slug: loops
+  title: 'Funkce a cykly'
+  date: 2021-09-29
+  materials:
+  - url: https://youtu.be/w_d8VKS8i48
+    type: lesson
+    title: (17:26) Funkce – video
+  - lesson: beginners/functions
+
+  - url: https://youtu.be/udEOvGIuZrs
+    type: lesson
+    title: (15:51) Užitečné funkce – video
+  - lesson: beginners/basic-functions
+
+  - url: https://youtu.be/A__45ibnsnc
+    type: lesson
+    title: (33:02) Želva a cykly – video
+  - lesson: intro/turtle
+
+  - url: https://youtu.be/I_mkND45dB0
+    type: lesson
+    title: (6:57) Cyklus While – video
+  - lesson: beginners/while
+
+  - url: https://youtu.be/fFh1LiksgdA
+    type: lesson
+    title: (9:28) Přepisování proměnných – video
+  - lesson: beginners/reassignment
+
+  - url: https://youtu.be/5Mc-cgoaM10
+    type: lesson
+    title: (7:58) Nebo anebo a – video
+  - lesson: beginners/and-or
+
+  - title: Tahák na užitečné funkce (PDF)
+    url: https://pyvec.github.io/cheatsheets/basic-functions/basic-functions-cs.pdf
+    type: cheatsheet
+#
+#   - title: "Úkol (\U0001f422 \U0001f0b2\U0001f0b1)"
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=loops
+#     type: homework
+#
+#
+- slug: str
+  title: 'Řetězce'
+  date: 2021-10-06
+  materials:
+  - url: https://youtu.be/xdZWIvryP20
+    type: lesson
+    title: (19:54) Zápis řetězců – video
+  - lesson: beginners/str
+
+  - url: https://youtu.be/QOamCtzLPAo
+    type: lesson
+    title: (16:12) Výběr z řetězců – video
+  - lesson: beginners/str-index-slice
+
+  - url: https://youtu.be/I3CB2YihRh8
+    type: lesson
+    title: (9:19) Řetězcové funkce a metody – video
+  - lesson: beginners/str-methods
+
+  - url: https://youtu.be/2-r2e9aM1HU
+    type: lesson
+    title: (11:52) Šablony (formátovací řetězce) – video
+  - lesson: beginners/fstring
+
+  - title: Řetězcový tahák (PDF)
+    url: https://pyvec.github.io/cheatsheets/strings/strings-cs.pdf
+    type: cheatsheet
+#   - title: "Úkol (|‾)"
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=str
+#     type: homework
+#
+#
+- slug: def
+  title: 'Vlastní funkce'
+  date: 2021-10-13
+  materials:
+
+  - url: https://youtu.be/6a-RjR9fNBY
+    type: lesson
+    title: (17:01) Definice funkcí – video
+  - lesson: beginners/def
+
+  - url: https://youtu.be/4M6Yq9ZyObs
+    type: lesson
+    title: (8:54) Vrátit nebo vypsat? – video
+  - lesson: beginners/prefer-return
+
+  - url: https://youtu.be/I_DpjBDQy_k
+    type: lesson
+    title: (3:58) Chybové hlášky ze zanořených funkcí – video
+  - lesson: beginners/nested-traceback
+
+  - url: https://youtu.be/gbjXnMmuAxw
+    type: lesson
+    title: (14:25) Lokální proměnné – video
+  - lesson: beginners/local-variables
+
+  - url: https://youtu.be/Vu6_jK8OiAI
+    type: lesson
+    title: (12:23) Rekurze – video
+  - lesson: beginners/recursion
+
+  - title: Python Tutor
+    url: http://pythontutor.com/visualize.html#mode=edit
+#   - title: "Úkol (⚁⚃⚅)"
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=def
+#     type: homework
+#
+#
+- slug: exc
+  title: 'Chyby a moduly'
+  date: 2021-10-20
+  materials:
+
+  - url: https://youtu.be/s-P5mBjUJBw
+    type: lesson
+    title: (17:11) Výjimky – video
+  - lesson: beginners/exceptions
+
+  - url: https://youtu.be/LFp_x7OgCBU
+    type: lesson
+    title: (10:32) Moduly – video
+  - lesson: beginners/modules
+
+  - url: https://youtu.be/bZ4iiSDe_4g
+    type: lesson
+    title: (5:56) Cyklické importy – video
+  - lesson: beginners/circular-imports
+
+  - title: Výjimkový tahák (PDF)
+    url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
+    type: cheatsheet
+#   - title: "Úkol (×○×○)"
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=exc
+#     type: homework
+#
+#
+- slug: test
+  title: 'Rozhraní a testy'
+  date: 2021-10-27
+  materials:
+
+
+  - url: https://youtu.be/xQ7J_R8VAJQ
+    type: lesson
+    title: (6:51) Rozhraní – video
+  - lesson: beginners/interfaces
+
+  - url: https://youtu.be/-KS_VRerZQ0
+    type: lesson
+    title: (15:25) Testování – video
+  - lesson: beginners/testing
+
+  - url: https://youtu.be/S6HyFIUyPTw
+    type: lesson
+    title: (10:12) Spouštěcí moduly – video
+  - url: https://youtu.be/s-KPxX5ZcMs
+    type: lesson
+    title: (3:53) Negativní testy – video
+  - lesson: beginners/main-module
+#
+#   - title: "Úkol (✕✕✕)"
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=test
+#     type: homework
+#
+#
+- slug: list
+  title: 'Seznamy a n-tice'
+  date: 2021-11-10
+  materials:
+
+  - url: https://youtu.be/abIMJjb9Nxw
+    type: lesson
+    title: (11:10) Seznamy – Úvod – video
+  - url: https://youtu.be/-gINX_pOtQo
+    type: lesson
+    title: (32:52) Co všechno umí seznamy – video
+  - lesson: beginners/list
+
+  - url: https://youtu.be/dObtA75Ouzk
+    type: lesson
+    title: (9:51) N-tice – video
+  - lesson: beginners/tuple
+
+  #- lesson: beginners/nested-list
+
+  - title: Tahák na seznamy (PDF)
+    url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
+    type: cheatsheet
+#   - title: "Úkol – [\U0001f436\U0001f431\U0001f430\U0001f40d]"
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=list
+#     type: homework
+#
+#
+- slug: file
+  title: 'Sekvence a soubory'
+  date: 2021-11-17
+  materials:
+
+  - url: https://youtu.be/UtyIKgsnLmk
+    type: lesson
+    title: (5:02) Range – video
+  - lesson: beginners/range
+
+  - url: https://youtu.be/JUCb7iiGsW4
+    type: lesson
+    title: (16:39) Iterátory n-tic (enum & zip) – video
+  - lesson: beginners/zip-enumerate
+
+  - url: https://youtu.be/1X4TU_thg7s
+    type: lesson
+    title: (13:17) Soubory – video
+  - lesson: beginners/files
+
+  #- url:
+  #  title: (:)  – video
+  - title: "Kontext: `with` a `finally` (bonus)"
+    lesson: beginners/with
+#
+#   - title: Úkol (⚔️)
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=file
+#     type: homework
+#
+- slug: dict
+  title: 'Slovníky'
+  date: 2021-11-24
+  materials:
+
+  - url: https://youtu.be/OVnUhWwd2C0
+    type: lesson
+    title: (19:23) Slovníky – video
+  - lesson: beginners/dict
+
+  - url: https://youtu.be/pQ268T2IZCo
+    type: lesson
+    title: (4:42) Více hodnot v jednom záznamu slovníku – video
+  - lesson: beginners/dict-with-list-values
+
+  - url: https://youtu.be/nPUSH7gSI4o
+    type: lesson
+    title: (12:54) Kódování dat – JSON – video
+  - lesson: intro/json
+
+  - title: Slovníkový tahák (PDF)
+    url: https://pyvec.github.io/cheatsheets/dicts/dicts-cs.pdf
+    type: cheatsheet
+#   - title: "Úkol (💾)"
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=dict
+#     type: homework
+#
+- slug: class
+  title: 'Třídy a dědičnost'
+  date: 2021-12-01
+#   materials:
+#
+#   - url: https://youtu.be/x4iJDPOSv4A
+#     type: lesson
+#     title: (22:26) Třídy – video
+#   - lesson: beginners/class
+#
+#   - url: https://youtu.be/mqxMmSFiASw
+#     type: lesson
+#     title: (12:58) Dědičnost – video
+#   - lesson: beginners/inheritance
+#
+#   - title: "Úkol (♟♚)"
+#     url: https://projekty.pyladies.cz/session?course=online-2021-spring&session=class
+#     type: homework
+#
+- slug: end
+  title: 'Závěr'
+  date: 2021-12-08
+#   materials:
+#
+#   - url: https://youtu.be/N90FxVr4H-M
+#     type: lesson
+#     title: (6:03) Závěr – video
+#   - lesson: adm/bye
+#
+#   - title: Odkazy na další materiály
+#     url: https://www.fi.muni.cz/IB111/sbirka/
