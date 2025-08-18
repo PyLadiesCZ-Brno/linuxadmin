@@ -33,7 +33,7 @@ se teď seznámíme.
 > [note]
 > Budeme hodně pracovat s příkazovou řádkou.
 > Jestli se s ní ještě nekamarádíš, koukni se na
-> [úvod]({{ lesson_url('beginners/cmdline') }}).
+> [úvod]({{ lesson_url('git/cmdline') }}).
 >
 > Nezapomeň: `$` na začátku se nepíše;
 > je tu proto, aby šlo poznat že jde o příkaz.
