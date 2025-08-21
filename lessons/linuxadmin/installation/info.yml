@@ -1,0 +1,11 @@
+title: Virtuální počítač
+style: md
+attribution: napsal Martin Pavlásek
+license: cc-by-sa-40
+subpages:
+    virtualbox:
+        subtitle: VirtualBox
+    gnome-boxes:
+        subtitle: Gnome Boxes
+    apple-silicon:
+        subtitle: Instalace na Apple Silicon
