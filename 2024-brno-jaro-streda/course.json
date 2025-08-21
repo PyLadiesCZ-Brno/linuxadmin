@@ -2671,7 +2671,7 @@
                 ],
                 "serial": "0",
                 "slug": "vm-setup",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Úvod & Instalace"
             },
             {
@@ -2710,7 +2710,7 @@
                 ],
                 "serial": "1",
                 "slug": "shell-1",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Bash I"
             },
             {
@@ -2764,7 +2764,7 @@
                 ],
                 "serial": "2",
                 "slug": "shell-2",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Bash II"
             },
             {
@@ -2798,7 +2798,7 @@
                 ],
                 "serial": "3",
                 "slug": "shell-3",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Procesy & deskriptory souborů"
             },
             {
@@ -2847,7 +2847,7 @@
                 ],
                 "serial": "4",
                 "slug": "descriptors",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Bash III"
             },
             {
@@ -2871,7 +2871,7 @@
                 ],
                 "serial": "5",
                 "slug": "users",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Správa uživatelů"
             },
             {
@@ -2900,7 +2900,7 @@
                 ],
                 "serial": "6",
                 "slug": "fhs",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Souborové systémy"
             },
             {
@@ -2933,7 +2933,7 @@
                 ],
                 "serial": "7",
                 "slug": "review",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Instalace balíčků"
             },
             {
@@ -2961,7 +2961,7 @@
                 ],
                 "serial": "8",
                 "slug": "mount",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Služby a webový server"
             },
             {
@@ -2985,7 +2985,7 @@
                 ],
                 "serial": "9",
                 "slug": "service",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "SSH a systemd jednotky"
             },
             {
@@ -3009,7 +3009,7 @@
                 ],
                 "serial": "10",
                 "slug": "net-services",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Signály a Automatizovaná konfigurace"
             },
             {
@@ -3028,11 +3028,11 @@
                 ],
                 "serial": "11",
                 "slug": "containers",
-                "source_file": "course.yml",
+                "source_file": "courses/2024-brno-jaro-streda.yml",
                 "title": "Kontejnery"
             }
         ],
-        "source_file": "course.yml",
+        "source_file": "courses/2024-brno-jaro-streda.yml",
         "subtitle": "Brno - jaro 2024 - středa",
         "time_description": "18:00–20:00",
         "timezone": "Europe/Prague",
