@@ -22,8 +22,9 @@ Nemáš-li `poetry`, nainstaluj si jej. Na to je několik způsobů:
 Přepni se do adresáře s projektem a spusť:
 
 ```console
-$ poetry install --dev
+$ poetry install --with dev
 ```
+* Pokud máš problém s instalací, zkus použít python3.12 a nižší.
 
 ### Lokální server
 
