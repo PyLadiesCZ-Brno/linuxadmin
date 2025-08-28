@@ -431,6 +431,436 @@
                 },
                 "title": "Textový editor Vim"
             },
+            "git/basics": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "basics/index.html"
+                        },
+                        "css": ".green  {   color:  #0a0;    }\n.red    {   color:  #a00;    }\n.yellow {   color:  #a50;    }\n.strong {   font-weight:  bold;    }\n.blue   {   color:  #0aa;    }\n",
+                        "ids": [
+                            "diagram",
+                            "druha_revize",
+                            "git",
+                            "gitk",
+                            "instalace",
+                            "log",
+                            "prvni_revize",
+                            "repozitar",
+                            "zaver"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#diagram",
+                            "#druha_revize",
+                            "#git",
+                            "#gitk",
+                            "#instalace",
+                            "#log",
+                            "#prvni_revize",
+                            "#repozitar",
+                            "#zaver",
+                            "naucse:page?lesson=git/cmdline",
+                            "naucse:page?lesson=git/install",
+                            "naucse:static?filename=diagram.svg",
+                            "naucse:static?filename=dropbox.png",
+                            "naucse:static?filename=gitk.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/basics/index.md",
+                        "title": "Git",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/basics/info.yml",
+                "static_files": {
+                    "diagram.svg": {
+                        "path": "basics/diagram.svg"
+                    },
+                    "dropbox.png": {
+                        "path": "basics/dropbox.png"
+                    },
+                    "gitk.png": {
+                        "path": "basics/gitk.png"
+                    }
+                },
+                "title": "Git"
+            },
+            "git/branching": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "branching/index.html"
+                        },
+                        "ids": [
+                            "slouceni",
+                            "vetveni_v_gitu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#slouceni",
+                            "#vetveni_v_gitu",
+                            "naucse:static?filename=branch1.png",
+                            "naucse:static?filename=branches.png",
+                            "naucse:static?filename=merge.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/branching/index.md",
+                        "title": "Větvení v Gitu",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/branching/info.yml",
+                "static_files": {
+                    "branch1.png": {
+                        "path": "branching/branch1.png"
+                    },
+                    "branches.png": {
+                        "path": "branching/branches.png"
+                    },
+                    "merge.png": {
+                        "path": "branching/merge.png"
+                    }
+                },
+                "title": "Větvení v Gitu"
+            },
+            "git/cmdline": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017.",
+                            "Založeno na tutoriálu [Django Girls].\n[Django Girls]: https://tutorial.djangogirls.org/en/intro_to_command_line/"
+                        ],
+                        "content": {
+                            "path": "cmdline/index.html"
+                        },
+                        "ids": [
+                            "aktualni_adresar",
+                            "co_v_tom_adresari_je",
+                            "konec",
+                            "kopirovani_z_prikazove_radky",
+                            "o_uroven_nahoru",
+                            "otevreni_vprohlizece_souboru",
+                            "pozorovani_zmen",
+                            "prehled",
+                            "prikazova_radka",
+                            "prvni_prikaz",
+                            "vgrafickem_hledatku",
+                            "vkladani_do_prikazove_radky",
+                            "vytvoreni_adresare",
+                            "zmena_aktualniho_adresare"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualni_adresar",
+                            "#co_v_tom_adresari_je",
+                            "#konec",
+                            "#kopirovani_z_prikazove_radky",
+                            "#o_uroven_nahoru",
+                            "#otevreni_vprohlizece_souboru",
+                            "#pozorovani_zmen",
+                            "#prehled",
+                            "#prikazova_radka",
+                            "#prvni_prikaz",
+                            "#vgrafickem_hledatku",
+                            "#vkladani_do_prikazove_radky",
+                            "#vytvoreni_adresare",
+                            "#zmena_aktualniho_adresare",
+                            "naucse:static?filename=linux-file-browser.png",
+                            "naucse:static?filename=macos-file-browser.png",
+                            "naucse:static?filename=windows-cmd-properties.png",
+                            "naucse:static?filename=windows-file-browser.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/cmdline/index.md",
+                        "title": "Příkazová řádka",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/cmdline/info.yml",
+                "static_files": {
+                    "linux-file-browser.png": {
+                        "path": "cmdline/linux-file-browser.png"
+                    },
+                    "macos-file-browser.png": {
+                        "path": "cmdline/macos-file-browser.png"
+                    },
+                    "windows-cmd-properties.png": {
+                        "path": "cmdline/windows-cmd-properties.png"
+                    },
+                    "windows-file-browser.png": {
+                        "path": "cmdline/windows-file-browser.png"
+                    }
+                },
+                "title": "Příkazová řádka"
+            },
+            "git/collaboration": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsali Petr Viktorin a Oskar Hollman, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "collaboration/index.html"
+                        },
+                        "ids": [
+                            "aktualizace_smallcodegit_pullcodesmall",
+                            "github",
+                            "hlaseni_chyb_smallemissuesemsmall",
+                            "licence",
+                            "naklonovani_repozitare_smallcodegit_clonecodesmall",
+                            "open_source",
+                            "posilani_zmen_smallcodegit_pushcodesmall",
+                            "readme_informace_pro_ostatni",
+                            "spoluprace",
+                            "vytvoreni_vetve",
+                            "zadost_o_zacleneni_smallempull_requestemsmall"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualizace_smallcodegit_pullcodesmall",
+                            "#github",
+                            "#hlaseni_chyb_smallemissuesemsmall",
+                            "#licence",
+                            "#naklonovani_repozitare_smallcodegit_clonecodesmall",
+                            "#open_source",
+                            "#posilani_zmen_smallcodegit_pushcodesmall",
+                            "#readme_informace_pro_ostatni",
+                            "#spoluprace",
+                            "#vytvoreni_vetve",
+                            "#zadost_o_zacleneni_smallempull_requestemsmall",
+                            "http://choosealicense.com/",
+                            "http://creativecommons.org/choose/",
+                            "https://bitbucket.org",
+                            "https://choosealicense.com/licenses/agpl-3.0/",
+                            "https://choosealicense.com/licenses/cc-by-sa-4.0/",
+                            "https://choosealicense.com/licenses/mit/",
+                            "https://chromium.googlesource.com/chromium/src.git",
+                            "https://cs.wikipedia.org/wiki/Markdown",
+                            "https://cs.wikipedia.org/wiki/Svobodn%C3%BD_software",
+                            "https://en.wikipedia.org/wiki/Richard_Stallman",
+                            "https://github.com",
+                            "https://github.com/",
+                            "https://github.com/GNOME/gedit",
+                            "https://github.com/Microsoft/vscode",
+                            "https://github.com/aosp-mirror",
+                            "https://github.com/atom/atom",
+                            "https://github.com/django/django",
+                            "https://github.com/jupyter/notebook",
+                            "https://github.com/kennethreitz/requests",
+                            "https://github.com/matplotlib/matplotlib",
+                            "https://github.com/mitsuhiko/flask",
+                            "https://github.com/mozilla/gecko-dev",
+                            "https://github.com/naucse/prezencka",
+                            "https://github.com/numpy/numpy",
+                            "https://github.com/pytest-dev/pytest/",
+                            "https://github.com/python/cpython",
+                            "https://github.com/pyvec/naucse.python.cz",
+                            "https://github.com/torvalds/linux",
+                            "https://gitlab.com/",
+                            "https://launchpad.net/",
+                            "https://opensource.org/licenses",
+                            "https://pagure.io/",
+                            "https://www.gnu.org/gnu/manifesto.en.html",
+                            "naucse:static?filename=gh-workflow-diagram.svg"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/collaboration/index.md",
+                        "title": "Spolupráce a Open source",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/collaboration/info.yml",
+                "static_files": {
+                    "gh-workflow-diagram.svg": {
+                        "path": "collaboration/gh-workflow-diagram.svg"
+                    }
+                },
+                "title": "Spolupráce a Open source"
+            },
+            "git/git-collaboration-2in1": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsali Petr Viktorin a Oskar Hollman, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "git-collaboration-2in1/index.html"
+                        },
+                        "ids": [
+                            "aktualizace_codegit_pullcode",
+                            "git_a_github",
+                            "log_codegit_logcode",
+                            "open-source_a_free_software",
+                            "posilani_zmen_codegit_pushcode",
+                            "prace_s_lokalnim_repozitarem",
+                            "prvni_revize_codegit_commitcode",
+                            "spoluprace_a_git",
+                            "spoluprace_na_projektu",
+                            "stav_repozitare_codegit_statuscode",
+                            "zadost_o_zacleneni_pull_request"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualizace_codegit_pullcode",
+                            "#git_a_github",
+                            "#log_codegit_logcode",
+                            "#open-source_a_free_software",
+                            "#posilani_zmen_codegit_pushcode",
+                            "#prace_s_lokalnim_repozitarem",
+                            "#prvni_revize_codegit_commitcode",
+                            "#spoluprace_a_git",
+                            "#spoluprace_na_projektu",
+                            "#stav_repozitare_codegit_statuscode",
+                            "#zadost_o_zacleneni_pull_request",
+                            "https://choosealicense.com",
+                            "https://creativecommons.org",
+                            "https://cs.wikipedia.org/wiki/Svobodn%C3%BD_software",
+                            "https://en.wikipedia.org/wiki/Richard_Stallman",
+                            "https://github.com",
+                            "https://github.com/asgeirrr/prezencka",
+                            "https://github.com/asgeirrr/prezencka/",
+                            "https://opensource.org",
+                            "https://www.root.cz/knihy/katedrala-a-trziste/",
+                            "naucse:page?lesson=git/cmdline",
+                            "naucse:static?filename=diagram.png",
+                            "naucse:static?filename=gh-workflow-diagram.svg"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/git-collaboration-2in1/index.md",
+                        "title": "Spolupráce a Git",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/git-collaboration-2in1/info.yml",
+                "static_files": {
+                    "diagram.png": {
+                        "path": "git-collaboration-2in1/diagram.png"
+                    },
+                    "gh-workflow-diagram.svg": {
+                        "path": "git-collaboration-2in1/gh-workflow-diagram.svg"
+                    }
+                },
+                "title": "Spolupráce a Git"
+            },
+            "git/ignoring": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsal Petr Viktorin, 2017."
+                        ],
+                        "content": {
+                            "path": "ignoring/index.html"
+                        },
+                        "ids": [
+                            "automaticke_pridavani",
+                            "dalsi_haraburdi",
+                            "format_ignorovaciho_souboru",
+                            "ignorovani_souboru",
+                            "osobni_poznamky",
+                            "priprava",
+                            "vystupy_programu_a_pomocne_soubory_spolecnych_nastroju"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#automaticke_pridavani",
+                            "#dalsi_haraburdi",
+                            "#format_ignorovaciho_souboru",
+                            "#ignorovani_souboru",
+                            "#osobni_poznamky",
+                            "#priprava",
+                            "#vystupy_programu_a_pomocne_soubory_spolecnych_nastroju",
+                            "https://git-scm.com/docs/gitignore",
+                            "https://inkscape.org/"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/ignoring/index.md",
+                        "title": "Ignorování souborů",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/ignoring/info.yml",
+                "static_files": {},
+                "title": "Ignorování souborů"
+            },
+            "git/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install/index.html"
+                        },
+                        "ids": [
+                            "config",
+                            "git",
+                            "linux",
+                            "macos",
+                            "nastaveni",
+                            "windows"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#config",
+                            "#git",
+                            "#linux",
+                            "#macos",
+                            "#nastaveni",
+                            "#windows",
+                            "https://git-scm.org"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/install/index.md",
+                        "title": "Instalace Gitu",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/install/info.yml",
+                "static_files": {},
+                "title": "Instalace Gitu"
+            },
             "hw/bash-1": {
                 "pages": {
                     "index": {
@@ -971,6 +1401,37 @@
                 },
                 "title": "Programy, funkce a aliasy"
             },
+            "linuxadmin/cicd": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsala Eliška Jégrová, 2025"
+                        ],
+                        "content": {
+                            "path": "cicd/index.html"
+                        },
+                        "ids": [
+                            "cicd"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#cicd"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/linuxadmin/cicd/index.md",
+                        "title": "CI/CD",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/linuxadmin/cicd/info.yml",
+                "static_files": {},
+                "title": "CI/CD"
+            },
             "linuxadmin/containers": {
                 "pages": {
                     "index": {
@@ -1209,47 +1670,6 @@
                 },
                 "title": "Fork a exec"
             },
-            "linuxadmin/fork-teaser": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "napsali Karolina Surma, Martin Pavlásek a Petr Viktorin, 2020-2021"
-                        ],
-                        "content": {
-                            "path": "fork-teaser/index.html"
-                        },
-                        "ids": [
-                            "a_k_cemu_to_je",
-                            "funkce_ktere_ovladaji_proces",
-                            "klonovani_fork",
-                            "mutace_exec",
-                            "tvrdsi_pristup",
-                            "ukonceni_exit"
-                        ],
-                        "license": "cc-by-sa-40",
-                        "links": [
-                            "#a_k_cemu_to_je",
-                            "#funkce_ktere_ovladaji_proces",
-                            "#klonovani_fork",
-                            "#mutace_exec",
-                            "#tvrdsi_pristup",
-                            "#ukonceni_exit"
-                        ],
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/linuxadmin/fork-teaser/index.md",
-                        "title": "Funkce které ovládají proces",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true,
-                            "user-gender": "f"
-                        }
-                    }
-                },
-                "source_file": "lessons/linuxadmin/fork-teaser/info.yml",
-                "static_files": {},
-                "title": "Funkce které ovládají proces"
-            },
             "linuxadmin/fs": {
                 "pages": {
                     "index": {
@@ -1335,6 +1755,37 @@
                 },
                 "title": "Úvod do prostředí GNOME"
             },
+            "linuxadmin/gnome-tools": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsala Eliška Jégrová, 2025"
+                        ],
+                        "content": {
+                            "path": "gnome-tools/index.html"
+                        },
+                        "ids": [
+                            "graficke_programy"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#graficke_programy"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/linuxadmin/gnome-tools/index.md",
+                        "title": "Grafické programy",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/linuxadmin/gnome-tools/info.yml",
+                "static_files": {},
+                "title": "Grafické programy"
+            },
             "linuxadmin/grep-find": {
                 "pages": {
                     "index": {
@@ -1371,6 +1822,37 @@
                 "source_file": "lessons/linuxadmin/grep-find/info.yml",
                 "static_files": {},
                 "title": "Hledání: grep a find"
+            },
+            "linuxadmin/hardware-basics": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsala Eliška Jégrová, 2025"
+                        ],
+                        "content": {
+                            "path": "hardware-basics/index.html"
+                        },
+                        "ids": [
+                            "hardware"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#hardware"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/linuxadmin/hardware-basics/index.md",
+                        "title": "Hardware",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/linuxadmin/hardware-basics/info.yml",
+                "static_files": {},
+                "title": "Hardware"
             },
             "linuxadmin/httpd-service": {
                 "pages": {
@@ -2222,6 +2704,37 @@
                 },
                 "title": "SSH"
             },
+            "linuxadmin/system-intro": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsala Eliška Jégrová, 2025"
+                        ],
+                        "content": {
+                            "path": "system-intro/index.html"
+                        },
+                        "ids": [
+                            "uvod_do_systemu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#uvod_do_systemu"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/linuxadmin/system-intro/index.md",
+                        "title": "Úvod do systémů",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/linuxadmin/system-intro/info.yml",
+                "static_files": {},
+                "title": "Úvod do systémů"
+            },
             "linuxadmin/users": {
                 "pages": {
                     "index": {
@@ -2420,6 +2933,37 @@
                 "static_files": {},
                 "title": "Co je to ten „Linux“?"
             },
+            "linuxadmin/yaml": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsala Eliška Jégrová, 2025"
+                        ],
+                        "content": {
+                            "path": "yaml/index.html"
+                        },
+                        "ids": [
+                            "yaml"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#yaml"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/linuxadmin/yaml/index.md",
+                        "title": "YAML",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/linuxadmin/yaml/info.yml",
+                "static_files": {},
+                "title": "YAML"
+            },
             "notes/bash-subshell": {
                 "pages": {
                     "index": {
@@ -2460,6 +3004,41 @@
                 "source_file": "lessons/notes/bash-subshell/info.yml",
                 "static_files": {},
                 "title": "Poznámky – Subshell"
+            },
+            "notes/cron": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsala Karolina Surma a Petr Viktorin, 2020"
+                        ],
+                        "content": {
+                            "path": "cron/index.html"
+                        },
+                        "ids": [
+                            "cron",
+                            "prehravame_zvuky_z_prikazove_radky",
+                            "spousteni_zvuku_podle_casu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#cron",
+                            "#prehravame_zvuky_z_prikazove_radky",
+                            "#spousteni_zvuku_podle_casu"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/notes/cron/index.md",
+                        "title": "Cron",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/notes/cron/info.yml",
+                "static_files": {},
+                "title": "Cron"
             },
             "notes/fhs": {
                 "pages": {
@@ -2576,44 +3155,6 @@
                 "static_files": {},
                 "title": "Signály"
             },
-            "notes/systemd-timer": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "<a href=\"https://www.youtube.com/watch?v=tF0LNPCzXE4\">video</a> připravil Erik Škultéty, 2020",
-                            "napsal Petr Viktorin, 2021"
-                        ],
-                        "content": {
-                            "path": "systemd-timer/index.html"
-                        },
-                        "ids": [
-                            "nase_sluzba",
-                            "systemd_jednotky",
-                            "timer",
-                            "uzivatelska_sluzba_amp_casovac"
-                        ],
-                        "license": "cc-by-sa-40",
-                        "links": [
-                            "#nase_sluzba",
-                            "#systemd_jednotky",
-                            "#timer",
-                            "#uzivatelska_sluzba_amp_casovac"
-                        ],
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/notes/systemd-timer/index.md",
-                        "title": "Poznámky – systemd jednotky",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true,
-                            "user-gender": "f"
-                        }
-                    }
-                },
-                "source_file": "lessons/notes/systemd-timer/info.yml",
-                "static_files": {},
-                "title": "Poznámky – systemd jednotky"
-            },
             "notes/terminal-color": {
                 "pages": {
                     "index": {
@@ -2647,7 +3188,7 @@
                 "title": "Barvičky v terminálu"
             }
         },
-        "long_description": "<p>Na získání práce v IT je často potřeba něco víc než programování.\nČasto to bývají zkušenosti s příkazovou řádkou, znalost fungování operačních\nsystémů a další věci, které si ukážeme v kurzu se (zjednodušeným) názvem\n&quot;Linuxová administrace&quot;.\nPro přijetí do kurzu je třeba znát základy programování v Pythonu.\nPokud máš za sebou začátečnický kurz PyLadies, tak jsi ve hře.</p>\n<p>Podobně jako v začátečnickém kurzu Pythonu je tu cílem obecný přehled spíš\nnež detailní znalosti. Kurz ti otevře cestu ke skriptování v Bashi,\nsystémové administraci, automatizované konfiguraci (např. přes Ansible)\nnebo nasazování kontejnerů.</p>\n<p>Na procvičení doma budou i menší úkoly, tak s nimi počítej do svých\nčasových možností.</p>\n<p>Tento běh měníme obsah některých lekcí a materiály pro ně ještě vznikají,\nněkteré části nebudou tedy bohužel k dispozici předem.</p>\n<p>Tento kurz je bez omezení OS, ale je nutné mít notebook s instalačními\nprávy a 10+ GB místa na disku.</p>\n<p>Kurz je zdarma, ale kapacita je omezená. Je potřeba se registrovat.</p>",
+        "long_description": "<p>Na získání práce v IT je často potřeba něco víc než programování.\nČasto to bývají zkušenosti s příkazovou řádkou, znalost fungování operačních\nsystémů a další věci, které si ukážeme v kurzu se (zjednodušeným) názvem\n&quot;Linuxová administrace&quot;.\nPro přijetí do kurzu je třeba znát základy programování v Pythonu.\nPokud máš za sebou začátečnický kurz PyLadies, tak jsi ve hře.</p>\n<p>Podobně jako v začátečnickém kurzu Pythonu je tu cílem obecný přehled spíš\nnež detailní znalosti. Kurz ti otevře cestu ke skriptování v Bashi,\nsystémové administraci, automatizované konfiguraci (např. přes Ansible)\nnebo nasazování kontejnerů.</p>\n<p>Na procvičení doma budou i menší úkoly, tak s nimi počítej do svých\nčasových možností.</p>\n<p>Tento běh měníme obsah některých lekcí a materiály pro ně ještě vznikají,\nněkteré části nebudou tedy bohužel k dispozici předem.</p>\n<p>Tento kurz je bez omezení OS, ale je nutné mít notebook s instalačními\nprávy, 8GB RAM a 15+ GB místa na disku.</p>\n<p>Kurz je zdarma, ale kapacita je omezená. Je potřeba se registrovat.</p>",
         "place": "Fakulta Informatiky MUNI, Botanická 554/68a, místnost S505",
         "sessions": [
             {
@@ -2667,6 +3208,21 @@
                         "lesson_slug": "linuxadmin/gnome-basics",
                         "title": "Úvod do prostředí GNOME",
                         "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "linuxadmin/system-intro",
+                        "title": "Úvod do systémů",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "linuxadmin/gnome-tools",
+                        "title": "Grafické programy",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "carpentry-unix/bash-intro",
+                        "title": "Bash – Úvod",
+                        "type": "lesson"
                     }
                 ],
                 "serial": "0",
@@ -2678,10 +3234,54 @@
                 "date": "2025-09-24",
                 "materials": [
                     {
-                        "lesson_slug": "carpentry-unix/bash-intro",
-                        "title": "Bash – Úvod",
+                        "lesson_slug": "git/basics",
+                        "title": "Git",
                         "type": "lesson"
                     },
+                    {
+                        "lesson_slug": "git/branching",
+                        "title": "Větvení v Gitu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/cmdline",
+                        "title": "Příkazová řádka",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/ignoring",
+                        "title": "Ignorování souborů",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/install",
+                        "title": "Instalace Gitu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/collaboration",
+                        "title": "Spolupráce a Open source",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/git-collaboration-2in1",
+                        "title": "Spolupráce a Git",
+                        "type": "lesson"
+                    },
+                    {
+                        "external_url": "https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf",
+                        "title": "Tahák na git",
+                        "type": "none-link"
+                    }
+                ],
+                "serial": "1",
+                "slug": "git",
+                "source_file": "courses/2025-brno-podzim-streda.yml",
+                "title": "Git"
+            },
+            {
+                "date": "2025-10-01",
+                "materials": [
                     {
                         "lesson_slug": "carpentry-unix/filedir",
                         "title": "Navigace v souborech a adresářích",
@@ -2698,6 +3298,11 @@
                         "type": "lesson"
                     },
                     {
+                        "lesson_slug": "linuxadmin/bash-shortcuts",
+                        "title": "Zkratky",
+                        "type": "lesson"
+                    },
+                    {
                         "external_url": "http://swcarpentry.github.io/shell-novice/",
                         "title": "Anglický originál: The Carpentries – The Unix Shell (po Working With Files and Directories včetně)",
                         "type": "none-link"
@@ -2708,13 +3313,32 @@
                         "type": "homework"
                     }
                 ],
-                "serial": "1",
+                "serial": "2",
                 "slug": "shell-1",
                 "source_file": "courses/2025-brno-podzim-streda.yml",
                 "title": "Bash I"
             },
             {
-                "date": "2025-10-01",
+                "date": "2025-10-08",
+                "materials": [
+                    {
+                        "lesson_slug": "linuxadmin/users",
+                        "title": "Uživatelé a práva",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "hw/sudo",
+                        "title": "Úkol",
+                        "type": "homework"
+                    }
+                ],
+                "serial": "3",
+                "slug": "users",
+                "source_file": "courses/2025-brno-podzim-streda.yml",
+                "title": "Správa uživatelů"
+            },
+            {
+                "date": "2025-10-15",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/output-files",
@@ -2737,16 +3361,6 @@
                         "type": "link"
                     },
                     {
-                        "lesson_slug": "linuxadmin/var-loop",
-                        "title": "Proměnné a cyklus",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "carpentry-unix/loop-nelle",
-                        "title": "Nela a medúzy: Zpracování souborů",
-                        "type": "link"
-                    },
-                    {
                         "lesson_slug": "linuxadmin/grep-find",
                         "title": "Hledání: grep a find",
                         "type": "lesson"
@@ -2762,14 +3376,19 @@
                         "type": "homework"
                     }
                 ],
-                "serial": "2",
+                "serial": "4",
                 "slug": "shell-2",
                 "source_file": "courses/2025-brno-podzim-streda.yml",
                 "title": "Bash II"
             },
             {
-                "date": "2025-10-08",
+                "date": "2025-10-22",
                 "materials": [
+                    {
+                        "lesson_slug": "linuxadmin/hardware-basics",
+                        "title": "Hardware",
+                        "type": "lesson"
+                    },
                     {
                         "lesson_slug": "linuxadmin/bash-exit-code",
                         "title": "Návratová hodnota příkazů",
@@ -2786,8 +3405,13 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "linuxadmin/fork-teaser",
-                        "title": "Bonus: Funkce, které ovládají proces",
+                        "lesson_slug": "notes/signals",
+                        "title": "Signály",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "notes/cron",
+                        "title": "Cron",
                         "type": "lesson"
                     },
                     {
@@ -2796,18 +3420,28 @@
                         "type": "homework"
                     }
                 ],
-                "serial": "3",
+                "serial": "5",
                 "slug": "shell-3",
                 "source_file": "courses/2025-brno-podzim-streda.yml",
-                "title": "Procesy & deskriptory souborů"
+                "title": "Procesy & Signály"
             },
             {
-                "date": "2025-10-15",
+                "date": "2025-10-29",
                 "materials": [
                     {
                         "lesson_slug": "linuxadmin/env-var",
                         "title": "Proměnné Bashe a proměnné prostředí",
                         "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "linuxadmin/var-loop",
+                        "title": "Proměnné a cyklus",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "carpentry-unix/loop-nelle",
+                        "title": "Nela a medúzy: Zpracování souborů",
+                        "type": "link"
                     },
                     {
                         "lesson_slug": "linuxadmin/script",
@@ -2835,73 +3469,15 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "linuxadmin/bash-shortcuts",
-                        "title": "Zkratky",
-                        "type": "lesson"
-                    },
-                    {
                         "lesson_slug": "hw/own-cmd",
                         "title": "Úkol",
                         "type": "homework"
                     }
                 ],
-                "serial": "4",
+                "serial": "6",
                 "slug": "descriptors",
                 "source_file": "courses/2025-brno-podzim-streda.yml",
                 "title": "Bash III"
-            },
-            {
-                "date": "2025-10-22",
-                "materials": [
-                    {
-                        "lesson_slug": "linuxadmin/users",
-                        "title": "Uživatelé a práva",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "notes/fhs",
-                        "title": "Adresářová struktura",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "hw/sudo",
-                        "title": "Úkol",
-                        "type": "homework"
-                    }
-                ],
-                "serial": "5",
-                "slug": "users",
-                "source_file": "courses/2025-brno-podzim-streda.yml",
-                "title": "Správa uživatelů"
-            },
-            {
-                "date": "2025-10-29",
-                "materials": [
-                    {
-                        "lesson_slug": "linuxadmin/fs",
-                        "title": "Souborové systémy – úvod",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "linuxadmin/links",
-                        "title": "Inode a odkazy",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "linuxadmin/mount",
-                        "title": "Mount",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "hw/link",
-                        "title": "Úkol",
-                        "type": "homework"
-                    }
-                ],
-                "serial": "6",
-                "slug": "fhs",
-                "source_file": "courses/2025-brno-podzim-streda.yml",
-                "title": "Souborové systémy"
             },
             {
                 "date": "2025-11-05",
@@ -2954,6 +3530,16 @@
                         "type": "lesson"
                     },
                     {
+                        "lesson_slug": "linuxadmin/virtualbox-networking",
+                        "title": "Virtualbox, nastavení sítě",
+                        "type": "link"
+                    },
+                    {
+                        "lesson_slug": "linuxadmin/ssh",
+                        "title": "SSH",
+                        "type": "lesson"
+                    },
+                    {
                         "lesson_slug": "hw/httpd",
                         "title": "Úkol",
                         "type": "lesson"
@@ -2968,56 +3554,47 @@
                 "date": "2025-11-19",
                 "materials": [
                     {
-                        "lesson_slug": "linuxadmin/ssh",
-                        "title": "SSH",
+                        "lesson_slug": "notes/fhs",
+                        "title": "Adresářová struktura",
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "notes/systemd-timer",
-                        "title": "Poznámky – systemd jednotky",
+                        "lesson_slug": "linuxadmin/fs",
+                        "title": "Souborové systémy – úvod",
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "linuxadmin/virtualbox-networking",
-                        "title": "Virtualbox, nastavení sítě",
-                        "type": "link"
+                        "lesson_slug": "linuxadmin/links",
+                        "title": "Inode a odkazy",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "linuxadmin/mount",
+                        "title": "Mount",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "hw/link",
+                        "title": "Úkol",
+                        "type": "homework"
                     }
                 ],
                 "serial": "9",
-                "slug": "service",
+                "slug": "fhs",
                 "source_file": "courses/2025-brno-podzim-streda.yml",
-                "title": "SSH a systemd jednotky"
+                "title": "Souborové systémy"
             },
             {
                 "date": "2025-11-26",
                 "materials": [
                     {
+                        "lesson_slug": "linuxadmin/yaml",
+                        "title": "YAML",
+                        "type": "lesson"
+                    },
+                    {
                         "lesson_slug": "linuxadmin/ansible",
                         "title": "Automatizace administrace – lehký úvod k Ansible",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "notes/signals",
-                        "title": "Signály",
-                        "type": "lesson"
-                    },
-                    {
-                        "external_url": "https://drive.google.com/file/d/1wNnnR8IOk6XgnbYF0ZQzYoGeQ-c9DqP7/view?usp=sharing",
-                        "title": "Videa a poznámky z minula – signály a systemctl",
-                        "type": "link"
-                    }
-                ],
-                "serial": "10",
-                "slug": "net-services",
-                "source_file": "courses/2025-brno-podzim-streda.yml",
-                "title": "Signály a Automatizovaná konfigurace"
-            },
-            {
-                "date": "2025-12-03",
-                "materials": [
-                    {
-                        "lesson_slug": "notes/terminal-color",
-                        "title": "Barevný Vánoční bonus",
                         "type": "lesson"
                     },
                     {
@@ -3026,10 +3603,29 @@
                         "type": "lesson"
                     }
                 ],
+                "serial": "10",
+                "slug": "net-services",
+                "source_file": "courses/2025-brno-podzim-streda.yml",
+                "title": "Automatizovaná konfigurace & Kontejnery"
+            },
+            {
+                "date": "2025-12-03",
+                "materials": [
+                    {
+                        "lesson_slug": "linuxadmin/cicd",
+                        "title": "CI/CD",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "notes/terminal-color",
+                        "title": "Barevný Vánoční bonus",
+                        "type": "lesson"
+                    }
+                ],
                 "serial": "11",
                 "slug": "containers",
                 "source_file": "courses/2025-brno-podzim-streda.yml",
-                "title": "Kontejnery"
+                "title": "CI/CD"
             }
         ],
         "source_file": "courses/2025-brno-podzim-streda.yml",
