@@ -72,5 +72,3 @@ možné).
     img=static('system-menu.png'),
     alt='Systémové menu',
 ) }}
-
-Až si dohraješ, virtuální počítač můžeš vypnout.
