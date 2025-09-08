@@ -53,14 +53,14 @@ sessions:
   date: 2025-09-24
   slug: git
   serial: 1
-  materials:  # TODO překopat podsekce, nechat důležité
+  materials:
+  - lesson: git/install
   - lesson: git/basics
   - lesson: git/branching
-  - lesson: git/cmdline
-  - lesson: git/ignoring
-  - lesson: git/install
   - lesson: git/collaboration
-  - lesson: git/git-collaboration-2in1
+  - lesson: git/ignoring
+  - lesson: git/cmdline
+    type: link
   - title: Tahák na git
     url: https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf
 
