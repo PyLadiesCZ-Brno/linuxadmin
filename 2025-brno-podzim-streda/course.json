@@ -704,76 +704,6 @@
                 },
                 "title": "Spolupráce a Open source"
             },
-            "git/git-collaboration-2in1": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "Pro PyLadies CZ napsali Petr Viktorin a Oskar Hollman, 2015-2017."
-                        ],
-                        "content": {
-                            "path": "git-collaboration-2in1/index.html"
-                        },
-                        "ids": [
-                            "aktualizace_codegit_pullcode",
-                            "git_a_github",
-                            "log_codegit_logcode",
-                            "open-source_a_free_software",
-                            "posilani_zmen_codegit_pushcode",
-                            "prace_s_lokalnim_repozitarem",
-                            "prvni_revize_codegit_commitcode",
-                            "spoluprace_a_git",
-                            "spoluprace_na_projektu",
-                            "stav_repozitare_codegit_statuscode",
-                            "zadost_o_zacleneni_pull_request"
-                        ],
-                        "license": "cc-by-sa-40",
-                        "links": [
-                            "#aktualizace_codegit_pullcode",
-                            "#git_a_github",
-                            "#log_codegit_logcode",
-                            "#open-source_a_free_software",
-                            "#posilani_zmen_codegit_pushcode",
-                            "#prace_s_lokalnim_repozitarem",
-                            "#prvni_revize_codegit_commitcode",
-                            "#spoluprace_a_git",
-                            "#spoluprace_na_projektu",
-                            "#stav_repozitare_codegit_statuscode",
-                            "#zadost_o_zacleneni_pull_request",
-                            "https://choosealicense.com",
-                            "https://creativecommons.org",
-                            "https://cs.wikipedia.org/wiki/Svobodn%C3%BD_software",
-                            "https://en.wikipedia.org/wiki/Richard_Stallman",
-                            "https://github.com",
-                            "https://github.com/asgeirrr/prezencka",
-                            "https://github.com/asgeirrr/prezencka/",
-                            "https://opensource.org",
-                            "https://www.root.cz/knihy/katedrala-a-trziste/",
-                            "naucse:page?lesson=git/cmdline",
-                            "naucse:static?filename=diagram.png",
-                            "naucse:static?filename=gh-workflow-diagram.svg"
-                        ],
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/git/git-collaboration-2in1/index.md",
-                        "title": "Spolupráce a Git",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true,
-                            "user-gender": "f"
-                        }
-                    }
-                },
-                "source_file": "lessons/git/git-collaboration-2in1/info.yml",
-                "static_files": {
-                    "diagram.png": {
-                        "path": "git-collaboration-2in1/diagram.png"
-                    },
-                    "gh-workflow-diagram.svg": {
-                        "path": "git-collaboration-2in1/gh-workflow-diagram.svg"
-                    }
-                },
-                "title": "Spolupráce a Git"
-            },
             "git/ignoring": {
                 "pages": {
                     "index": {
@@ -3234,6 +3164,11 @@
                 "date": "2025-09-24",
                 "materials": [
                     {
+                        "lesson_slug": "git/install",
+                        "title": "Instalace Gitu",
+                        "type": "lesson"
+                    },
+                    {
                         "lesson_slug": "git/basics",
                         "title": "Git",
                         "type": "lesson"
@@ -3244,8 +3179,8 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "git/cmdline",
-                        "title": "Příkazová řádka",
+                        "lesson_slug": "git/collaboration",
+                        "title": "Spolupráce a Open source",
                         "type": "lesson"
                     },
                     {
@@ -3254,19 +3189,9 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "git/install",
-                        "title": "Instalace Gitu",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "git/collaboration",
-                        "title": "Spolupráce a Open source",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "git/git-collaboration-2in1",
-                        "title": "Spolupráce a Git",
-                        "type": "lesson"
+                        "lesson_slug": "git/cmdline",
+                        "title": "Příkazová řádka",
+                        "type": "link"
                     },
                     {
                         "external_url": "https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf",
