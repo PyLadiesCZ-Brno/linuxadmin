@@ -63,7 +63,8 @@ sessions:
     type: link
   - title: Tahák na git
     url: https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf
-
+  - title: Playgroud repo
+    url: https://github.com/PyLadiesCZ-Brno/2025-podzim-linuxadmin-git
 
 - title: Bash I
   date: 2025-10-01
