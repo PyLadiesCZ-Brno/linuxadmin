@@ -130,6 +130,10 @@ ukážeme.
 Jestli ještě nemáš uživatelský účet na [github.com](https://github.com), jdi
 tam a založ si ho.
 
+## SSH klíče
+
+Aby mohl Git v příkazové řádce ukládat změny do vzdáleného repozitáře na
+GitHubu, je potřeba vytvořit a nahrát [SSH klíč]({{ lesson_url('linuxadmin/ssh#ssh_klic') }}).
 
 ## Naklonování repozitáře <small>(<code>git clone</code>)</small>
 
