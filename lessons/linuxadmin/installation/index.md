@@ -30,14 +30,14 @@ Pro jednotnost si budeme všechno ukazovat na distribuci Fedora, kterou
 si stáhni z [getfedora.org](https://getfedora.org/cs/workstation/download) –
 stáhnout soubor ISO.
 
-Je to velký soubor (zhruba 2 GB) s názvem `Fedora-Workstation-Live-x86_64-39-1.5.iso`.
+Je to velký soubor (zhruba 2 GB) s názvem `Fedora-Workstation-Live-42-1.1.x86_64.iso`.
 
 ### Poznámka pro uživatele macOS
 
 Pokud máš macOS a nevíš, jestli máš procesor Intel, přečti si nejdříve [Jak poznat který procesor máš]({{ subpage_url('apple-silicon#jak-poznat-ktery-procesor-mas') }}) a poté se vrať zpět sem.
 Jestli máš procesor od Apple řady M, pak si budeš muset stáhnout obraz pro systémy ARM aarch64.
 
-Tedy něco jako `Fedora-Workstation-Live-aarch64-39-1.5-respin.iso`.
+Tedy něco jako `Fedora-Workstation-Live-42-1.1.aarch64.iso`.
 
 
 # Příprava hosta
@@ -65,7 +65,7 @@ soubory potřebné k samotné instalaci.
 ) }}
 
 V černém okně vyber šipkami na klávesnici (myš zatím nelze použít)
-**Start Fedora-Workstation-Live 39** a potvrď klávesou Enter. 
+**Start Fedora-Workstation-Live 42** a potvrď klávesou Enter.
 
 {{ figure(
     img=static('fedora-install-02.png'),
@@ -77,7 +77,7 @@ operační systém rovnou z DVD k vyzkoušení - tu ale nyní nevyužijeme).
 
 ## Instalační obrazovky
 
-* **Výběr jazyka** - V levém panelu vyber *Čeština*, poté klepni na *Pokračovat*.
+* **Výběr jazyka** - V poli jazyk hledej cz a následně vyber možnost *Čeština*.
   (Můžeš vybrat i jiný jazyk, ale tyto materiály budou v češtině.)
 
   {{ figure(
@@ -85,44 +85,68 @@ operační systém rovnou z DVD k vyzkoušení - tu ale nyní nevyužijeme).
     alt='Instalace #3',
   ) }}
 
-
-* **Přehled instalace** - Instalátor potřebuje potvrdit, kde se bude instalace
-  provádět. Klepni na *Cíl instalace*, která ti nabídne dostupné pevné disky.
+Ve stejném okně si vyber rozložení klávesnice, pokud nepoužíváš *us* klávesnici.
+Klikni na **Add Input Source**.
 
   {{ figure(
     img=static('fedora-install-04.png'),
     alt='Instalace #4',
   ) }}
 
-
-* **Cíl instalace** - U virtuálního počítače je situace jednoduchá, není tu
-  potřeba nic měnit.
-  Vlevo nahoře najdeš tlačítko *Hotovo*, kterým obrazovku potvrdíš.
+Podobně jako u výběru jazyku vyhledej preferovanou českou klávesnici.
 
   {{ figure(
     img=static('fedora-install-05.png'),
     alt='Instalace #5',
- ) }}
+  ) }}
 
+Následně odstraň anglickou klávesnici kliknutím na 3 tečky vpravo a vyber
+*Remove*.
 
-* **Přehled instalace** - Nyní už instalátor ví vše potřebné. Vpravo dole
- klepni na tlačítko *Zahájit instalaci*. Od tohoto okamžiku se začne
- zapisovat na vybraný pevný disk.
- 
   {{ figure(
     img=static('fedora-install-06.png'),
     alt='Instalace #6',
   ) }}
 
+* **Cíl instalace** - U virtuálního počítače je situace jednoduchá, není tu
+  potřeba nic měnit.
+  Pokračuj kliknutím na tlačítko *Další*.
 
-* **Průběh instalace** - tento krok bude trvat nejdéle. V závislosti na
- rychlosti tvého počítače to může být od pár minut po malé desítky minut.
- Nakonec se vpravo dole objeví tlačítko *Dokončit instalaci*. Tím dojde k 
- uzavření instalačního programu a je třeba provést restart.
- 
   {{ figure(
     img=static('fedora-install-07.png'),
     alt='Instalace #7',
+  ) }}
+
+* **Uspořádání úložiště** - Máme možnost nastavit šifrování disku.
+  My na virtuálním počítači nebudeme mít žádné důležité data a není nutné jej
+  šifrovat. V jiném případě ale silně doporučuji disk zašifrovat.
+  Pokračuj kliknutím na tlačítko *Další*.
+
+  {{ figure(
+    img=static('fedora-install-08.png'),
+    alt='Instalace #8',
+  ) }}
+
+
+* **Zkontrolovat a nainstalovat** - Nyní už instalátor ví vše potřebné. Dole
+ klepni na tlačítko *Vymazat data a nainstalovat*. Od tohoto okamžiku se začne
+ zapisovat na vybraný pevný disk.
+ 
+  {{ figure(
+    img=static('fedora-install-09.png'),
+    alt='Instalace #9',
+  ) }}
+
+
+* **Průběh instalace** - tento krok bude trvat nejdéle. V závislosti na
+ rychlosti tvého počítače to může být od pár minut po malé desítky minut.
+ Nakonec se objeví nápis **Úspěšně nainstalováno**. Vyber *Ukončit a přejít do
+ systému spouštěného přímo z instalačního média*. Tím dojde k
+ uzavření instalačního programu a je třeba provést restart.
+ 
+  {{ figure(
+    img=static('fedora-install-10.png'),
+    alt='Instalace #10',
   ) }}
 
 * **Vypnutí** - K tomu je potřeba kliknout na sadu ikonek úplně vpravo nahoře,
@@ -171,11 +195,18 @@ V této části už je operační systém nainstalovaný,
  zbývá akorát provést posledních několik nastavení. To se děje formou průvodce,
  kde je vždy vpravo nahoře tlačítko *Další*.
 
-* **Vítejte v prostředí Fedora Linux 39!** - klikni na "Začít nastavovat".
+* **Vítejte** - ponech volbu "Čeština".
 
   {{ figure(
-    img=static('fedora-install-09.png'),
-    alt='Instalace #09',
+    img=static('fedora-install-11.png'),
+    alt='Instalace #11',
+  ) }}
+
+* **Psaní** - ponech nastavenou klávesnici.
+
+  {{ figure(
+    img=static('fedora-install-12.png'),
+    alt='Instalace #12',
   ) }}
 
 * **Soukromí**
@@ -184,22 +215,23 @@ V této části už je operační systém nainstalovaný,
     neplechu na virtuálním počítači napácháš
 
   {{ figure(
-    img=static('fedora-install-10.png'),
-    alt='Instalace #10',
+    img=static('fedora-install-13.png'),
+    alt='Instalace #13',
   ) }}
 
-* **Repozitáře třetích stran** - repozitáře není nutné povolovat, nebudeme je využívat.
+* **Časové pásmo** - vyhledej město podle kterého ti přiřadí časové pásmo.
 
   {{ figure(
-    img=static('fedora-install-11.png'),
-    alt='Instalace #11',
+    img=static('fedora-install-14.png'),
+    alt='Instalace #14',
   ) }}
-  
-* **Účty online** - tento krok můžeš klidně přeskočit (a třeba provést později)
+
+* **Repozitáře třetích stran** - repozitáře není nutné povolovat, nebudeme je
+  využívat.
 
   {{ figure(
-    img=static('fedora-install-12.png'),
-    alt='Instalace #12',
+    img=static('fedora-install-15.png'),
+    alt='Instalace #15',
   ) }}
 
   
@@ -212,8 +244,8 @@ V této části už je operační systém nainstalovaný,
   k uživatelskému jménu.) Pokračuj tlačítkem *Další*.
 
   {{ figure(
-    img=static('fedora-install-13.png'),
-    alt='Instalace #13',
+    img=static('fedora-install-16.png'),
+    alt='Instalace #16',
   ) }}
 
 
@@ -227,8 +259,8 @@ V této části už je operační systém nainstalovaný,
  Určitě ale nepoužívej heslo, které používáš i jinde!
 
   {{ figure(
-    img=static('fedora-install-14.png'),
-    alt='Instalace #14',
+    img=static('fedora-install-17.png'),
+    alt='Instalace #17',
   ) }}
 
   Heslo si dobře zapamatuj (nebo, navzdory radám k bezpečným heslům, zapiš).
@@ -237,8 +269,8 @@ V této části už je operační systém nainstalovaný,
   pustit do objevování. Klepni na *Začít používat systém Fedora Linux*.
 
   {{ figure(
-    img=static('fedora-install-15.png'),
-    alt='Instalace #15',
+    img=static('fedora-install-18.png'),
+    alt='Instalace #18',
   ) }}
 
 Virtuální počítač můžeš vypnout přes menu v pravém horním rohu obrazovky.
