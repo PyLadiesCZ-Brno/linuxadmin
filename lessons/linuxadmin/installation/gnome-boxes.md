@@ -35,9 +35,7 @@ Spuštěný program by měl vypadat nějak takto:
 ## Vytvoření virtuálního počítače
 
 V levém horním rohu je tlačítko **+**.
-Klikni na něj a vyber *Vytvořit virtuální stroj* (*Create a Virtual Machine*).
-
-V následujícím okně ignoruj nabídku systémů a zvol *Vybrat soubor*:
+Klikni na něj a vyber *Instalace ze souboru* (*Install from File*).
 
   {{ figure(
     img=static('boxes-02.png'),
@@ -45,7 +43,9 @@ V následujícím okně ignoruj nabídku systémů a zvol *Vybrat soubor*:
   ) }}
 
 Vyber ISO soubor se systémem, který jsi před chvílí stáhl{{a}}.
-V dalším kroku je možnost virtuální počítač přizpůsobit, což není nutné.
+V dalším kroku je možnost virtuální počítač přizpůsobit. Pokud tvůj počítač
+má 8 GB RAM, doporučuji snížit paměť (Memory) na 2 GB. Ostatní ponechej, jak je
+uvedeno.
 Zvol *Vytvořit*:
 
   {{ figure(

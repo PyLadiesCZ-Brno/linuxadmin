@@ -45,7 +45,7 @@ sessions:
   - lesson: linuxadmin/installation
   - lesson: linuxadmin/whats-linux
   - lesson: linuxadmin/gnome-basics
-  - lesson: linuxadmin/gnome-tools  # TODO přidat obrázky
+  - lesson: linuxadmin/gnome-tools
 
 
 - title: Git
