@@ -1766,47 +1766,46 @@
                         },
                         "ids": [
                             "kalkulacka_calculator",
+                            "kancelarsky_balik_libreoffice",
                             "nastaveni_settings",
-                            "poznamky_notes__gnome_notes",
                             "prohlizec_dokumentu_document_viewer__evince",
                             "prohlizec_internetu_firefox",
-                            "prohlizec_souboru_files__nautilus",
                             "rozsireni_gnome_extensions",
-                            "screenshoty_a_zaznam_obrazovky_screenshot__screen_recorder",
-                            "spravce_aktualizaci_software__gnome_software",
-                            "systemovy_monitor_system_monitor",
-                            "textovy_editor_text_editor__gedit",
-                            "vyladeni_tweaks",
+                            "sledovani_systemu_system_monitor",
+                            "software_software__gnome_software",
+                            "soubory_files__nautilus",
+                            "textovy_editor_text_editor",
+                            "vyladeni_gnome_tweaks",
                             "zakladni_uzivatelske_nastroje_v_gnome"
                         ],
                         "license": "cc-by-sa-40",
                         "links": [
                             "#kalkulacka_calculator",
+                            "#kancelarsky_balik_libreoffice",
                             "#nastaveni_settings",
-                            "#poznamky_notes__gnome_notes",
                             "#prohlizec_dokumentu_document_viewer__evince",
                             "#prohlizec_internetu_firefox",
-                            "#prohlizec_souboru_files__nautilus",
                             "#rozsireni_gnome_extensions",
-                            "#screenshoty_a_zaznam_obrazovky_screenshot__screen_recorder",
-                            "#spravce_aktualizaci_software__gnome_software",
-                            "#systemovy_monitor_system_monitor",
-                            "#textovy_editor_text_editor__gedit",
-                            "#vyladeni_tweaks",
+                            "#sledovani_systemu_system_monitor",
+                            "#software_software__gnome_software",
+                            "#soubory_files__nautilus",
+                            "#textovy_editor_text_editor",
+                            "#vyladeni_gnome_tweaks",
                             "#zakladni_uzivatelske_nastroje_v_gnome",
                             "https://extensions.gnome.org",
-                            "images/gnome-calculator.png",
-                            "images/gnome-evince.png",
-                            "images/gnome-extensions.png",
-                            "images/gnome-firefox.png",
-                            "images/gnome-nautilus.png",
-                            "images/gnome-notes.png",
-                            "images/gnome-screenshot.png",
-                            "images/gnome-settings.png",
-                            "images/gnome-software.png",
-                            "images/gnome-system-monitor.png",
-                            "images/gnome-text-editor.png",
-                            "images/gnome-tweaks.png"
+                            "naucse:static?filename=tools-01.png",
+                            "naucse:static?filename=tools-02.png",
+                            "naucse:static?filename=tools-03.png",
+                            "naucse:static?filename=tools-04.png",
+                            "naucse:static?filename=tools-05.png",
+                            "naucse:static?filename=tools-06.png",
+                            "naucse:static?filename=tools-07.png",
+                            "naucse:static?filename=tools-08.png",
+                            "naucse:static?filename=tools-09.png",
+                            "naucse:static?filename=tools-10.png",
+                            "naucse:static?filename=tools-11.png",
+                            "naucse:static?filename=tools-12.png",
+                            "naucse:static?filename=tools-13.png"
                         ],
                         "slug": "index",
                         "solutions": [],
@@ -1820,7 +1819,47 @@
                     }
                 },
                 "source_file": "lessons/linuxadmin/gnome-tools/info.yml",
-                "static_files": {},
+                "static_files": {
+                    "tools-01.png": {
+                        "path": "gnome-tools/tools-01.png"
+                    },
+                    "tools-02.png": {
+                        "path": "gnome-tools/tools-02.png"
+                    },
+                    "tools-03.png": {
+                        "path": "gnome-tools/tools-03.png"
+                    },
+                    "tools-04.png": {
+                        "path": "gnome-tools/tools-04.png"
+                    },
+                    "tools-05.png": {
+                        "path": "gnome-tools/tools-05.png"
+                    },
+                    "tools-06.png": {
+                        "path": "gnome-tools/tools-06.png"
+                    },
+                    "tools-07.png": {
+                        "path": "gnome-tools/tools-07.png"
+                    },
+                    "tools-08.png": {
+                        "path": "gnome-tools/tools-08.png"
+                    },
+                    "tools-09.png": {
+                        "path": "gnome-tools/tools-09.png"
+                    },
+                    "tools-10.png": {
+                        "path": "gnome-tools/tools-10.png"
+                    },
+                    "tools-11.png": {
+                        "path": "gnome-tools/tools-11.png"
+                    },
+                    "tools-12.png": {
+                        "path": "gnome-tools/tools-12.png"
+                    },
+                    "tools-13.png": {
+                        "path": "gnome-tools/tools-13.png"
+                    }
+                },
                 "title": "Grafické programy"
             },
             "linuxadmin/grep-find": {
