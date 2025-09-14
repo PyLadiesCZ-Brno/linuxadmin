@@ -1698,11 +1698,47 @@
                             "path": "gnome-tools/index.html"
                         },
                         "ids": [
-                            "graficke_programy"
+                            "kalkulacka_calculator",
+                            "kancelarsky_balik_libreoffice",
+                            "nastaveni_settings",
+                            "prohlizec_dokumentu_document_viewer__evince",
+                            "prohlizec_internetu_firefox",
+                            "rozsireni_gnome_extensions",
+                            "sledovani_systemu_system_monitor",
+                            "software_software__gnome_software",
+                            "soubory_files__nautilus",
+                            "textovy_editor_text_editor",
+                            "vyladeni_gnome_tweaks",
+                            "zakladni_uzivatelske_nastroje_v_gnome"
                         ],
                         "license": "cc-by-sa-40",
                         "links": [
-                            "#graficke_programy"
+                            "#kalkulacka_calculator",
+                            "#kancelarsky_balik_libreoffice",
+                            "#nastaveni_settings",
+                            "#prohlizec_dokumentu_document_viewer__evince",
+                            "#prohlizec_internetu_firefox",
+                            "#rozsireni_gnome_extensions",
+                            "#sledovani_systemu_system_monitor",
+                            "#software_software__gnome_software",
+                            "#soubory_files__nautilus",
+                            "#textovy_editor_text_editor",
+                            "#vyladeni_gnome_tweaks",
+                            "#zakladni_uzivatelske_nastroje_v_gnome",
+                            "https://extensions.gnome.org",
+                            "naucse:static?filename=tools-01.png",
+                            "naucse:static?filename=tools-02.png",
+                            "naucse:static?filename=tools-03.png",
+                            "naucse:static?filename=tools-04.png",
+                            "naucse:static?filename=tools-05.png",
+                            "naucse:static?filename=tools-06.png",
+                            "naucse:static?filename=tools-07.png",
+                            "naucse:static?filename=tools-08.png",
+                            "naucse:static?filename=tools-09.png",
+                            "naucse:static?filename=tools-10.png",
+                            "naucse:static?filename=tools-11.png",
+                            "naucse:static?filename=tools-12.png",
+                            "naucse:static?filename=tools-13.png"
                         ],
                         "slug": "index",
                         "solutions": [],
@@ -1716,7 +1752,47 @@
                     }
                 },
                 "source_file": "lessons/linuxadmin/gnome-tools/info.yml",
-                "static_files": {},
+                "static_files": {
+                    "tools-01.png": {
+                        "path": "gnome-tools/tools-01.png"
+                    },
+                    "tools-02.png": {
+                        "path": "gnome-tools/tools-02.png"
+                    },
+                    "tools-03.png": {
+                        "path": "gnome-tools/tools-03.png"
+                    },
+                    "tools-04.png": {
+                        "path": "gnome-tools/tools-04.png"
+                    },
+                    "tools-05.png": {
+                        "path": "gnome-tools/tools-05.png"
+                    },
+                    "tools-06.png": {
+                        "path": "gnome-tools/tools-06.png"
+                    },
+                    "tools-07.png": {
+                        "path": "gnome-tools/tools-07.png"
+                    },
+                    "tools-08.png": {
+                        "path": "gnome-tools/tools-08.png"
+                    },
+                    "tools-09.png": {
+                        "path": "gnome-tools/tools-09.png"
+                    },
+                    "tools-10.png": {
+                        "path": "gnome-tools/tools-10.png"
+                    },
+                    "tools-11.png": {
+                        "path": "gnome-tools/tools-11.png"
+                    },
+                    "tools-12.png": {
+                        "path": "gnome-tools/tools-12.png"
+                    },
+                    "tools-13.png": {
+                        "path": "gnome-tools/tools-13.png"
+                    }
+                },
                 "title": "Grafické programy"
             },
             "linuxadmin/grep-find": {
@@ -1970,6 +2046,7 @@
                             "naucse:static?filename=fedora-install-05.png",
                             "naucse:static?filename=fedora-install-06.png",
                             "naucse:static?filename=fedora-install-07.png",
+                            "naucse:static?filename=fedora-install-08.png",
                             "naucse:static?filename=fedora-install-09.png",
                             "naucse:static?filename=fedora-install-10.png",
                             "naucse:static?filename=fedora-install-11.png",
@@ -1977,6 +2054,9 @@
                             "naucse:static?filename=fedora-install-13.png",
                             "naucse:static?filename=fedora-install-14.png",
                             "naucse:static?filename=fedora-install-15.png",
+                            "naucse:static?filename=fedora-install-16.png",
+                            "naucse:static?filename=fedora-install-17.png",
+                            "naucse:static?filename=fedora-install-18.png",
                             "naucse:static?filename=restart-01.png",
                             "naucse:static?filename=restart-02.png",
                             "naucse:static?filename=restart-03.png",
@@ -2118,6 +2198,9 @@
                     "fedora-install-07.png": {
                         "path": "installation/fedora-install-07.png"
                     },
+                    "fedora-install-08.png": {
+                        "path": "installation/fedora-install-08.png"
+                    },
                     "fedora-install-09.png": {
                         "path": "installation/fedora-install-09.png"
                     },
@@ -2138,6 +2221,15 @@
                     },
                     "fedora-install-15.png": {
                         "path": "installation/fedora-install-15.png"
+                    },
+                    "fedora-install-16.png": {
+                        "path": "installation/fedora-install-16.png"
+                    },
+                    "fedora-install-17.png": {
+                        "path": "installation/fedora-install-17.png"
+                    },
+                    "fedora-install-18.png": {
+                        "path": "installation/fedora-install-18.png"
                     },
                     "restart-01.png": {
                         "path": "installation/restart-01.png"
@@ -2637,37 +2729,6 @@
                 },
                 "title": "SSH"
             },
-            "linuxadmin/system-intro": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "napsala Eliška Jégrová, 2025"
-                        ],
-                        "content": {
-                            "path": "system-intro/index.html"
-                        },
-                        "ids": [
-                            "uvod_do_systemu"
-                        ],
-                        "license": "cc-by-sa-40",
-                        "links": [
-                            "#uvod_do_systemu"
-                        ],
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/linuxadmin/system-intro/index.md",
-                        "title": "Úvod do systémů",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true,
-                            "user-gender": "f"
-                        }
-                    }
-                },
-                "source_file": "lessons/linuxadmin/system-intro/info.yml",
-                "static_files": {},
-                "title": "Úvod do systémů"
-            },
             "linuxadmin/users": {
                 "pages": {
                     "index": {
@@ -3143,18 +3204,8 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "linuxadmin/system-intro",
-                        "title": "Úvod do systémů",
-                        "type": "lesson"
-                    },
-                    {
                         "lesson_slug": "linuxadmin/gnome-tools",
                         "title": "Grafické programy",
-                        "type": "lesson"
-                    },
-                    {
-                        "lesson_slug": "carpentry-unix/bash-intro",
-                        "title": "Bash – Úvod",
                         "type": "lesson"
                     }
                 ],
@@ -3215,6 +3266,11 @@
             {
                 "date": "2025-10-01",
                 "materials": [
+                    {
+                        "lesson_slug": "carpentry-unix/bash-intro",
+                        "title": "Bash – Úvod",
+                        "type": "lesson"
+                    },
                     {
                         "lesson_slug": "carpentry-unix/filedir",
                         "title": "Navigace v souborech a adresářích",
