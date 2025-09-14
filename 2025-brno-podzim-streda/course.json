@@ -634,6 +634,7 @@
                             "posilani_zmen_smallcodegit_pushcodesmall",
                             "readme_informace_pro_ostatni",
                             "spoluprace",
+                            "ssh_klice",
                             "vytvoreni_vetve",
                             "zadost_o_zacleneni_smallempull_requestemsmall"
                         ],
@@ -648,6 +649,7 @@
                             "#posilani_zmen_smallcodegit_pushcodesmall",
                             "#readme_informace_pro_ostatni",
                             "#spoluprace",
+                            "#ssh_klice",
                             "#vytvoreni_vetve",
                             "#zadost_o_zacleneni_smallempull_requestemsmall",
                             "http://choosealicense.com/",
@@ -683,6 +685,7 @@
                             "https://opensource.org/licenses",
                             "https://pagure.io/",
                             "https://www.gnu.org/gnu/manifesto.en.html",
+                            "naucse:page?lesson=linuxadmin/ssh#ssh_klic",
                             "naucse:static?filename=gh-workflow-diagram.svg"
                         ],
                         "slug": "index",
@@ -3196,6 +3199,11 @@
                     {
                         "external_url": "https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf",
                         "title": "Tahák na git",
+                        "type": "none-link"
+                    },
+                    {
+                        "external_url": "https://github.com/PyLadiesCZ-Brno/2025-podzim-linuxadmin-git",
+                        "title": "Playground repo",
                         "type": "none-link"
                     }
                 ],
