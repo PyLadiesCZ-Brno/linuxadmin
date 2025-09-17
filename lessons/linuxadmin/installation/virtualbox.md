@@ -14,16 +14,17 @@ Klikni na tlačitko „Nový“ a pokračuj podle obrázkového návodu:
     alt='Instalace VirtualBoxu – #1',
   ) }}
 
-2. Velikost paměti nastav na 2048 MB (tedy 2GB).
+2. Velikost paměti nastav na minimálně 4096 MB (tedy 4GB).
    Pokud je u tebe tahle hodnota v „červeném“ pásmu, použij menší, aby byla
-   v zeleném;
+   v zeleném.
+   Počet procesorů je také dobré trošku navýšit, zase tak nějak aby zůstal ukazatel v zeleném poli.
 
   {{ figure(
     img=static('vbox-02.png'),
     alt='Instalace VirtualBoxu – #2',
   ) }}
 
-3. Pevný disk vytvoř nyní, typ souboru a úložiště nech ve výchozích hodnotách, velikost souboru zvol 15GB, umístění nech výchozí:
+3. Pevný disk vytvoř nyní, typ souboru a úložiště nech ve výchozích hodnotách, velikost souboru zvol 20GB, umístění nech výchozí:
 
   {{ figure(
     img=static('vbox-03.png'),
