@@ -64,6 +64,8 @@ sessions:
     url: https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf
   - title: Playground repo
     url: https://github.com/PyLadiesCZ-Brno/2025-podzim-linuxadmin-git
+  - lesson: hw/git
+    type: homework
 
 - title: Bash I
   date: 2025-10-01
