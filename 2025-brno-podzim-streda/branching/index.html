@@ -41,7 +41,7 @@ ale nepřepnul do ní.
 Hvězdička ve výstupu z <code>git branch</code> ukazuje,
 že stále pracuješ v <code>master</code>.
 Na přepnutí budeš potřebovat další příkaz:</p>
-<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git checkout doplneni-autora
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git switch doplneni-autora
 Switched to branch 'doplneni-autora'
 <span style="color: #00aaaa">$</span> git branch
 * <span style="color: #00aa00">doplneni-autora</span>
@@ -58,10 +58,10 @@ na původní revizi.</p>
 Vrať se do větve <code>master</code> a vytvoř z ní
 větev <code>doplneni-jmena</code>.
 Pak se na tuhle novou větev přepni.</p>
-<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git checkout master
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git switch master
 Switched to branch 'master'
 <span style="color: #00aaaa">$</span> git branch doplneni-jmena
-<span style="color: #00aaaa">$</span> git checkout doplneni-jmena
+<span style="color: #00aaaa">$</span> git switch doplneni-jmena
 Switched to branch 'doplneni-jmena'
 <span style="color: #00aaaa">$</span> git branch
   doplneni-autora
@@ -96,7 +96,7 @@ ukazuje nejsložitější variantu, která může nastat.</p>
 a použij příkaz <code>git merge</code>, který
 sloučí jinou větev s tou aktuální.
 Příkazu musíš dát jméno větve, kterou chceš sloučit.</p>
-<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git checkout master
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git switch master
 Switched to branch 'master'
 <span style="color: #00aaaa">$</span> git merge doplneni-jmena
 Updating 1fcd654..5c9bf93
