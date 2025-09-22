@@ -184,7 +184,7 @@ Například pomocí:
 
 ```console
 $ git branch pridani-jmena
-$ git checkout pridani-jmena
+$ git switch pridani-jmena
 ```
 
 
