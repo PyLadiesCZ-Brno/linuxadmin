@@ -51,7 +51,7 @@ GIT_EDITOR="echo \"$second_msg\" >" git commit
 git branch
 git branch doplneni-autora
 git branch
-git checkout doplneni-autora
+git switch doplneni-autora
 git branch
 
 cat > basnicka.txt << END
@@ -73,9 +73,9 @@ GIT_EDITOR='echo "Doplnění autora" >' git commit
 
 take_screenshot $OUTFILE.branch1.png gitk --all
 
-git checkout master
+git switch master
 git branch doplneni-jmena
-git checkout doplneni-jmena
+git switch doplneni-jmena
 git branch
 
 cat > basnicka.txt << END
@@ -97,7 +97,7 @@ GIT_EDITOR='echo "Doplnění jména" >' git commit
 
 take_screenshot $OUTFILE.branches.png gitk --all
 
-git checkout master
+git switch master
 git merge doplneni-jmena
 git merge doplneni-autora
 git status

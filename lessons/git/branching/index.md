@@ -55,7 +55,7 @@ Hvězdička ve výstupu z `git branch` ukazuje,
 Na přepnutí budeš potřebovat další příkaz:
 
 ```ansi
-␛[36m$␛[0m git checkout doplneni-autora
+␛[36m$␛[0m git switch doplneni-autora
 Switched to branch 'doplneni-autora'
 ␛[36m$␛[0m git branch
 * ␛[32mdoplneni-autora␛[m
@@ -82,10 +82,10 @@ větev `doplneni-jmena`.
 Pak se na tuhle novou větev přepni.
 
 ```ansi
-␛[36m$␛[0m git checkout master
+␛[36m$␛[0m git switch master
 Switched to branch 'master'
 ␛[36m$␛[0m git branch doplneni-jmena
-␛[36m$␛[0m git checkout doplneni-jmena
+␛[36m$␛[0m git switch doplneni-jmena
 Switched to branch 'doplneni-jmena'
 ␛[36m$␛[0m git branch
   doplneni-autora␛[m
@@ -135,7 +135,7 @@ sloučí jinou větev s tou aktuální.
 Příkazu musíš dát jméno větve, kterou chceš sloučit.
 
 ```ansi
-␛[36m$␛[0m git checkout master
+␛[36m$␛[0m git switch master
 Switched to branch 'master'
 ␛[36m$␛[0m git merge doplneni-jmena
 Updating 1fcd654..5c9bf93
