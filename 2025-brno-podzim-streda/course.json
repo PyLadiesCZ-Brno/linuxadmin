@@ -974,6 +974,59 @@
                 "static_files": {},
                 "title": "Úkol - Balíčky"
             },
+            "hw/git": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "napsala Eliška Jégrová, 2025"
+                        ],
+                        "content": {
+                            "path": "git/index.html"
+                        },
+                        "ids": [
+                            "1_inicializace",
+                            "2_pruvodce_pariz",
+                            "3_pruvodce_londyn",
+                            "4_pruvodce_berlin",
+                            "5_oprav_preklep",
+                            "6_ignorovani_souboru",
+                            "_mezitim",
+                            "_nyni",
+                            "prakticky_ukol_cestovni_pruvodce",
+                            "prakticky_ukol_playground_repo",
+                            "teoreticke_otazky",
+                            "ukoly_-_git"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#1_inicializace",
+                            "#2_pruvodce_pariz",
+                            "#3_pruvodce_londyn",
+                            "#4_pruvodce_berlin",
+                            "#5_oprav_preklep",
+                            "#6_ignorovani_souboru",
+                            "#_mezitim",
+                            "#_nyni",
+                            "#prakticky_ukol_cestovni_pruvodce",
+                            "#prakticky_ukol_playground_repo",
+                            "#teoreticke_otazky",
+                            "#ukoly_-_git"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/hw/git/index.md",
+                        "title": "Úkol",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/hw/git/info.yml",
+                "static_files": {},
+                "title": "Úkol"
+            },
             "hw/httpd": {
                 "pages": {
                     "index": {
@@ -3256,6 +3309,11 @@
                         "external_url": "https://github.com/PyLadiesCZ-Brno/2025-podzim-linuxadmin-git",
                         "title": "Playground repo",
                         "type": "none-link"
+                    },
+                    {
+                        "lesson_slug": "hw/git",
+                        "title": "Úkol",
+                        "type": "homework"
                     }
                 ],
                 "serial": "1",
