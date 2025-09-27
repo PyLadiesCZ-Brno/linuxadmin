@@ -76,7 +76,7 @@ Obsahuje: Paříž, Francie, Londýn
 
 ### 4. Průvodce Berlín
 1. Vytvoř větev `pridat-berlin`.
-2. Přidej soubor `berlin.md` (zajímavost, jídlo, doprava).
+2. Přidej soubor `berlin.txt` (zajímavost, jídlo, doprava).
 3. Vytvoř commit (Přidán průvodce po Berlíně).
 4. Sluč větev do `main`.
 
