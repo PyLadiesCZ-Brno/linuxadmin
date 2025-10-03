@@ -103,4 +103,4 @@ pracovni/
 
 ## Praktický úkol: „Playground repo“
 
-Postupuj dle návodu `Readme.md` v gitovém repozitáři.
+Postupuj dle návodu `Readme.md` v [gitovém repozitáři](https://github.com/PyLadiesCZ-Brno/2025-podzim-linuxadmin-git).
