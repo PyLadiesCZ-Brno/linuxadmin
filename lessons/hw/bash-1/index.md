@@ -137,88 +137,7 @@ $ ls
 * **C.** `proteiny.dat rekombinace`
 * **D.** `proteiny2.dat`
 
-## 9. 
-
-Sam má následující soubory:
-
-```
-.
-├── 2015-10-23-calibration.txt
-├── 2015-10-23-dataset1.txt
-├── 2015-10-23-dataset2.txt
-├── 2015-10-23-dataset_overview.txt
-├── 2015-10-26-calibration.txt
-├── 2015-10-26-dataset1.txt
-├── 2015-10-26-dataset2.txt
-├── 2015-10-26-dataset_overview.txt
-├── 2015-11-23-calibration.txt
-├── 2015-11-23-dataset1.txt
-├── 2015-11-23-dataset2.txt
-├── 2015-11-23-dataset_overview.txt
-├── backup
-│   ├── calibration
-│   └── datasets
-└── send_to_bob
-    ├── all_datasets_created_on_a_23rd
-    └── all_november_files
-```
-
-Doplň následující příkazy...
-
-```console
-$ cp *dataset* backup/datasets
-$ cp ____calibration____ backup/calibration
-$ cp 2015-____-____ send_to_bob/all_november_files/
-$ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
-```
-
-... aby výsledek vypadal takhle:
-
-```
-.
-├── 2015-10-23-calibration.txt
-├── 2015-10-23-dataset1.txt
-├── 2015-10-23-dataset2.txt
-├── 2015-10-23-dataset_overview.txt
-├── 2015-10-26-calibration.txt
-├── 2015-10-26-dataset1.txt
-├── 2015-10-26-dataset2.txt
-├── 2015-10-26-dataset_overview.txt
-├── 2015-11-23-calibration.txt
-├── 2015-11-23-dataset1.txt
-├── 2015-11-23-dataset2.txt
-├── 2015-11-23-dataset_overview.txt
-├── backup
-│   ├── calibration
-│   │   ├── 2015-10-23-calibration.txt
-│   │   ├── 2015-10-26-calibration.txt
-│   │   └── 2015-11-23-calibration.txt
-│   └── datasets
-│       ├── 2015-10-23-dataset1.txt
-│       ├── 2015-10-23-dataset2.txt
-│       ├── 2015-10-23-dataset_overview.txt
-│       ├── 2015-10-26-dataset1.txt
-│       ├── 2015-10-26-dataset2.txt
-│       ├── 2015-10-26-dataset_overview.txt
-│       ├── 2015-11-23-dataset1.txt
-│       ├── 2015-11-23-dataset2.txt
-│       └── 2015-11-23-dataset_overview.txt
-└── send_to_bob
-    ├── all_datasets_created_on_a_23rd
-    │   ├── 2015-10-23-dataset1.txt
-    │   ├── 2015-10-23-dataset2.txt
-    │   ├── 2015-10-23-dataset_overview.txt
-    │   ├── 2015-11-23-dataset1.txt
-    │   ├── 2015-11-23-dataset2.txt
-    │   └── 2015-11-23-dataset_overview.txt
-    └── all_november_files
-        ├── 2015-11-23-calibration.txt
-        ├── 2015-11-23-dataset1.txt
-        ├── 2015-11-23-dataset2.txt
-        └── 2015-11-23-dataset_overview.txt
-```
-
-## 10.
+## 9.
 
 Máš následující soubory:
 
@@ -229,7 +148,7 @@ analyzed/  fructose.dat    raw/   sucrose.dat
 
 Zkus napsat co nejkratší příkaz, kterým přesuneš `fructose.dat` a `sucrose.dat` do adresáře `analyzed/`.
 
-## 11.
+## 10.
 
 Které z následujících sad příkazů vytvoří tuhle strukturu adresářů?
 
