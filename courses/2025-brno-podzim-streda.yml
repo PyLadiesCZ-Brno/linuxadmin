@@ -73,7 +73,7 @@ sessions:
   materials:
   - lesson: carpentry-unix/bash-intro
   - lesson: carpentry-unix/filedir   # XXX: man sections
-  - lesson: carpentry-unix/create   # TODO chybí cat, rmdir     # TODO Přesunout Vybírání více souborů pomocí zástupných znaků do Bash II
+  - lesson: carpentry-unix/create   # TODO chybí cat, rmdir
   - lesson: carpentry-unix/vim
   - lesson: linuxadmin/bash-shortcuts
   - url: http://swcarpentry.github.io/shell-novice/
@@ -101,7 +101,6 @@ sessions:
   slug: shell-2
   materials:
   - lesson: linuxadmin/output-files
-    # TODO zařadit speciální znaky
   - lesson: carpentry-unix/pipefilter
   - lesson: linuxadmin/echo
   - lesson: carpentry-unix/pipefilter-nelle   # TODO zkoušení v hodině? znaky: *, [], ..
