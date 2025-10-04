@@ -1,0 +1,128 @@
+<h1 id="ukoly_-_git">Úkoly - Git
+<a href="#ukoly_-_git" class="header-link">#</a>
+</h1>
+<h2 id="teoreticke_otazky">Teoretické otázky
+<a href="#teoreticke_otazky" class="header-link">#</a>
+</h2>
+<ol>
+<li>Proč je vhodné nastavit uživatelské jméno a e-mail hned po instalaci?</li>
+<li>Jaký je rozdíl mezi pracovním adresářem, indexem (staging area) a repozitářem?</li>
+<li>Co se děje při příkazu git add a co při git commit?</li>
+<li>Vysvětli, co je to commit hash a proč je důležitý.</li>
+<li>Jak Git uchovává historii změn? Uveď rozdíl oproti klasickému ukládání souborů.</li>
+<li>Co znamená, že Git je „distribuovaný systém pro správu verzí“?</li>
+<li>Proč je doporučeno používat větve místo práce přímo v hlavní větvi (main/master)?</li>
+<li>Jaký je rozdíl mezi git merge a git rebase? Uveď příklad, kdy bys použil/a který. Co se stane s historií, pokud sloučíš větev pomocí merge? A co při rebase?
+Pozn.: Co je rebase jsme se na kurzu neučili, ale jde taky o způsob slučování větví, který je dobré znát. Zkus si o tom dohledat informace.</li>
+<li>Jaký je účel pull requestu a proč se používá?</li>
+<li>Co znamená code review a jaký je jeho přínos?</li>
+<li>K čemu je soubor .gitignore ?</li>
+<li>Co se stane, pokud přidáš do .gitignore soubor, který už je ve verzovací historii?</li>
+<li>Proč je vhodné ignorovat logy, dočasné soubory editorů nebo sestavení?</li>
+<li>Jak se zapisují vzory do .gitignore? Uveď příklady pro:<ul>
+<li>ignorování všech .log souborů</li>
+<li>ignorování adresáře build</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="prakticky_ukol_cestovni_pruvodce">Praktický úkol: „Cestovní průvodce“
+<a href="#prakticky_ukol_cestovni_pruvodce" class="header-link">#</a>
+</h2>
+<p>Tento úkol se provádí pouze lokálně na virtuálce, není nutné jej odevzdávat.
+Pokud ale chceš, odevzdej například soubor který bude obsahovat změny ve
+větvi main:</p>
+<div class="highlight"><pre><span></span><span class="go">git log -p main</span>
+</pre></div><h3 id="1_inicializace">1. Inicializace
+<a href="#1_inicializace" class="header-link">#</a>
+</h3>
+<ol>
+<li>Vytvoř repozitář <code>pruvodce</code>.</li>
+<li>Do <code>README.md</code> napiš:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="go">Tento repozitáx obsahuje cestovní průvodce po různých městech a zemích.</span>
+</pre></div><ol start="3">
+<li>Vytvoř commit v <code>main</code> s názvem: Inicializace projektu.</li>
+<li>Od této chvíle se v <code>main</code> již přímo nepracuje – vždy se vytvoří větev.</li>
+</ol>
+<h3 id="2_pruvodce_pariz">2. Průvodce Paříž
+<a href="#2_pruvodce_pariz" class="header-link">#</a>
+</h3>
+<ol>
+<li>Vytvoř větev <code>pridat-pariz</code>.</li>
+<li>Přidej soubor <code>pariz.txt</code> s průvodcem (zajímavost, jídlo, doprava).</li>
+<li>Vytvoř commit (Přidán průvodce po Paříži).</li>
+<li>Sluč větev do <code>main</code>.</li>
+</ol>
+<h3 id="3_pruvodce_londyn">3. Průvodce Londýn
+<a href="#3_pruvodce_londyn" class="header-link">#</a>
+</h3>
+<ol>
+<li>Vytvoř větev <code>pridat-londyn</code>.</li>
+<li>První commit: vytvoř soubor <code>londyn.txt</code> (zajímavost, jídlo, doprava).</li>
+<li>Druhý commit: přidej novou sekci do <code>README.md</code>:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="go">Obsahuje: Paříž, Londýn</span>
+</pre></div><ol start="4">
+<li>Tuto větev zatím neslučuj.</li>
+</ol>
+<h4 id="_mezitim">👉 Mezitím
+<a href="#_mezitim" class="header-link">#</a>
+</h4>
+<ol>
+<li>Vytvoř větev <code>pariz-update</code> z větve <code>main</code>.</li>
+<li>Uprav <code>README.md</code>, aby obsahoval text:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="go">Obsahuje: Paříž, Francie</span>
+</pre></div><ol start="3">
+<li>Vytvoř commit (Rozšířen seznam v README.md).</li>
+<li>Sluč <code>pariz-update</code> do <code>main</code>.</li>
+</ol>
+<h4 id="_nyni">👉 Nyní
+<a href="#_nyni" class="header-link">#</a>
+</h4>
+<ol>
+<li>Vrať se do větve <code>pridat-londyn</code> a zkus sloučit do <code>main</code>.</li>
+<li>Git nahlásí konflikt v <code>README.md</code>.</li>
+<li>Konflikt vyřeš tak, že výsledný řádek bude:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="go">Obsahuje: Paříž, Francie, Londýn</span>
+</pre></div><ol start="4">
+<li>Commitni a dokonči merge.</li>
+</ol>
+<h3 id="4_pruvodce_berlin">4. Průvodce Berlín
+<a href="#4_pruvodce_berlin" class="header-link">#</a>
+</h3>
+<ol>
+<li>Vytvoř větev <code>pridat-berlin</code>.</li>
+<li>Přidej soubor <code>berlin.txt</code> (zajímavost, jídlo, doprava).</li>
+<li>Vytvoř commit (Přidán průvodce po Berlíně).</li>
+<li>Sluč větev do <code>main</code>.</li>
+</ol>
+<h3 id="5_oprav_preklep">5. Oprav překlep
+<a href="#5_oprav_preklep" class="header-link">#</a>
+</h3>
+<ol>
+<li>Vytvoř větev: <code>oprava-readme</code></li>
+<li>Oprav překlep v <strong>README.md</strong></li>
+<li>Vytvoř commit (Opravenen překlep v readme)</li>
+<li>Sluč větev do <code>main</code>.</li>
+</ol>
+<h3 id="6_ignorovani_souboru">6. Ignorování souborů
+<a href="#6_ignorovani_souboru" class="header-link">#</a>
+</h3>
+<ol>
+<li>Vytvoř větev <code>pridat-gitignore</code>.</li>
+<li>Přidej <code>.gitignore</code> s pravidly:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="go">*.tmp</span>
+<span class="go">pracovni/</span>
+</pre></div><ol start="3">
+<li>Vytvoř commit (Přidán soubor .gitignore).</li>
+<li>Sluč větev do <code>main</code>.</li>
+</ol>
+<hr />
+<h2 id="prakticky_ukol_playground_repo">Praktický úkol: „Playground repo“
+<a href="#prakticky_ukol_playground_repo" class="header-link">#</a>
+</h2>
+<p>Postupuj dle návodu <code>Readme.md</code> v gitovém repozitáři.</p>
