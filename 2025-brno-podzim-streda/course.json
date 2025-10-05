@@ -993,7 +993,8 @@
                             "#prakticky_ukol_cestovni_pruvodce",
                             "#prakticky_ukol_playground_repo",
                             "#teoreticke_otazky",
-                            "#ukoly_-_git"
+                            "#ukoly_-_git",
+                            "https://github.com/PyLadiesCZ-Brno/2025-podzim-linuxadmin-git"
                         ],
                         "slug": "index",
                         "solutions": [],
