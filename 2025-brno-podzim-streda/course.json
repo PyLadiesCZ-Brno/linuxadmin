@@ -3370,6 +3370,11 @@
                 "date": "2025-10-08",
                 "materials": [
                     {
+                        "lesson_slug": "linuxadmin/output-files",
+                        "title": "Vypisování souborů",
+                        "type": "lesson"
+                    },
+                    {
                         "lesson_slug": "linuxadmin/users",
                         "title": "Uživatelé a práva",
                         "type": "lesson"
@@ -3388,11 +3393,6 @@
             {
                 "date": "2025-10-15",
                 "materials": [
-                    {
-                        "lesson_slug": "linuxadmin/output-files",
-                        "title": "Vypisování souborů",
-                        "type": "lesson"
-                    },
                     {
                         "lesson_slug": "carpentry-unix/pipefilter",
                         "title": "Roury a filtry",
