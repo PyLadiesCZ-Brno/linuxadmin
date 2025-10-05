@@ -94,16 +94,11 @@
                             "co_uz_mame",
                             "kopirovani_souboru",
                             "odstranovani_souboru_a_adresaru",
-                            "opakovani_kopirovani_svice_cestami",
                             "pojmenovavani_souboru_a_adresaru",
-                            "prace_s_vice_soubory_a_adresari",
                             "prace_se_soubory_a_adresari",
                             "presouvani_do_adresare",
                             "presouvani_souboru_a_adresaru",
                             "presouvani_vice_souboru",
-                            "solution-0",
-                            "solution-1",
-                            "vybirani_vice_souboru_pomoci_zastupnych_znaku",
                             "vytvareni_souboru",
                             "vytvoreni_adresare"
                         ],
@@ -112,28 +107,16 @@
                             "#co_uz_mame",
                             "#kopirovani_souboru",
                             "#odstranovani_souboru_a_adresaru",
-                            "#opakovani_kopirovani_svice_cestami",
                             "#pojmenovavani_souboru_a_adresaru",
-                            "#prace_s_vice_soubory_a_adresari",
                             "#prace_se_soubory_a_adresari",
                             "#presouvani_do_adresare",
                             "#presouvani_souboru_a_adresaru",
                             "#presouvani_vice_souboru",
-                            "#vybirani_vice_souboru_pomoci_zastupnych_znaku",
                             "#vytvareni_souboru",
-                            "#vytvoreni_adresare",
-                            "naucse:solution?solution=0",
-                            "naucse:solution?solution=1"
+                            "#vytvoreni_adresare"
                         ],
                         "slug": "index",
-                        "solutions": [
-                            {
-                                "content": "<p>Zkopíruje soubory <code>amino-acids.txt</code> a <code>animals.txt</code>, tj. všechny argumenty\nkromě posledního, do adresáře <code>zaloha</code>.\nVytvoří tedy soubory <code>zaloha/amino-acids.txt</code> a <code>zaloha/animals.txt</code>.</p>"
-                            },
-                            {
-                                "content": "<p>Zkopíroval by první dva soubory (<code>amino-acids.txt</code> a <code>animals.txt</code>)\ndo adresáře <code>morse.txt/</code>.\nJenže <code>morse.txt</code> není adresářem, takže příkaz selže.\nDo souboru nelze dát další soubory.</p>\n<div class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>cp<span class=\"w\"> </span>amino-acids.txt<span class=\"w\"> </span>animals.txt<span class=\"w\"> </span>morse.txt\n<span class=\"go\">cp: cíl &#39;morse.txt&#39; není adresářem</span>\n</pre></div>"
-                            }
-                        ],
+                        "solutions": [],
                         "source_file": "lessons/carpentry-unix/create/index.md",
                         "title": "Práce se soubory a adresáři",
                         "vars": {
@@ -443,7 +426,6 @@
                         },
                         "ids": [
                             "10",
-                            "11",
                             "1_",
                             "2",
                             "3",
@@ -458,7 +440,6 @@
                         "license": "cc-by-sa-40",
                         "links": [
                             "#10",
-                            "#11",
                             "#1_",
                             "#2",
                             "#3",
@@ -503,6 +484,7 @@
                         "ids": [
                             "1_grepovani_yamlu",
                             "2_uniq",
+                            "3_zastupne_znaky_zkus_z_hlavy",
                             "bonusova_vyzva",
                             "napoveda",
                             "ukoly_bash_ii_ampc"
@@ -511,6 +493,7 @@
                         "links": [
                             "#1_grepovani_yamlu",
                             "#2_uniq",
+                            "#3_zastupne_znaky_zkus_z_hlavy",
                             "#bonusova_vyzva",
                             "#napoveda",
                             "#ukoly_bash_ii_ampc",
@@ -1909,8 +1892,13 @@
                             "hlavicky_a_ocasky",
                             "mene_je_vice",
                             "opakovaci_kocka",
+                            "opakovani_kopirovani_svice_cestami",
                             "pocitani_radku",
+                            "prace_s_vice_soubory_a_adresari",
                             "proc_codecatcode",
+                            "solution-0",
+                            "solution-1",
+                            "vybirani_vice_souboru_pomoci_zastupnych_znaku",
                             "vypisovaci_kocka",
                             "vypisovani_souboru"
                         ],
@@ -1919,13 +1907,25 @@
                             "#hlavicky_a_ocasky",
                             "#mene_je_vice",
                             "#opakovaci_kocka",
+                            "#opakovani_kopirovani_svice_cestami",
                             "#pocitani_radku",
+                            "#prace_s_vice_soubory_a_adresari",
                             "#proc_codecatcode",
+                            "#vybirani_vice_souboru_pomoci_zastupnych_znaku",
                             "#vypisovaci_kocka",
-                            "#vypisovani_souboru"
+                            "#vypisovani_souboru",
+                            "naucse:solution?solution=0",
+                            "naucse:solution?solution=1"
                         ],
                         "slug": "index",
-                        "solutions": [],
+                        "solutions": [
+                            {
+                                "content": "<p>Zkopíruje soubory <code>amino-acids.txt</code> a <code>animals.txt</code>, tj. všechny argumenty\nkromě posledního, do adresáře <code>zaloha</code>.\nVytvoří tedy soubory <code>zaloha/amino-acids.txt</code> a <code>zaloha/animals.txt</code>.</p>"
+                            },
+                            {
+                                "content": "<p>Zkopíroval by první dva soubory (<code>amino-acids.txt</code> a <code>animals.txt</code>)\ndo adresáře <code>morse.txt/</code>.\nJenže <code>morse.txt</code> není adresářem, takže příkaz selže.\nDo souboru nelze dát další soubory.</p>\n<div class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>cp<span class=\"w\"> </span>amino-acids.txt<span class=\"w\"> </span>animals.txt<span class=\"w\"> </span>morse.txt\n<span class=\"go\">cp: cíl &#39;morse.txt&#39; není adresářem</span>\n</pre></div>"
+                            }
+                        ],
                         "source_file": "lessons/linuxadmin/output-files/index.md",
                         "title": "Vypisování souborů",
                         "vars": {
