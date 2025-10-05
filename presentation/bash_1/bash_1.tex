@@ -193,7 +193,7 @@ man ls
   \item Vytvoř novou složku \texttt{testdir} ve složce \texttt{data-shell}.
   \item Vytvoř prázdný soubor \texttt{novy.txt} uvnitř \texttt{testdir} (\texttt{touch}).
   \item Zkopíruj soubor \texttt{amino-acids.txt} ze složky \texttt{data} do \texttt{testdir} (\texttt{cp}).
-  \item Přesuň soubor \texttt{animals.txt} do složky \texttt{testdir} (\texttt{mv}).
+  \item Přesuň soubor \texttt{data/animals.txt} do složky \texttt{testdir} (\texttt{mv}).
   \item Smaž soubor \texttt{novy.txt} (\texttt{rm}).
 \end{enumerate}
 \end{frame}
@@ -204,10 +204,10 @@ man ls
 
 \textbf{Úkoly:}
 \begin{enumerate}
-  \item Zjisti, jak se používá příkaz \texttt{ls} pomocí \texttt{--help}.
+  \item Zjisti, jak se používá příkaz \texttt{ls} pomocí \texttt{-{}-help}.
+  \item Najdi přepínač pomocí kterého zobrazíš i velikost souborů.
   \item Zjisti, jak se používá příkaz \texttt{cd} pomocí \texttt{man}.
-  \item Vypiš seznam souborů a složek v \texttt{data-shell/data} s jejich absolutní cestou.
-  \item Přejdi do nadřazeného adresáře a znovu vypiš obsah složky \texttt{data}.
+
 \end{enumerate}
 \end{frame}
 
@@ -268,6 +268,7 @@ vim vlastni.txt
   \section{Zkratky / užitečné klávesy}
   \begin{frame}{Zkratky}
     \begin{itemize}
+      \item \texttt{AltGr+A} – tilda (\ts)
       \item \texttt{Tab} – automatické doplnění názvů
       \item \texttt{Ctrl+C} – ukončení příkazu
       \item \texttt{Ctrl+R} – hledání v historii
@@ -277,8 +278,6 @@ vim vlastni.txt
       \item \texttt{history} – výpis historie příkazů
     \end{itemize}
   \end{frame}
-
-
 
 
 \end{document}
