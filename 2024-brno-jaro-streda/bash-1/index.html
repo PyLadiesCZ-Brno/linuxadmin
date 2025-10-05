@@ -126,82 +126,12 @@ digraph hierarchy {
 <h2 id="9">9.
 <a href="#9" class="header-link">#</a>
 </h2>
-<p>Sam má následující soubory:</p>
-<div class="highlight"><pre><code>.
-├── 2015-10-23-calibration.txt
-├── 2015-10-23-dataset1.txt
-├── 2015-10-23-dataset2.txt
-├── 2015-10-23-dataset_overview.txt
-├── 2015-10-26-calibration.txt
-├── 2015-10-26-dataset1.txt
-├── 2015-10-26-dataset2.txt
-├── 2015-10-26-dataset_overview.txt
-├── 2015-11-23-calibration.txt
-├── 2015-11-23-dataset1.txt
-├── 2015-11-23-dataset2.txt
-├── 2015-11-23-dataset_overview.txt
-├── backup
-│   ├── calibration
-│   └── datasets
-└── send_to_bob
-    ├── all_datasets_created_on_a_23rd
-    └── all_november_files
-</code></pre></div><p>Doplň následující příkazy...</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>cp<span class="w"> </span>*dataset*<span class="w"> </span>backup/datasets
-<span class="gp">$ </span>cp<span class="w"> </span>____calibration____<span class="w"> </span>backup/calibration
-<span class="gp">$ </span>cp<span class="w"> </span><span class="m">2015</span>-____-____<span class="w"> </span>send_to_bob/all_november_files/
-<span class="gp">$ </span>cp<span class="w"> </span>____<span class="w"> </span>send_to_bob/all_datasets_created_on_a_23rd/
-</pre></div><p>... aby výsledek vypadal takhle:</p>
-<div class="highlight"><pre><code>.
-├── 2015-10-23-calibration.txt
-├── 2015-10-23-dataset1.txt
-├── 2015-10-23-dataset2.txt
-├── 2015-10-23-dataset_overview.txt
-├── 2015-10-26-calibration.txt
-├── 2015-10-26-dataset1.txt
-├── 2015-10-26-dataset2.txt
-├── 2015-10-26-dataset_overview.txt
-├── 2015-11-23-calibration.txt
-├── 2015-11-23-dataset1.txt
-├── 2015-11-23-dataset2.txt
-├── 2015-11-23-dataset_overview.txt
-├── backup
-│   ├── calibration
-│   │   ├── 2015-10-23-calibration.txt
-│   │   ├── 2015-10-26-calibration.txt
-│   │   └── 2015-11-23-calibration.txt
-│   └── datasets
-│       ├── 2015-10-23-dataset1.txt
-│       ├── 2015-10-23-dataset2.txt
-│       ├── 2015-10-23-dataset_overview.txt
-│       ├── 2015-10-26-dataset1.txt
-│       ├── 2015-10-26-dataset2.txt
-│       ├── 2015-10-26-dataset_overview.txt
-│       ├── 2015-11-23-dataset1.txt
-│       ├── 2015-11-23-dataset2.txt
-│       └── 2015-11-23-dataset_overview.txt
-└── send_to_bob
-    ├── all_datasets_created_on_a_23rd
-    │   ├── 2015-10-23-dataset1.txt
-    │   ├── 2015-10-23-dataset2.txt
-    │   ├── 2015-10-23-dataset_overview.txt
-    │   ├── 2015-11-23-dataset1.txt
-    │   ├── 2015-11-23-dataset2.txt
-    │   └── 2015-11-23-dataset_overview.txt
-    └── all_november_files
-        ├── 2015-11-23-calibration.txt
-        ├── 2015-11-23-dataset1.txt
-        ├── 2015-11-23-dataset2.txt
-        └── 2015-11-23-dataset_overview.txt
-</code></pre></div><h2 id="10">10.
-<a href="#10" class="header-link">#</a>
-</h2>
 <p>Máš následující soubory:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F
 <span class="go">analyzed/  fructose.dat    raw/   sucrose.dat</span>
 </pre></div><p>Zkus napsat co nejkratší příkaz, kterým přesuneš <code>fructose.dat</code> a <code>sucrose.dat</code> do adresáře <code>analyzed/</code>.</p>
-<h2 id="11">11.
-<a href="#11" class="header-link">#</a>
+<h2 id="10">10.
+<a href="#10" class="header-link">#</a>
 </h2>
 <p>Které z následujících sad příkazů vytvoří tuhle strukturu adresářů?</p>
 <div class="highlight"><pre><code>2016-05-20/
