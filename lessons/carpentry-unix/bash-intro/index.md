@@ -26,8 +26,8 @@ Ty – nebo aspoň jejich nejpoužívanější verze – jsou vyvíjeny jako sou
 projektu [GNU](https://www.gnu.org/).
 
 > [note]
-> Někteří dokonce korektnější celému systému říkat GNU/Linux, protože
-> Linux je jen jedniná část.
+> Někteří dokonce považují za korektnější celému systému říkat GNU/Linux,
+> protože Linux je jen jediná část.
 > Autor tohoto textu považuje pojmenování systému podle *dvou* částí
 > jen o málo lepší než podle jediné, takže zůstaneme u krátkého „Linux“.
 
