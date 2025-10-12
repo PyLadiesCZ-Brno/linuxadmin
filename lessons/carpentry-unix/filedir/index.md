@@ -14,7 +14,7 @@ Otevři si příkazovou řádku s Bashem, jestli ji už nemáš před sebou.
 Nejdřív se podívej kde „jsi“, pomocí příkazu `pwd` (zkratka angl.
 *print working directory*, vypiš pracovní adresář).
 Adresáře jsou jako *místa* a vždycky, když používáš příkazovou řádku,
-jsi právně na jednom z těchto míst: v *pracovním* neboli *aktuálním* adresáři.
+jsi právě na jednom z těchto míst: v *pracovním* neboli *aktuálním* adresáři.
 Příkazy většinou pracují se soubory v aktuálním adresáři („tady“),
 takže se hodí vždy vědět, kde to „tady“ je.
 
@@ -344,7 +344,7 @@ Když přidáš `-h` (tedy: `ls -h -l`), velikost souboru se zobrazí ve formát
 „pro lidi“, zaokrouhleně — např. místo `5369` se vypíše `5.3K`.
 {% endfilter %}
 
-Příkaz `ls` normálě řadí soubory podle abecedy (A-Z).
+Příkaz `ls` normálně řadí soubory podle abecedy (A-Z).
 Příkaz `ls -t` je seřadí podle data poslední změny.
 Příkaz `ls -r` je seřadí podle abecedy, ale opacně (Z-A)
 
