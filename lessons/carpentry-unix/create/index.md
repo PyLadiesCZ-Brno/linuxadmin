@@ -382,6 +382,41 @@ kap1  notes.txt  plan.txt
 > Příkaz `mv` takový přepínač nemá: pouhým přesouváním si disk nezaplníš.
 
 
+## Kopírování s více cestami
+
+Přepni se do adresáře `data-shell/data`.
+Co udělá příkaz níže?
+
+```console
+$ mkdir zaloha
+$ cp amino-acids.txt animals.txt zaloha/
+```
+
+{% filter solution %}
+Zkopíruje soubory `amino-acids.txt` a `animals.txt`, tj. všechny argumenty
+kromě posledního, do adresáře `zaloha`.
+Vytvoří tedy soubory `zaloha/amino-acids.txt` a `zaloha/animals.txt`.
+{% endfilter %}
+
+Co udělá příkaz níže?
+
+```console
+$ ls -F
+amino-acids.txt  animals.txt  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt  zaloha/
+$ cp amino-acids.txt animals.txt morse.txt
+```
+
+{% filter solution %}
+Zkopíroval by první dva soubory (`amino-acids.txt` a `animals.txt`)
+do adresáře `morse.txt/`.
+Jenže `morse.txt` není adresářem, takže příkaz selže.
+Do souboru nelze dát další soubory.
+
+```console
+$ cp amino-acids.txt animals.txt morse.txt
+cp: cíl 'morse.txt' není adresářem
+```
+{% endfilter %}
 ## Odstraňování souborů a adresářů
 
 Mít dvě kopie souboru `plan.txt` nakonec nebude to nejlepší rozhodnutí
