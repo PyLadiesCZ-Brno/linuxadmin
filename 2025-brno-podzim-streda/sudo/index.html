@@ -1,16 +1,131 @@
-<h1 id="ukoly_sudo">Úkoly – sudo
-<a href="#ukoly_sudo" class="header-link">#</a>
+<h1 id="ukoly_sprava_uzivatelu_sudo">Úkoly – Správa uživatelů, Sudo
+<a href="#ukoly_sprava_uzivatelu_sudo" class="header-link">#</a>
 </h1>
-<h2 id="jak_se_pousti_sudo">Jak se pouští sudo
-<a href="#jak_se_pousti_sudo" class="header-link">#</a>
+<h2 id="_teoreticka_cast">🧠 Teoretická část
+<a href="#_teoreticka_cast" class="header-link">#</a>
 </h2>
-<p>Nakresli diagram toho, jak se pouští procesy pro příkaz <code>sudo ps</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>ps
-<span class="go">    PID TTY          TIME CMD</span>
-<span class="go">2501386 pts/9    00:00:00 sudo</span>
-<span class="go">2501388 pts/9    00:00:00 ps</span>
-</pre></div><h2 id="sudo_zapomina">Sudo zapomíná
-<a href="#sudo_zapomina" class="header-link">#</a>
+<h3 id="a_prace_se_soubory_a_vystupem">A. Práce se soubory a výstupem
+<a href="#a_prace_se_soubory_a_vystupem" class="header-link">#</a>
+</h3>
+<ol>
+<li>Co udělá příkaz <code>cat</code> a kdy je vhodné ho použít?</li>
+<li>Jaký je rozdíl mezi <code>less</code> a <code>cat</code>?</li>
+<li>K čemu slouží příkaz <code>head</code> a jak určíš, kolik řádků zobrazí?</li>
+<li>Jak bys zjistil, kolik má soubor řádků nebo slov?</li>
+<li>Jaký příkaz bys použil, pokud chceš zobrazit pouze posledních 10 řádků souboru?</li>
+</ol>
+<h3 id="b_uzivatele_skupiny_a_prava">B. Uživatelé, skupiny a práva
+<a href="#b_uzivatele_skupiny_a_prava" class="header-link">#</a>
+</h3>
+<ol>
+<li>Jaký je rozdíl mezi uživatelem a skupinou v Linuxu?</li>
+<li>Co znamenají jednotlivé části výpisu oprávnění u souboru (např. <code>-rw-r--r--</code>)?</li>
+<li>Jaký je rozdíl mezi vlastníkem souboru a skupinou souboru?</li>
+<li>Co obsahují soubory <code>/etc/passwd</code> a <code>/etc/shadow</code>?</li>
+<li>K čemu slouží příkaz <code>chmod</code> a jak se používá?</li>
+<li>K čemu slouží příkazy <code>useradd</code>, <code>groupadd</code>, <code>usermod</code>, <code>passwd</code>, <code>userdel</code> a <code>groupdel</code>?</li>
+</ol>
+<h2 id="_prakticka_cast">💻 Praktická část
+<a href="#_prakticka_cast" class="header-link">#</a>
+</h2>
+<h3 id="ukol_1_vytvoreni_skupin_a_uzivatelu">Úkol 1: Vytvoření skupin a uživatelů
+<a href="#ukol_1_vytvoreni_skupin_a_uzivatelu" class="header-link">#</a>
+</h3>
+<ol>
+<li>Vytvoř skupiny:<ul>
+<li><code>studenti</code></li>
+<li><code>ucitele</code></li>
+</ul>
+</li>
+<li>Vytvoř uživatele:<ul>
+<li><code>eva</code> (člen skupiny <code>studenti</code>)</li>
+<li><code>adam</code> (člen skupiny <code>studenti</code>)</li>
+<li><code>petr</code> (člen skupiny <code>ucitele</code>)</li>
+</ul>
+</li>
+<li>Nastav každému uživateli heslo (např. <code>test123</code>).</li>
+<li>Ověř, do jakých skupin uživatelé patří.</li>
+<li>Přidej uživatele <code>eva</code> také do skupiny <code>ucitele</code>.</li>
+<li>Smaž uživatele <code>adam</code> a skupinu <code>ucitele</code>.</li>
+</ol>
+<h3 id="ukol_2_prava_a_pristup_k_souborum">Úkol 2: Práva a přístup k souborům
+<a href="#ukol_2_prava_a_pristup_k_souborum" class="header-link">#</a>
+</h3>
+<ol>
+<li>Přepni se na uživatele <code>petr</code>.</li>
+<li>V jeho domovské složce vytvoř soubor <code>poznamka.txt</code>.</li>
+<li>Zobraz výpis oprávnění.</li>
+<li>Nastav oprávnění tak, aby:<ul>
+<li>vlastník mohl číst i zapisovat,</li>
+<li>skupina mohla pouze číst,</li>
+<li>ostatní neměli žádný přístup.</li>
+</ul>
+</li>
+<li>Ověř, že změna proběhla správně.</li>
+<li>Změň vlastníka souboru na uživatele <code>eva</code> a skupinu na <code>studenti</code>.</li>
+<li>Ověř, že soubor má nového vlastníka i skupinu.</li>
+</ol>
+<h3 id="ukol_3_sdilena_slozka_pro_skupinu">Úkol 3: Sdílená složka pro skupinu
+<a href="#ukol_3_sdilena_slozka_pro_skupinu" class="header-link">#</a>
+</h3>
+<ol>
+<li>Jako <code>root</code> vytvoř složku <code>/home/spolecne</code>.</li>
+<li>Nastav vlastníka <code>root</code> a skupinu <code>studenti</code>.</li>
+<li>Nastav práva tak, aby:<ul>
+<li>vlastník měl práva <code>rw</code>,</li>
+<li>skupina měla práva <code>rw</code>,</li>
+<li>ostatní neměli žádná.</li>
+</ul>
+</li>
+<li>Nastav <strong>setgid bit</strong>, aby nově vytvořené soubory ve složce zdědily skupinu <code>studenti</code>:<div class="highlight"><pre><span></span>chmod<span class="w"> </span>g+s<span class="w"> </span>/home/spolecne
+</pre></div></li>
+<li>Ve složce <code>/home/spolecne</code> vytvoř soubor <code>zkouska.txt</code> jako uživatel <code>eva</code>.</li>
+<li>Ověř, že soubor má skupinu <code>studenti</code>.</li>
+<li>Přepni se na uživatele <code>adam</code> a zkontroluj, že může tento soubor číst i upravovat.</li>
+</ol>
+<h3 id="ukol_4_struktura_skolni_tym">Úkol 4: Struktura „Školní tým“
+<a href="#ukol_4_struktura_skolni_tym" class="header-link">#</a>
+</h3>
+<ol>
+<li><p>Znovu vytvoř skupinu <code>ucitele</code>.</p>
+</li>
+<li><p>Vytvoř uživatele:</p>
+<ul>
+<li><code>reditel</code></li>
+<li><code>ucitelka</code></li>
+<li><code>student1</code></li>
+<li><code>student2</code></li>
+</ul>
+</li>
+<li><p>Přiřaď uživatele do skupin:</p>
+<ul>
+<li><code>reditel</code>, <code>ucitelka</code> → <code>ucitele</code></li>
+<li><code>student1</code>, <code>student2</code> → <code>studenti</code></li>
+</ul>
+</li>
+<li><p>Vytvoř strukturu složek:</p>
+<div class="highlight"><pre><span></span><span class="go">/opt/skola/</span>
+<span class="go">  ├── ucitele/</span>
+<span class="go">  └── studenti/</span>
+</pre></div></li>
+<li><p>Nastav:</p>
+<ul>
+<li><code>/opt/skola/ucitele</code> → vlastník <code>root</code>, skupina <code>ucitele</code>, práva <code>770</code></li>
+<li><code>/opt/skola/studenti</code> → vlastník <code>root</code>, skupina <code>studenti</code>, práva <code>770</code></li>
+</ul>
+</li>
+<li><p>Do obou složek přidej soubor <code>info.txt</code> s krátkým textem <em>(např. „Vítejte ve složce učitelů“)</em>.</p>
+</li>
+<li><p>Ověř, že:</p>
+<ul>
+<li>Učitelé mají přístup pouze do složky <code>ucitele</code>.</li>
+<li>Studenti pouze do <code>studenti</code>.</li>
+<li>Ostatní uživatelé nemají přístup do žádné z nich.</li>
+</ul>
+</li>
+</ol>
+<h2 id="bonus_sudo_zapomina">Bonus: Sudo zapomíná
+<a href="#bonus_sudo_zapomina" class="header-link">#</a>
 </h2>
 <p><em>(<code>sudo</code> ti dává oprávnění, ale i zodpovědnost. Nauč se před každým použitím <code>sudo</code> přečíst spouštěný příkaz a zamyslet se, jestli ho opravdu chceš spustit. Ale opět, neboj se experimentovat – na virtuálním počítači není co zkazit.)</em></p>
 <p>Co by měl dělat tento příkaz?</p>

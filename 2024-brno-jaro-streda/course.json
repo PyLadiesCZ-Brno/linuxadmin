@@ -734,15 +734,29 @@
                             "path": "sudo/index.html"
                         },
                         "ids": [
-                            "jak_se_pousti_sudo",
-                            "sudo_zapomina",
-                            "ukoly_sudo"
+                            "_prakticka_cast",
+                            "_teoreticka_cast",
+                            "a_prace_se_soubory_a_vystupem",
+                            "b_uzivatele_skupiny_a_prava",
+                            "bonus_sudo_zapomina",
+                            "ukol_1_vytvoreni_skupin_a_uzivatelu",
+                            "ukol_2_prava_a_pristup_k_souborum",
+                            "ukol_3_sdilena_slozka_pro_skupinu",
+                            "ukol_4_struktura_skolni_tym",
+                            "ukoly_sprava_uzivatelu_sudo"
                         ],
                         "license": "cc-by-sa-40",
                         "links": [
-                            "#jak_se_pousti_sudo",
-                            "#sudo_zapomina",
-                            "#ukoly_sudo"
+                            "#_prakticka_cast",
+                            "#_teoreticka_cast",
+                            "#a_prace_se_soubory_a_vystupem",
+                            "#b_uzivatele_skupiny_a_prava",
+                            "#bonus_sudo_zapomina",
+                            "#ukol_1_vytvoreni_skupin_a_uzivatelu",
+                            "#ukol_2_prava_a_pristup_k_souborum",
+                            "#ukol_3_sdilena_slozka_pro_skupinu",
+                            "#ukol_4_struktura_skolni_tym",
+                            "#ukoly_sprava_uzivatelu_sudo"
                         ],
                         "slug": "index",
                         "solutions": [],
