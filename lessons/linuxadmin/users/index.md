@@ -66,7 +66,7 @@ Skupina `wheel` je pro uživatele, kteří mají přístup k admistrátorským
 oprávněním. Můžou tak např. přidávat další uživatele.
 
 Příkaz `groups` bere i argumenty – uživatele, jejichž skupiny vypíše.
-Koukni se třeba, že uživate `root` není ve skupině `wheel`:
+Koukni se třeba, že uživatel `root` není ve skupině `wheel`:
 
 ```console
 $ groups hanka root
@@ -102,7 +102,7 @@ počítače nemají přístup.
 Kdybys chtěl{{a}} dát svůj program k dispozici všem uživatelům,
 do adresáře `/usr/bin/` (nebo jiného sdíleného adresáře v `$PATH`),
 narazíš.
-Na podobných sdílených místech nemázádný tvůj proces právo soubory vytvářet,
+Na podobných sdílených místech nemá žádný tvůj proces právo soubory vytvářet,
 měnit ani mazat:
 
 ```console
@@ -188,7 +188,7 @@ ke čtení obsahu.
 
 ### Zápis – `w`
 
-Druhé písmenko udává právo ke čtení.
+Druhé písmenko udává právo k zápisu.
 Když je zde místo `w` pomlčka, vlastník do souboru nesmí zapisovat.
 Toto oprávnění se dá změnit pomocí `chmod -w` a `chmod +w`:
 
@@ -331,7 +331,7 @@ $ chmod u=rw,g=r,o= pizza.cfg
 ```
 
 
-Když so podíváš na svůj domovský adresář, zjistíš že to do něj nikdo jiný
+když se podíváš na svůj domovský adresář, zjistíš že ti do něj nikdo jiný
 nevleze: `rwx` je tu jen pro tebe.
 
 ```console
@@ -340,7 +340,7 @@ drwx------. 25 hanka hanka 4096  2. lis 14.31 /home/hanka
 ```
 
 Když tahle práva odebereš i sobě (`chmod u-rwx ~`),
-bude tvůj systém podobně nepoužitelný jako kdyby chtěl tvůj uživatelský učet
+bude tvůj systém podobně nepoužitelný, jako kdyby chtěl tvůj uživatelský učet
 používat někdo jiný.
 Běžící procesy se neukončí, ale můžeš mít problém například
 otevřít nový terminál nebo prohlížeč.
@@ -363,7 +363,7 @@ Vždy totiž platí jen první trojice `rwx`, která se na soubor vztahuje, tak�
 
 * první `rwx` platí pro vlastníka,
 * druhé `rwx` platí pro všechny ze skupiny *kromě* vlastníka,
-* třetí `rwx` platí pro všechny ostatní – ty, kdo nejsou ani vlastníkem ani
+* třetí `rwx` platí pro všechny ostatní – ty, kdo nejsou ani vlastníkem, ani
   nepatří do skupiny.
 
 A vlastníka souboru změnit nemůžeš.
@@ -372,7 +372,7 @@ Tuhle operaci bys totiž nemohl{{a}} vzít zpět
 z administrátorského účtu.
 Tam k tomu slouží příkaz `chown` (z angl. *change owner*, změň vlastníka)
 
-Pojďme se podívat jak se přihlásit pod jiným účtem;
+Pojďme se podívat, jak se přihlásit pod jiným účtem;
 za domácí úkol si pak s `chgrp` a `chown` pohraj.
 
 
@@ -402,7 +402,7 @@ $ su root
 Heslo: 
 ```
 
-Zjistíš že k účtu `root` neznáš heslo.
+Zjistíš, že k účtu `root` neznáš heslo.
 Tak to ukonči pomocí <kbd>Ctrl</kbd>+<kbd>C</kbd>, zkusíme to jinak.
 
 
@@ -414,14 +414,14 @@ Tady můžeš přidávat nové uživatelské účty.
 Aktuálně tam bude jen jeden – systémové účty jako `root` jsou skryté.
 
 Při instalaci systému jsi nastavil{{a}}, že jsi správce.
-To znamená že si tvoje procesy můžou *zažádat* o administrátorská práva;
+To znamená, že si tvoje procesy můžou *zažádat* o administrátorská práva;
 typicky je ale dostanou až po zadání hesla.
 
 Klikni tedy na tlačítko **Odemknout** a zadej svoje heslo.
 
 > [note]
-> Kdykoli se tě systém zeptá na heslo, znamená to že se buď přihlašuješ,
-> nebo dělat něco, co ovlivní celý systém (tj. víc než jen tvůj účet) – a je
+> Kdykoli se tě systém zeptá na heslo, znamená to, že se buď přihlašuješ,
+> nebo děláš něco, co ovlivní celý systém (tj. víc než jen tvůj účet) – a je
 > to tedy potenciálně nebezpečné.
 > Přidání uživatele zas tak nebezpečné není, ale rozhodně to ovlivní víc než
 > jen tvůj účet.
@@ -442,7 +442,7 @@ Zavřít nastavení, otevřít znovu – chce to heslo znovu.
 Administrátor – systém mi přidělí oprávnění, když zadám *své* heslo.
 „Být“ administrátor chci co nejmíň.
 
-Přepni se teď do příkazové řádky a přepni se na nový účet `test`.
+Přepni se teď do příkazové řádky a přepni se na nový účet `test1`.
 Když budeš vyplňovat heslo, na obrazovku se nic nevypíše (ani hvězdičky/tečky
 jako když zadáváš heslo grafických aplikací).
 To je u zadávání hesel do příkazové řádky normální:
@@ -485,7 +485,7 @@ bash: cd: /home/hanka/Dokumenty/data-shell: Operace zamítnuta
 ```
 
 Navíc tu chybí adresáře jako `Obrázky` a `Video`.
-Ty totiž vytváří grafické rozhraní – GNOME – které uživatel `test`
+Ty totiž vytváří grafické rozhraní – GNOME – které uživatel `test1`
 ještě nespustil:
 
 ```console
@@ -497,7 +497,7 @@ $ ls -a
 
 Přepni tedy uživatele „graficky“: v menu vpravo nahoře vyber
 **Přepnout uživatele** (NE „odhlásit“).
-Přihláění bude trvat déle – například o vytvoření výše zmíněných adresářů.
+Přihlášení bude trvat déle – například o vytvoření výše zmíněných adresářů.
 
 Když si teď pustíš **Nastavení** a budeš chtít odemknout nastavení uživatelů,
 bude to po tobě chtít heslo *správce*, nikoli heslo uživatele `test1`.
@@ -508,13 +508,13 @@ ne „odhlásit“).
 
 Zpátky ke konzoli.
 Jsi-li v ní stále přihlášen{{a}} jako `test1`, napiš `exit`.
-(Příkaz `su` pouští nový shell; když ho ukončíš, vrátíš se do shellu
+(Příkaz `su` pouští nový shell; když ho ukončíš, vrátíš se do shellu,
 ve kterém jsi pustil{{a}} `su`.)
 
 ```console
 $ exit
 $ whoami
-hanks
+hanka
 ```
 
 Superuživatel `root` nemá heslo, takže `su root` nebude fungovat:
@@ -564,18 +564,18 @@ test1      18171  0.0  0.1 228432  3980 pts/0    R+   15:10   0:00 ps -a -u
 $ type su
 su je /usr/bin/su
 $ ls -l /usr/bin/su
--rwsr-xr-x. 1 root root 58384 12. úno  2021 /usr/bin/su
+-rwsr-xr-x. 1 root root 58384 12. února  2021 /usr/bin/su
 ```
 
 Všimni si zvláštních písmenek v módu: `rws` – to `s` místo `x` znamená
 *setuid*, program se spouští s právy vlastníka.
-Je tedy jedno kdo `su` spustí; proces bude mít vždycky práva superuživatele
+Je tedy jedno, kdo `su` spustí; proces bude mít vždycky práva superuživatele
 `root`, tj. může dělat *cokoli*.
-Program `su` ale umí dělat jen jednu věc: zeptá na heslo a spustí shell pod
+Program `su` ale umí dělat jen jednu věc: zeptá se na heslo a spustí shell pod
 jiným uživatelským účtem.
 
 Programy s módem *setuid* jsou napsány zvlášť opatrně,
-aby umožnily opravdu jen to k čemu slouží.
+aby umožnily opravdu jen to, k čemu slouží.
 
 ```console
 $ exit
@@ -626,7 +626,7 @@ Ale `sudo` funguje to jen pro *administrátory* (`wheel`):
 $ sudo su hanka
 ```
 
-Uživatel pro kterého funguje `sudo` se ovšem může přihlásit jako superuživatel!
+Uživatel, pro kterého funguje `sudo`, se ovšem může přihlásit jako superuživatel!
 
 ```console
 $ sudo su root
@@ -659,7 +659,7 @@ $ sudo -i
 ## Změna hesla
 
 Další věc, kterou může dělat jen administrátor, je změna hesla.
-Existuje ale příkaz `passwd` který heslo mění – a má příznak *setuid*.
+Existuje ale příkaz `passwd`, který heslo mění – a má příznak *setuid*.
 
 ```console
 $ type passwd
