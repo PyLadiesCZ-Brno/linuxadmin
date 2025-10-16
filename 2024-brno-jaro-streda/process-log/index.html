@@ -1,0 +1,21 @@
+<h1 id="ukoly_-_zapis_udaju_o_procesech">Úkoly - Zápis údajů o procesech
+<a href="#ukoly_-_zapis_udaju_o_procesech" class="header-link">#</a>
+</h1>
+<p>Na začátku si vytvořte dočasnou složku, ať si zbytečně neděláte nepořádek v souborovém systému. Přesuňte se do této složky.</p>
+<p>Vytvořte složku <code>root</code> a složku s názvem vašeho <code>uživatele</code> (s tím vám může pomoct proměnná <code>$USER</code>).
+Po zadání příkazu <code>tree</code> by ste měli vidět něco podobného:</p>
+<div class="highlight"><pre><code>$ tree
+.
+├── tux
+└── root
+</code></pre></div><p>Příkaz <code>ps</code> má velké množství přepínačů, nás ale zajímají přepínače <code>-e</code> a <code>-f</code>. Spusťte příkaz <code>ps</code> s těmito přepínači. V prvním sloupci si můžete všimnout jméno vlastníka procesu. Rozdělte tuto tabulku do dvou souborů, <code>root_ps.txt</code>, který bude ve složce <code>root</code> a <code>&lt;jméno uživatele&gt;_ps.txt</code>, který bude ve složce pro <code>uživatele</code>.</p>
+<p>Teď by nás zajímalo kolik procesů, měl spuštěných <code>root</code> i <code>uživatel</code>. Zapište počet procesů na <strong>konec</strong> příslušných souborů. Tyto soubory spojte do jednoho souboru <code>vsechny_ps.txt</code>, který sa bude nacházet ve vaší dočasné složce. <strong>Obsah oddelte jedním prázdným řádkem</strong>.</p>
+<p>Výslední strom by mal vypadat takhle:</p>
+<div class="highlight"><pre><code>$ tree
+.
+├── tux
+│   └── tux.txt
+├── root
+│   └── root_ps.txt
+└── vsechny_ps.txt
+</code></pre></div>
