@@ -564,7 +564,7 @@ test1      18171  0.0  0.1 228432  3980 pts/0    R+   15:10   0:00 ps -a -u
 $ type su
 su je /usr/bin/su
 $ ls -l /usr/bin/su
--rwsr-xr-x. 1 root root 58384 12. února  2021 /usr/bin/su
+-rwsr-xr-x. 1 root root 58384 12. úno  2021 /usr/bin/su
 ```
 
 Všimni si zvláštních písmenek v módu: `rws` – to `s` místo `x` znamená
