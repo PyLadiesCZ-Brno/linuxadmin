@@ -51,7 +51,7 @@ Podívej se, v jakých skupinách jsi ty:</p>
 </pre></div><p>Skupina <code>wheel</code> je pro uživatele, kteří mají přístup k admistrátorským
 oprávněním. Můžou tak např. přidávat další uživatele.</p>
 <p>Příkaz <code>groups</code> bere i argumenty – uživatele, jejichž skupiny vypíše.
-Koukni se třeba, že uživate <code>root</code> není ve skupině <code>wheel</code>:</p>
+Koukni se třeba, že uživatel <code>root</code> není ve skupině <code>wheel</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>groups<span class="w"> </span>hanka<span class="w"> </span>root
 <span class="go">hanka : hanka wheel</span>
 <span class="go">root : root</span>
@@ -76,7 +76,7 @@ počítače nemají přístup.</p>
 <p>Kdybys chtěla dát svůj program k dispozici všem uživatelům,
 do adresáře <code>/usr/bin/</code> (nebo jiného sdíleného adresáře v <code>$PATH</code>),
 narazíš.
-Na podobných sdílených místech nemázádný tvůj proces právo soubory vytvářet,
+Na podobných sdílených místech nemá žádný tvůj proces právo soubory vytvářet,
 měnit ani mazat:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>cp<span class="w"> </span>~/bin/mujprogram<span class="w"> </span>/usr/bin/mujprogram
 <span class="go">cp: nelze vytvořit obyčejný soubor &#39;/usr/bin/mcd&#39;: Operace zamítnuta</span>
@@ -144,7 +144,7 @@ ke čtení obsahu.</p>
 <h3 id="zapis_codewcode">Zápis – <code>w</code>
 <a href="#zapis_codewcode" class="header-link">#</a>
 </h3>
-<p>Druhé písmenko udává právo ke čtení.
+<p>Druhé písmenko udává právo k zápisu.
 Když je zde místo <code>w</code> pomlčka, vlastník do souboru nesmí zapisovat.
 Toto oprávnění se dá změnit pomocí <code>chmod -w</code> a <code>chmod +w</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>chmod<span class="w"> </span>-w<span class="w"> </span>pizza.cfg
@@ -244,12 +244,12 @@ a <code>o</code> (<em>others</em>, ostatní) nebo <code>a</code> (<em>all</em> �
 (tj. zadaná přidá a nezadaná odebere).
 A několik specifikací se dá spojit pomocí čárky, takže můžeš konkrétní práva nastavit třeba takto:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>chmod<span class="w"> </span><span class="nv">u</span><span class="o">=</span>rw,g<span class="o">=</span>r,o<span class="o">=</span><span class="w"> </span>pizza.cfg
-</pre></div><p>Když so podíváš na svůj domovský adresář, zjistíš že to do něj nikdo jiný
+</pre></div><p>když se podíváš na svůj domovský adresář, zjistíš že ti do něj nikdo jiný
 nevleze: <code>rwx</code> je tu jen pro tebe.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-ld<span class="w"> </span>~
 <span class="go">drwx------. 25 hanka hanka 4096  2. lis 14.31 /home/hanka</span>
 </pre></div><p>Když tahle práva odebereš i sobě (<code>chmod u-rwx ~</code>),
-bude tvůj systém podobně nepoužitelný jako kdyby chtěl tvůj uživatelský učet
+bude tvůj systém podobně nepoužitelný, jako kdyby chtěl tvůj uživatelský učet
 používat někdo jiný.
 Běžící procesy se neukončí, ale můžeš mít problém například
 otevřít nový terminál nebo prohlížeč.
@@ -267,7 +267,7 @@ Vždy totiž platí jen první trojice <code>rwx</code>, která se na soubor vzt
 <ul>
 <li>první <code>rwx</code> platí pro vlastníka,</li>
 <li>druhé <code>rwx</code> platí pro všechny ze skupiny <em>kromě</em> vlastníka,</li>
-<li>třetí <code>rwx</code> platí pro všechny ostatní – ty, kdo nejsou ani vlastníkem ani
+<li>třetí <code>rwx</code> platí pro všechny ostatní – ty, kdo nejsou ani vlastníkem, ani
 nepatří do skupiny.</li>
 </ul>
 <p>A vlastníka souboru změnit nemůžeš.
@@ -275,7 +275,7 @@ Tuhle operaci bys totiž nemohla vzít zpět
 (to by musel provést nový vlastník), takže tohle lze udělat jen
 z administrátorského účtu.
 Tam k tomu slouží příkaz <code>chown</code> (z angl. <em>change owner</em>, změň vlastníka)</p>
-<p>Pojďme se podívat jak se přihlásit pod jiným účtem;
+<p>Pojďme se podívat, jak se přihlásit pod jiným účtem;
 za domácí úkol si pak s <code>chgrp</code> a <code>chown</code> pohraj.</p>
 <h2 id="zmena_uzivatele">Změna uživatele
 <a href="#zmena_uzivatele" class="header-link">#</a>
@@ -291,7 +291,7 @@ se to pamatuje jako moravské „od včil <em>su Pepa</em>“).</p>
 <code>ps</code> a <code>ls</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>su<span class="w"> </span>root
 <span class="go">Heslo: </span>
-</pre></div><p>Zjistíš že k účtu <code>root</code> neznáš heslo.
+</pre></div><p>Zjistíš, že k účtu <code>root</code> neznáš heslo.
 Tak to ukonči pomocí <kbd>Ctrl</kbd>+<kbd>C</kbd>, zkusíme to jinak.</p>
 <h2 id="novy_uzivatel">Nový uživatel
 <a href="#novy_uzivatel" class="header-link">#</a>
@@ -301,11 +301,11 @@ vyber sekci <strong>Uživatelé</strong>.
 Tady můžeš přidávat nové uživatelské účty.
 Aktuálně tam bude jen jeden – systémové účty jako <code>root</code> jsou skryté.</p>
 <p>Při instalaci systému jsi nastavila, že jsi správce.
-To znamená že si tvoje procesy můžou <em>zažádat</em> o administrátorská práva;
+To znamená, že si tvoje procesy můžou <em>zažádat</em> o administrátorská práva;
 typicky je ale dostanou až po zadání hesla.</p>
 <p>Klikni tedy na tlačítko <strong>Odemknout</strong> a zadej svoje heslo.</p>
-<div class="admonition note"><p>Kdykoli se tě systém zeptá na heslo, znamená to že se buď přihlašuješ,
-nebo dělat něco, co ovlivní celý systém (tj. víc než jen tvůj účet) – a je
+<div class="admonition note"><p>Kdykoli se tě systém zeptá na heslo, znamená to, že se buď přihlašuješ,
+nebo děláš něco, co ovlivní celý systém (tj. víc než jen tvůj účet) – a je
 to tedy potenciálně nebezpečné.
 Přidání uživatele zas tak nebezpečné není, ale rozhodně to ovlivní víc než
 jen tvůj účet.</p>
@@ -321,7 +321,7 @@ Co je to administrátor?</p>
 <p>Zavřít nastavení, otevřít znovu – chce to heslo znovu.
 Administrátor – systém mi přidělí oprávnění, když zadám <em>své</em> heslo.
 „Být“ administrátor chci co nejmíň.</p>
-<p>Přepni se teď do příkazové řádky a přepni se na nový účet <code>test</code>.
+<p>Přepni se teď do příkazové řádky a přepni se na nový účet <code>test1</code>.
 Když budeš vyplňovat heslo, na obrazovku se nic nevypíše (ani hvězdičky/tečky
 jako když zadáváš heslo grafických aplikací).
 To je u zadávání hesel do příkazové řádky normální:</p>
@@ -352,7 +352,7 @@ systém nekontroluje, jestli tam máš přístup:</p>
 <span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>-
 <span class="go">bash: cd: /home/hanka/Dokumenty/data-shell: Operace zamítnuta</span>
 </pre></div><p>Navíc tu chybí adresáře jako <code>Obrázky</code> a <code>Video</code>.
-Ty totiž vytváří grafické rozhraní – GNOME – které uživatel <code>test</code>
+Ty totiž vytváří grafické rozhraní – GNOME – které uživatel <code>test1</code>
 ještě nespustil:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>ls
 <span class="gp">$ </span>ls<span class="w"> </span>-a
@@ -360,7 +360,7 @@ ještě nespustil:</p>
 <span class="go">..  .bash_profile  .mozilla  .xauthIdeOEt</span>
 </pre></div><p>Přepni tedy uživatele „graficky“: v menu vpravo nahoře vyber
 <strong>Přepnout uživatele</strong> (NE „odhlásit“).
-Přihláění bude trvat déle – například o vytvoření výše zmíněných adresářů.</p>
+Přihlášení bude trvat déle – například o vytvoření výše zmíněných adresářů.</p>
 <p>Když si teď pustíš <strong>Nastavení</strong> a budeš chtít odemknout nastavení uživatelů,
 bude to po tobě chtít heslo <em>správce</em>, nikoli heslo uživatele <code>test1</code>.
 Test totiž nemá právo přidávat účty; na to musí poprosit administrátora.</p>
@@ -368,11 +368,11 @@ Test totiž nemá právo přidávat účty; na to musí poprosit administrátora
 ne „odhlásit“).</p>
 <p>Zpátky ke konzoli.
 Jsi-li v ní stále přihlášena jako <code>test1</code>, napiš <code>exit</code>.
-(Příkaz <code>su</code> pouští nový shell; když ho ukončíš, vrátíš se do shellu
+(Příkaz <code>su</code> pouští nový shell; když ho ukončíš, vrátíš se do shellu,
 ve kterém jsi pustila <code>su</code>.)</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">exit</span>
 <span class="gp">$ </span>whoami
-<span class="go">hanks</span>
+<span class="go">hanka</span>
 </pre></div><p>Superuživatel <code>root</code> nemá heslo, takže <code>su root</code> nebude fungovat:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>su<span class="w"> </span>root
 </pre></div><div class="admonition warning"><p>Zbytek tohoto textu jsou zatím jen zkratkovité poznámky.
@@ -407,12 +407,12 @@ Jak tedy funguje <code>su</code>?</p>
 <span class="go">-rwsr-xr-x. 1 root root 58384 12. úno  2021 /usr/bin/su</span>
 </pre></div><p>Všimni si zvláštních písmenek v módu: <code>rws</code> – to <code>s</code> místo <code>x</code> znamená
 <em>setuid</em>, program se spouští s právy vlastníka.
-Je tedy jedno kdo <code>su</code> spustí; proces bude mít vždycky práva superuživatele
+Je tedy jedno, kdo <code>su</code> spustí; proces bude mít vždycky práva superuživatele
 <code>root</code>, tj. může dělat <em>cokoli</em>.
-Program <code>su</code> ale umí dělat jen jednu věc: zeptá na heslo a spustí shell pod
+Program <code>su</code> ale umí dělat jen jednu věc: zeptá se na heslo a spustí shell pod
 jiným uživatelským účtem.</p>
 <p>Programy s módem <em>setuid</em> jsou napsány zvlášť opatrně,
-aby umožnily opravdu jen to k čemu slouží.</p>
+aby umožnily opravdu jen to, k čemu slouží.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">exit</span>
 <span class="gp">$ </span>whoami
 <span class="go">hanka</span>
@@ -435,7 +435,7 @@ aby umožnily opravdu jen to k čemu slouží.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>su<span class="w"> </span>test1
 </pre></div><p>Ale <code>sudo</code> funguje to jen pro <em>administrátory</em> (<code>wheel</code>):</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>su<span class="w"> </span>hanka
-</pre></div><p>Uživatel pro kterého funguje <code>sudo</code> se ovšem může přihlásit jako superuživatel!</p>
+</pre></div><p>Uživatel, pro kterého funguje <code>sudo</code>, se ovšem může přihlásit jako superuživatel!</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>su<span class="w"> </span>root
 <span class="gp"># </span><span class="nb">pwd</span>
 <span class="gp"># </span><span class="nb">exit</span>
@@ -458,7 +458,7 @@ lepší než <code>sudo su root</code> je <code>sudo -i</code> (interaktivní):<
 <a href="#zmena_hesla" class="header-link">#</a>
 </h2>
 <p>Další věc, kterou může dělat jen administrátor, je změna hesla.
-Existuje ale příkaz <code>passwd</code> který heslo mění – a má příznak <em>setuid</em>.</p>
+Existuje ale příkaz <code>passwd</code>, který heslo mění – a má příznak <em>setuid</em>.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">type</span><span class="w"> </span>passwd
 <span class="go">passwd je /usr/bin/passwd</span>
 <span class="gp">[test1@fedora data-shell]$ </span>ls<span class="w"> </span>-l<span class="w"> </span>/usr/bin/passwd
