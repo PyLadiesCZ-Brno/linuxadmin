@@ -1,5 +1,53 @@
 # Roury a filtry
 
+## Vybírání více souborů pomocí zástupných znaků
+
+Hvězdička, `*`, je v Bashi *žolík* neboli *zástupný znak*, který odpovídá
+libovolnému počtu (0 nebo víc) znaků.
+Budeš-li v adresáři `data-shell/molecules`, pak „šablona“ `*.pdb` odpovídá
+souborům `ethane.pdb`, `propane.pdb` a všem ostatním, které končí na `.pdb`.
+Ale `p*.pdb` odpovídá jen `pentane.pdb` a `propane.pdb` – těm, které zároveň
+začínají písmenem `p`:
+
+```console
+$ cd ~/Dokumenty/data-shell/molecules
+$ ls *.pdb
+cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+$ ls p*.pdb
+pentane.pdb  propane.pdb
+```
+
+Další zástupný znak je otazník, `?`, který odpovídá jen jednomu znaku.
+Takže šablona  `?ethane.pdb` odpovídá jen jménu `methane.pdb` – na rozdíl od
+`*ethane.pdb`, cemuž odpovídá jak `methane.pdb`, tak i `ethane.pdb`.
+
+```console
+$ ls ?ethane.pdb
+methane.pdb
+$ ls *ethane.pdb
+ethane.pdb  methane.pdb
+```
+
+Zástupných znaků můžeš použít víc: `???ane.pdb` odpovídá třem znakům
+následovaným `ane.pdb`, tedy `cubane.pdb ethane.pdb octane.pdb`.
+
+Když Bash zástupné znaky zpracovává, vytvoří seznam odpovídajících souborů
+ještě předtím, než spustí příslušný příkaz.
+Když neodpovídá *žádný* soubor, pošle příkazu argument tak, jak je:
+
+```console
+$ ls *.pdf
+ls: nelze přistoupit k '*.pdf': Adresář nebo soubor neexistuje
+```
+
+Když ale nějaké názvy odpovídají, dostane příkaz tyto příkazy jako jednotlivé
+argumenty.
+Zpracovává je tedy Bash; samotný příkaz jako `ls` nebo `cp` nemá
+k původní šabloně přístup.
+
+
+## Další příklad
+
 Teď, když znáš základní příkazy, si ukážeme nejmocnější vlastnost shellu:
 možnost příkazy jednoduše spojovat dohromady.
 Začni opět v adresáři `molecules`, kde je několik souborů s popisem molekul:
