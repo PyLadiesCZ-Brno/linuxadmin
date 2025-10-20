@@ -1,4 +1,4 @@
-# Úkoly – Bash II &c
+# Úkoly – Bash II
 
 ## 1. Grepování yamlů
 
