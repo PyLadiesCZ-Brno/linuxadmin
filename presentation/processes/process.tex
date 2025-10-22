@@ -1,0 +1,107 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\setbeamerfont{title}{size=\LARGE}
+
+\title{Procesy}
+\author{Eliška Jégrová}
+\date{20. 10. 2025}
+
+% pro obrázky a kreslení
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{datetime}
+\usepackage{svg}
+\usepackage{listings}
+
+
+% vlastní příkaz pro tildy
+\newcommand{\ts}{\raisebox{-0.25em}{\textasciitilde}}
+
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	\begin{frame}{Obsah}
+		\tableofcontents
+	\end{frame}
+	
+	
+	\section{Návratová hodnota příkazů}
+
+\begin{frame}[fragile]{Návratová hodnota příkazů}
+	\begin{itemize}
+		\item Každý příkaz po dokončení vrátí číslo — tzv. \texttt{exit code}.
+		\item \texttt{0} = úspěch, jiná hodnota = chyba nebo jiný stav.
+		\item Poslední návratovou hodnotu zobrazí \texttt{\$?}
+	\end{itemize}
+	
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ echo Ahoj} \\
+	\hspace{2em}Ahoj \\
+	\hspace{2em}\texttt{\$ echo \$?} \\
+	\hspace{2em}0 \\[0.7em]
+	
+	\hspace{2em}\texttt{\$ ls neexistuje.txt} \\
+	\hspace{2em}ls: cannot access \textquotesingle neexistuje.txt\textquotesingle: No such file or directory \\
+	\hspace{2em}\texttt{\$ echo \$?} \\
+	\hspace{2em}2
+\end{frame}
+
+\section{Procesy}
+
+\begin{frame}[fragile]{Co je proces}
+	\begin{itemize}
+		\item Proces je termín pro běžící program
+		\item Každý proces má své PID (Process ID).
+		\item Procesy lze zobrazit příkazem \texttt{ps}.
+	\end{itemize}
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ ps} \\
+	\hspace{2em}PID\hspace{3em}TTY\hspace{2em}TIME\hspace{2em}CMD \\
+	\hspace{2em}2180\hspace{2em}pts/0\hspace{1em}00:00:00 bash \\
+	\hspace{2em}2215\hspace{2em}pts/0\hspace{1em}00:00:00 ps
+	
+	\vspace{2.5em}	
+	\hspace{2em}Všechny běžící procesy zobrazí: \texttt{ps -A}
+\end{frame}
+
+\begin{frame}[fragile]{Sledování procesů pomocí \texttt{top}}
+	\begin{itemize}
+		\item Příkaz \texttt{top} zobrazuje procesy v reálném čase.
+		\item Zobrazuje vytížení CPU, paměti a běžící procesy.
+		\item Ukončení programu: klávesa \texttt{q}.
+	\end{itemize}
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ top} \\[0.3em]
+	\texttt{top - 09:42:01 up 1:03, 1 user, load average: 0.10, 0.08, 0.02}\\
+	\texttt{PID USER \hspace{0.5em}PR \hspace{0.5em}NI \hspace{0.5em}VIRT \hspace{0.5em}RES \hspace{0.5em}S \hspace{0.5em}\%CPU \hspace{0.5em}\%MEM \hspace{0.5em}COMMAND}\\
+	\texttt{2180 pepa \hspace{0.6em}20 \hspace{0.5em}0 \hspace{0.1em} 1234 \hspace{0.5em}532 \hspace{0.5em}S \hspace{0.5em}0.0 \hspace{0.5em}0.1 \hspace{0.5em}bash}\\
+	\texttt{2250 pepa \hspace{0.6em}20 \hspace{0.5em}0 \hspace{0.5em} 980 \hspace{0.5em}400 \hspace{0.5em}S \hspace{0.5em}0.0 \hspace{0.5em}0.0 \hspace{0.5em}sleep}
+\end{frame}
+
+\begin{frame}[fragile]{Ukončení procesu}
+	\begin{itemize}
+		\item Proces lze ukončit příkazem \texttt{kill}.
+		\item Ukončení podle PID: \texttt{kill <pid>}
+		\item Násilné ukončení podle PID: \texttt{kill -9 <pid>}
+	\end{itemize}
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ ps} \\
+	\hspace{2em}2250 pts/0 00:00:00 top \\
+	\hspace{2em}\texttt{\$ kill 2250} \\
+\end{frame}
+
+\begin{frame}{Samostatná práce – procesy}
+	\small
+	\begin{enumerate}
+		\item Zapni si dva terminály, v prvním spusť \texttt{top}.
+		\item Ve druhém terminálu zjisti PID procesu \texttt{top}. (ps)
+		\item Z druhého terminálu ukonči proces \texttt{top}. (kill)
+	\end{enumerate}
+\end{frame}
+	
+\end{document}
