@@ -119,7 +119,7 @@ sessions:
   - lesson: linuxadmin/hardware-basics    # TODO vytvořit základní info o hardware v počítači: cpu, ram, disk, síťová karta
   - lesson: linuxadmin/bash-exit-code
   - lesson: linuxadmin/process  # TODO procesy - ps, top, echo $$, pgrep
-  - lesson: linuxadmin/fd   # TODO vyhodit deskriptory, nechat jen Soubor ,(otevřené soubory procesu)?, stdin/out/err + přesměrování + /dev/null
+  - lesson: linuxadmin/fd
   - lesson: notes/signals   # TODO doupravit
   - lesson: notes/cron
   - lesson: hw/process-log

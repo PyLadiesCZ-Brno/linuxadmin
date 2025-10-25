@@ -1,4 +1,4 @@
-# Soubory a deskriptory
+# Soubory
 
 Co je to soubor?
 
@@ -133,286 +133,12 @@ Soubor pro terminál není zas tolik zvláštní: jakmile znáš jméno, může�
 > Jen to ukazuje jak věci fungují – „všechno je soubor“.
 
 
-### Procvičování v Pythonu
-
-Procvičme si to trochu v Pythonu.
-Budeš potřebovat textový editor a dva terminály.
-V tomto textu jim budu říkat A a B.
-
-> [note]
-> Budeme používat Python, který je zabudovaný přímo v systému.
-> Nevytvářej/neaktivuj si virtuální prostředí – pracuješ na virtuálním stroji,
-> to úplně stačí.
-
-V obou terminálech se přepni do adresáře,
-do kterého ukládáš soubory pro dnešní lekci.
-Jestli takový nemáš, vytvoř si ho.
-
-Otevři si textový editor a následující kód si ulož do souboru
-`soubory.py`:
-
-```python
-# soubory.py
-# modul, kde jsou zpřístupněné služby operačního systému
-import os
-import time
-
-# číslo právě běžícího procesu (ne Bashe, ale Pythonu)
-# Pokaždé, když spustíš soubory.py v příkazové řádce, se toto číslo změní
-print(os.getpid())
-
-# Nechme program 600 vteřin (10 minut) čekat.
-# To bude dost času na to, abychom mohli např. analyzovat otevřené soubory.
-time.sleep(600)
-```
-
-A v terminálu A program spusť.
-
-```console
-$ python soubory.py
-17342
-```
-
-Mělo by se ti vypsat číslo procesu (jiné, než v našem příkladu). 
-
-V terminálu B pusť příkaz:
-```console
-$ lsof -p <číslo procesu z terminálu A>
-COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF    NODE NAME
-python  6503 user  cwd    DIR    8,1     4096 1310722 /home/user
-python  6503 user  rtd    DIR    8,1     4096       2 /
-python  6503 user  txt    REG    8,1  4873376 5773466 /usr/bin/python3.7
-python  6503 user  mem    REG    8,1 11531024 5773943 /usr/lib/locale/locale-archive
-python  6503 user  mem    REG    8,1  1700792 7344916 /lib/x86_64-linux-gnu/libm-2.27.so
-python  6503 user  mem    REG    8,1   116960 7345025 /lib/x86_64-linux-gnu/libz.so.1.2.11
-(...)
-python  6503 user    0u   CHR  136,0      0t0       3 /dev/pts/0
-python  6503 user    1u   CHR  136,0      0t0       3 /dev/pts/0
-python  6503 user    2u   CHR  136,0      0t0       3 /dev/pts/0
-
-```
-Zkontroluj, jestli pod `txt` vidíš nějako verzi Pythonu.
-Vidíš? Skvěle, pojďme o kousek dál.
-
-V `soubory.py` změň poslední sekci – dopiš kus kódu, který otevře soubor:
-
-```python
-# soubory.py
-# modul, kde jsou zpřístupněné služby operačního systému
-import os   
-import time
-
-# číslo právě běžícího procesu (ne Bashe, ale Pythonu)
-# pokaždé, když spustíš soubory.py v příkazové řádce, se toto číslo změní
-print(os.getpid())
-
-# Tentokrát čekáme s otevřeným souborem:
-with open('soubory.py', encoding='utf-8') as soubor:
-    time.sleep(600)
-```
-Po uložení souboru ukonči program v terminálu A (<kbd>CTRL</kbd>+<kbd>C</kbd>)
-a spusť ho znovu. Vypíše se jiné číslo procesu.
-Do terminálu B zadej *aktualizovaný* příkaz `lsof -p <číslo procesu>`.
-Podívej se na poslední řádek výpisu. Vidíš tam něco nového?
-
-```console
-$ lsof -p 6604
-(...)
-python  6604 user    3r   REG    8,1      333 1314091 /home/user/bash/03/soubory.py
-```
-
-Měl by přibýt záznam o nově otevřeném souboru (`soubory.py`) s číslem `3r`.
-Tři je další zatím nevyužité číslo (po 0, 1, a 2);
-`r` indikuje soubor otevřený pro čtení.
-
-Řekl{{a}} jsi Pythonu, aby otevřel pro čtení soubor s vlastním programem.
-Protože příkaz `lsof` vypíše otevřené soubory procesu,
-vidíš ve výsledcích nově výsledek této operace.
-
-Zatím všechno v pohodě? Tak otevři jeden soubor pro čtení a nějaký jiný pro zápis. 
-Změn svůj program na příklad níže.
-
-```python
-# soubory.py
-# modul, kde jsou zpřístupněné služby operačního systému
-import os   
-import time
-
-# číslo právě běžícího procesu (ne Bashe, ale Pythonu)
-# pokaždé, když spustíš soubory.py v příkazové řádce, se toto číslo změní
-print(os.getpid())
-
-with open('soubory.py', encoding='utf-8') as soubor:
-    with open('jiny.txt', mode='w', encoding='utf-8') as soubor2:
-        print(soubor.fileno(), soubor2.fileno())
-        time.sleep(600)
-```
-
-Kromě PID se teď vypíší výsledky metody `fileno`.
-Jsou to deskriptory souborů – čísla která pro otevřené soubory používá systém,
-a která budou vidět i ve výstupu `lsof`.
-
-Ukonči běh předchozího programu v terminálu A (<kbd>CTRL</kbd>+<kbd>C</kbd>) a spusť soubor ještě jednou.
-V terminálu B spusť aktualizovaný příkaz `lsof`. 
-```console
-$ lsof -p 6904
-python  6904 user    0u   CHR  136,0      0t0       3 /dev/pts/0
-python  6904 user    1u   CHR  136,0      0t0       3 /dev/pts/0
-python  6904 user    2u   CHR  136,0      0t0       3 /dev/pts/0
-python  6904 user    3r   REG    8,1      373 1314108 /home/user/bash/03/soubory.py
-python  6904 user    4w   REG    8,1        0 1314053 /home/user/bash/03/jiny.txt
-```
-Výsledek doufám nepřekvapí.
-
-### Deskriptory
-
-Python nám v mnohém pomáhá, ale taky vzdaluje od systémové vrstvy.
-Pythonní objekty které vrací funkce `open` nejsou přesně totéž jako způsob,
-jakým soubory zpracovává operační systém. Dělají spoustu věcí navíc.
-
-My se chceme podívat, jak funguje vevnitř operační systém, nikoliv Pythonní zlepšováky.
-Proto si otevři tyto soubory ještě jednou pomocí modulu `os`, který umožňuje dělat věci trošku víc „přímo“.
-
-Zaměň celý blok s `with` za tento kus kódu:
-```python
-fd1 = os.open("soubory.py", os.O_RDONLY)
-fd2 = os.open("jiny.txt", os.O_WRONLY)
-print(fd1, fd2)
-time.sleep(600)
-```
-
-Takto upravený program spusť v terminálu A. 
-Kromě nového čísla procesu bys měl(a) vidět na dalším řádku dvě čísla. U nás jsou to `3, 4`.
-
-```console
-$ python soubory.py
-19257
-3, 4
-```
-
-V terminálu B spusť opět příkaz `lsof` s novým číslem procesu a podívej se na dva poslední řádky.
-Deskriptory otevřených souborů by měly opět odpovídat číslům z terminálu A.
-
-> [note]
-> Poznámka pro zvídavé: pod složitým `os.O_RDONLY` a `os.O_WRONLY` se
-> skrývají jenom číselné konstanty `0` a `1`.
-> Systémové operace (např. `open`) používají číselné konstant, kterým byla pro
-> lepší čitelnost přiřazena krátká jména.
-
-> [note]
-> Pokud otevřeš pomocí pythonní funkce
-> `open`  neexistující soubor pro zápis, funkce soubor vytvoří a otevře ho.
-> Oproti tomu systémová funkce `os.open()` ho nevytvoří, ale zahlásí chybu.
-> Pokud se ti to stane, můžeš společně s `os.O_WRONLY` použít `os.O_CREAT`.
-> Kombinují se pomocí operátoru `|`:
->
-> ```console
-> os.open('jiny.txt', os.O_WRONLY | os.O_CREAT)
-> ```
-> Anebo můžeš soubor vytvořit v terminálu pomocí`touch jiny.txt`.
-
-
-Přidej do pythonního souboru pod řádky, kde soubory otevíráš, tento řádek:
-```python
-print(os.read(fd1, 10))
-```
-Tento řádek načte prvních 10 bajtů ze souboru `soubory.py` a vypíše je do terminálu. 
-V terminálu A spusť `soubory.py`.
-V našem případě výstup vypadá takto:
-```console
-$ python soubory.py
-20019
-b'# soubory.'
-3, 4
-```
-
-Do souboru můžeš i něco napsat.
-Pozor, to co zapisuješ (a čteš) není Pythonní řetězec (text), ale bajty.
-Když se ale omezíš na anglickou abecedu, hlavní rozdíl mezi nimi je zápis
-s `b` na začátku.
-
-Přidej za předchozí řádek tento kód, který do `jiny.txt` zapíše 4 písmenka.
-
-```python
-os.write(fd2, b'abcd\n') 
-```
-
-Nezapomeň na konec dát `\n`, nový řádek, aby se pak text hezky vypisoval.
-Když teď spustíš program v terminálu A a v terminálu B vypíšeš obsah souboru `jiny.txt` pomocí programu `cat`, měl by se ti zobrazit text "abcd".
-```console
-$ cat jiny.txt 
-abcd
-```
-
-Jak víš z kurzu Pythonu, otevřené soubory je dobré vždy na konci manipulace zavřít.
-Tak to pojď udělat: na konec, před `time.sleep`, dopiš:
-
-```python
-os.close(fd1)
-os.close(fd2)
-```
-
-
-### Standardní deskriptory
-
-Celou dobu pracuješ se soubory otevřenými pythonním programem, tedy `3` a `4`. 
-Určitě tě zajímá, co jsou vlastně soubory označení `0`, `1`, `2`.
-
-V textovém editoru smaž `time.sleep` a místo toho dopiš řádky:
-
-```python
-os.write(1, b'Tohle jde do souboru 1\n')
-os.write(2, b'Tohle jde do souboru 2\n')
-```
-
-Kam se to vypíše?
-
-{% filter solution %}
-Všechno se to vypíše do terminálu, ve kterém program spouštíš.
-
-```console
-$ python soubory.py 
-7102
-3 4
-b'# soubory.'
-Tohle jde do souboru 1
-Tohle jde do souboru 2
-```
-{% endfilter %}
-
-Funguje to?
-Tak zkus přesměrovat výstup `soubory.py` do `jiny.txt`:
-```console
-$ python soubory.py > jiny.txt
-Tohle jde do souboru 2
-$ cat jiny.txt 
-Tohle jde do souboru 1
-7167
-3 4
-b'## soubory'
-```
-Když se podíváš do souboru `jiny.txt`, najdeš v něm text *Tohle jde do souboru 1*.
-
-Pokud to tam máš, připiš do programu ještě poslední řádek.
-
-```python
-print(os.read(0, 10))
-```
-
-Spusť ho v terminálu A bez přesměrování.
-
-```console
-$ python soubory.py
-```
-
-Tdyž teď něco napíšeš do terminálu, Python vypíše prvních 10 bajtů tvého textu.
-
-Co se tady děje?
+### Chybový výstup
 
 Tyto tři soubory, `0`, `1` a `2`, má každý proces otevřené.
 
 `0` je náš starý známý *standardní vstup*.
-Když nepřesměrováváš, je to terminál: ťe se to co napíšeš na klávesnici.
+Když nepřesměrováváš, je to terminál: čte se to co napíšeš na klávesnici.
 Ale může to být i jiný soubor – třeba následující `grep` má pod
 číslem 0 otevřený soubor `soubory.py`:
 
@@ -423,7 +149,6 @@ grep print < soubory.py
 `1` je standardní výstup – místo, kam program píše informace,
 které chce předat světu.
 
-### Chybový výstup
 
 `2` je ale nové: je to standardní *chybový* výstup
 (angl. *standard error stream*, *stderr*), místo,
@@ -478,49 +203,10 @@ error: unsupported option (BSD syntax)
 
 ### Přesměrovat všechno
 
-Vraťme se na chvíli k Pythonu.
-
-V terminálu A spusť aktuální program.
-
-```console
-$ python soubory.py
-7305
-3 4
-b'## soubory'
-Tohle jde do souboru 1
-Tohle jde do souboru 2
-```
-
-Měly by se ti vypsat všechny tyto informace na terminál. 
-
-A co se stane, když přesměruješ výstup programu a pak zmáčkneš <kbd>Ctrl</kbd>+<kbd>C</kbd>?
-```console
-$ python soubory.py > jiny.txt
-Tohle jde do souboru 2
-Traceback (most recent call last):
-  File "soubory.py", line 21, in <module>
-    print(os.read(0, 10))
-KeyboardInterrupt
-```
-
-Výstup – všechno kromě chybového výstupu – je v souboru `jiny.txt`.
-Chybová hláška ale jde do chybového výstupu, tedy stále do terminálu.
-
 Co kdybys ale přece jen chtěl{{a}} přesměrovat ten druhý, chybový, výstup?
 Existuje na to speciální operátor `2>` - tedy přesměrování souboru číslo 2.
 ```console
-$ python soubor.py 2> jiny.txt
-7388
-3 4
-b'## soubory'
-Tohle jde do souboru 1
-^C
-$ cat jiny.txt 
-Tohle jde do souboru 2
-Traceback (most recent call last):
-  File "soubory.py", line 21, in <module>
-    print(os.read(0, 10))
-KeyboardInterrupt
+$ $ cp a b 2> jiny.txt
 ```
 
 #### Přesměrování obojího
@@ -528,44 +214,32 @@ KeyboardInterrupt
 Můžeš přesměrovat i oba výstupy:
 
 ```console
-$ python soubory.py > vystup.txt 2> chyby.txt
-^C$ cat vystup.txt 
-Tohle jde do souboru 1
-7423
-3 4
-b'## soubory'
-$ cat chyby.txt 
-Tohle jde do souboru 2
-Traceback (most recent call last):
-  File "soubory.py", line 21, in <module>
-    print(os.read(0, 10))
-KeyboardInterrupt
+$ ls existuje.txt neexistuje.txt > vystup.txt 2> chyby.txt
 ```
 
 Když přesměrováváš do různých souborů, tak nezáleží na pořadí `>` a `2>`.
 
 Když ale použiješ dvakrát stejný soubor (např. `> jiny.txt 2> jiny.txt`),
 narazíš na problém: v souboru se většinou objeví jen jeden z výsledků.
-Když je jeden soubor otevřený pro čtení dvakrát, a zapisuje se do obou
-deskriptorů zároveň, obvykle „vyhraje“ jen jeden.
+Když je jeden soubor otevřený pro čtení dvakrát, a zapisuje se do obou zároveň, obvykle „vyhraje“ jen jeden.
 
 Bash má na řešení této situace speciální operátor:
 
 ```console
-$python soubory.py > jiny.txt 2>&1
-#                               ^--- chybový směruje tam, kam první
+$ ls existuje.txt neexistuje.txt > jiny.txt  2>&1
+#                                             ^--- chybový směruje tam, kam první
 ```
 
 Kdyby v příkazu nebyl `&`, výstup se přesměruje do souboru s názvem `1`.
-`&1` ale „odkazuje“ na deskriptor 1, tedy `jiny.txt`.
+`&1` ale „odkazuje“ na soubor 1, tedy `jiny.txt`.
 
 Tady už záleží v jakém pořadí se skládají příkazy, protože tohle fungovat nebude:
 
 ```
-#                  ,-------- 1. přesměruje stderr na stdout, tedy na terminál
-#                  |    ,--- 2. přesměruje stdout do souboru
-#                  ↓    ↓
-$python soubory.py 2>&1 > jiny
+#                                ,-------- 1. přesměruje stderr na stdout, tedy na terminál
+#                                |   ,--- 2. přesměruje stdout do souboru
+#                                ↓   ↓
+$ls existuje.txt neexistuje.txt 2>&1 > jiny.txt
 ```
 
 Proto *stderr* půjde na terminál a *stdout* do souboru.
@@ -573,70 +247,12 @@ Proto *stderr* půjde na terminál a *stdout* do souboru.
 
 ### Přesměrování vstupu
 
-Pro úplnost si ukážeme i přesměrování standardnho vstupu.
+Pro úplnost si ukážeme i přesměrování standardního vstupu.
 
 ```console
-$ python soubory.py < jiny.txt
-7481
-3 4
-b'## soubory'
-Tohle jde do souboru 1
-Tohle jde do souboru 2
-b'abcd\n jde '
+$ grep print < soubor.py
+print("Hello")
 ```
-
-Poslední řádek je vstup načtený ze souboru `jiny.txt`.
-Podívej se na soubor 0 ve výpisu `lsof` – standardní vstup je nastaven na
-„opravdový“ soubor na disku.
-
-```console
-$ lsof -p 7481
-...
-python  7481 user 0r REG 253,0 150 299463294 /home/user/bash/03/jiny.txt
-...
-```
-
-Když data „přitečou“ rourou, bude standardní vstup vypadat ještě trochu jinak.
-```console
-$ cat jiny.txt | python soubory.py
-7485
-3 4
-b'## soubory'
-Tohle jde do souboru 1
-Tohle jde do souboru 2
-b'abcd\n jde '
-```
-
-Podívej se na výpis `lsof`, na soubor číslo 0:
-
-```console
-$ lsof -p 7485
-...
-python  7485 user 0r FIFO 0,12 0t0 1352745 pipe
-...
-```
-
-Ono `pipe` znamená *roura*.
-Stejně jako terminál (např. `/dev/pts/0`) není obsah roury uložený na disku
-(data „proudí“ přímo z jednoho procesu do druhého).
-Na rozdíl od terminálu ale roura ani nemá jméno: nemůžeš udělat
-`echo Ahoj > /dev/pts/0` jako u terminálu.
-S rourou může pracovat jen proces, který už ji má k dispozici.
-V tomto případě rouru vytvořil Bash, jeden její konec dal procesu `cat`
-a druhý procesu `python`.
-
-> [note] Odbočka pro zvídavé
-> Přesměrování funguje i s jinými čísly než 2, a to i se vstupem.
-> Například:
-> ```
-> console $ python soubory.py 8< jiny.txt 
-> ```
-> 
-> Soubor `jiny.txt` se takto předá Pythonu na zpracování jako `8r` (když
-> se podíváš do `lsof`).
-> Dá se pak přečíst např. pomocí `os.read(8, 10)`.
-> Jen čísla 0, 1, 2 mají určený význam, ostatní můžeš používat dle libosti.
-> Jen pozor že `open` nebo `os.open` si nějaké číslo „zamluví“ pro sebe.
 
 
 ## Zahození výstupu
@@ -646,7 +262,7 @@ souboru, který si nic z toho co se do něj píše, neukládá.
 Jmenuje se `/dev/null`.
 
 ```console
-$ python soubory.py 2> /dev/null
+$ ls existuje.txt neexistuje.txt 2> /dev/null
 ```
 
 Celý chybový výstup se tak „vyhodí“.
