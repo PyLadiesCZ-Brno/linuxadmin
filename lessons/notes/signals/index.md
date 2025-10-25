@@ -1,6 +1,3 @@
-> [warning]
-> Tohle jsou jen poznámky, ne materiály k samostudiu.
-
 # Signály
 
 Signál (angl. *signal*) je způsob, jak poslat „upozornění“ běžícímu procesu.
@@ -12,9 +9,8 @@ druh signálu.
 Větší „zprávy“ se musí procesům posílat jiným způsobem (třeba souborem,
 rourou nebo přes síť), ale i v těchto případech se dá signálem upozornit
 že si proces má nějakou větší zprávu přečíst.
-Například `httpd` čte konfiguraci ze spousty souborů,
-ale signálem se dá přimět, aby je všechny načetl znova.
-Příkaz `systemctl reload httpd` dělá právě tohle: pošle HTTP serveru signál.
+Typickým příkladem je ukončení probíhajícího procesu pomocí `Ctrl+C`, kdy
+pošleme procesu signál žádající o jeho ukončení.
 
 
 ## Přijetí signálu
@@ -93,13 +89,13 @@ Podobně si můžeš vyzkoušet jiné signály, třeba:
 
 * `SIGINT` se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 * `SIGTERM` posílá `kill` když mu nezadáš jiný signál.
-* `SIGKILL` (9) se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>\</kbd>;
+* `SIGKILL` (9) se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>\\</kbd>;
   proces se „natvrdo“ ukončí.
   U tohoto signálu si procesy nemůžou nastavit jiné chování:
   proces se vždy ukončí.
 * `SIGSTOP` se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>z</kbd>;
   proces se pozastaví.
-  Podobně jako u `SIGKILL` si i u tohoto signálu si procesy nemůžou nastavit
+  Podobně jako u `SIGKILL` si i u tohoto signálu procesy nemůžou nastavit
   jiné chování.
 * `SIGCONT` posílá příkaz `fg`; pozastavený proces se obnoví.
 
@@ -140,30 +136,3 @@ Tento program reaguje na `SIGUSR1` a `SIGUSR2`, tedy např. `kill -SIGUSR1 $pid`
 Můžeš si ověřit, že pro `SIGKILL` a `SIGSTOP` funkce `signal.signal` selže.
 A taky že předefinování `SIGINT` přenastaví chování
 <kbd>Ctrl</kbd>+<kbd>C</kbd> – právě pro takové situace se hodí `SIGKILL`.
-
-
-
-## Signály a démoni
-
-Démoni systémových služeb často reagují na signály.
-Když se podíváš na `systemctl cat httpd` a `systemctl cat sshd`,
-uvidíš řádky jako:
-
-* `KillSignal=SIGWINCH` – služba se ukončuje (`stop`) pomocí signálu
-  `SIGWINCH`, po kterém se server ukončí „elegantně“: přestane přijímat
-  nová spojení, ta co jsou otevřená zpracuje, a až potom se ukončí.
-* `ExecReload=/usr/sbin/httpd $OPTIONS -k graceful` – tady se pro `reload`
-  volá speciální příkaz, který ale ve výsledku nedělá nic moc jiného než
-  poslání signálu `SIGUSR1`.
-  Když server tenhle signál dostane, dokončí otevřená spojení, ale mezitím
-  znovu načte konfiguraci a nová spojení začne zpracovávat s novým nastavením.
-* `ExecReload=/bin/kill -HUP $MAINPID` – pro `reload` tohoto serveru se pošle
-  signál `SIGHUP`, který server interpretuje jako žádost o to, aby znovu načetl
-  nastavení.
-
-Co dělá který signál, to se dozvíš v dokumentaci konkrétního serveru.
-Signálů je málo, a tak se často „zneužívají“ – třeba `SIGWINCH` by se formálně
-měl posílat když se změní velikost terminálu; programy jako `vim` nebo
-`top` si po jeho přijetí zjistí novou velikost a překreslí výstup.
-Ale Apache `httpd` ho používá pro ukončení.
-
