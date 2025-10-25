@@ -1,0 +1,4 @@
+/.arca/
+/_compiled/
+venv
+*.cache
