@@ -291,3 +291,27 @@ Na prvních unixových systémech to bylo skvělé – každý si mohl jednoduš
 Pak se zjistilo, že je to bezpečnostní riziko, protože se podle toho dá velmi jednoduše zjistit, jestli uživatel daného jména existuje na tom počítači a zkoušet se na ně připojit.
 Z tohoto důvodu je to standardně vypnuté, ale v případě potřeby můžeš tuto funkcionalitu opět zapnout.
 
+
+## Signály a démoni
+
+Démoni systémových služeb často reagují na signály.
+Když se podíváš na `systemctl cat httpd` a `systemctl cat sshd`,
+uvidíš řádky jako:
+
+* `KillSignal=SIGWINCH` – služba se ukončuje (`stop`) pomocí signálu
+  `SIGWINCH`, po kterém se server ukončí „elegantně“: přestane přijímat
+  nová spojení, ta co jsou otevřená zpracuje, a až potom se ukončí.
+* `ExecReload=/usr/sbin/httpd $OPTIONS -k graceful` – tady se pro `reload`
+  volá speciální příkaz, který ale ve výsledku nedělá nic moc jiného než
+  poslání signálu `SIGUSR1`.
+  Když server tenhle signál dostane, dokončí otevřená spojení, ale mezitím
+  znovu načte konfiguraci a nová spojení začne zpracovávat s novým nastavením.
+* `ExecReload=/bin/kill -HUP $MAINPID` – pro `reload` tohoto serveru se pošle
+  signál `SIGHUP`, který server interpretuje jako žádost o to, aby znovu načetl
+  nastavení.
+
+Co dělá který signál, to se dozvíš v dokumentaci konkrétního serveru.
+Signálů je málo, a tak se často „zneužívají“ – třeba `SIGWINCH` by se formálně
+měl posílat když se změní velikost terminálu; programy jako `vim` nebo
+`top` si po jeho přijetí zjistí novou velikost a překreslí výstup.
+Ale Apache `httpd` ho používá pro ukončení.
