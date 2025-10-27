@@ -120,7 +120,7 @@ sessions:
   - lesson: linuxadmin/bash-exit-code
   - lesson: linuxadmin/process  # TODO procesy - ps, top, echo $$, pgrep
   - lesson: linuxadmin/fd
-  - lesson: notes/signals   # TODO doupravit
+  - lesson: notes/signals
   - lesson: notes/cron
   - lesson: hw/process-log
     type: homework
