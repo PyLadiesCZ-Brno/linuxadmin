@@ -1372,6 +1372,7 @@
                             "instalace_httpd",
                             "log",
                             "restart_a_reload",
+                            "signaly_a_demoni",
                             "sluzby_a_demoni",
                             "sprava_sluzby_httpd",
                             "start_stop_enable_disable",
@@ -1384,6 +1385,7 @@
                             "#instalace_httpd",
                             "#log",
                             "#restart_a_reload",
+                            "#signaly_a_demoni",
                             "#sluzby_a_demoni",
                             "#sprava_sluzby_httpd",
                             "#start_stop_enable_disable",
@@ -2567,7 +2569,6 @@
                             "posilani_signalu",
                             "prijeti_signalu",
                             "signaly",
-                            "signaly_a_demoni",
                             "signaly_vpythonu"
                         ],
                         "license": "cc-by-sa-40",
@@ -2576,7 +2577,6 @@
                             "#posilani_signalu",
                             "#prijeti_signalu",
                             "#signaly",
-                            "#signaly_a_demoni",
                             "#signaly_vpythonu"
                         ],
                         "slug": "index",
