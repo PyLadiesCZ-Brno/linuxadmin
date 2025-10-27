@@ -1567,39 +1567,27 @@
                         },
                         "ids": [
                             "chybovy_vystup",
-                            "deskriptory",
                             "otevrene_soubory_procesu",
                             "presmerovani_obojiho",
                             "presmerovani_vstupu",
                             "presmerovat_vsechno",
-                            "procvicovani_v_pythonu",
-                            "solution-0",
-                            "soubory_a_deskriptory",
-                            "standardni_deskriptory",
+                            "soubory",
                             "terminal_jako_soubor",
                             "zahozeni_vystupu"
                         ],
                         "license": "cc-by-sa-40",
                         "links": [
                             "#chybovy_vystup",
-                            "#deskriptory",
                             "#otevrene_soubory_procesu",
                             "#presmerovani_obojiho",
                             "#presmerovani_vstupu",
                             "#presmerovat_vsechno",
-                            "#procvicovani_v_pythonu",
-                            "#soubory_a_deskriptory",
-                            "#standardni_deskriptory",
+                            "#soubory",
                             "#terminal_jako_soubor",
-                            "#zahozeni_vystupu",
-                            "naucse:solution?solution=0"
+                            "#zahozeni_vystupu"
                         ],
                         "slug": "index",
-                        "solutions": [
-                            {
-                                "content": "<p>Všechno se to vypíše do terminálu, ve kterém program spouštíš.</p>\n<div class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>python<span class=\"w\"> </span>soubory.py<span class=\"w\"> </span>\n<span class=\"go\">7102</span>\n<span class=\"go\">3 4</span>\n<span class=\"go\">b&#39;# soubory.&#39;</span>\n<span class=\"go\">Tohle jde do souboru 1</span>\n<span class=\"go\">Tohle jde do souboru 2</span>\n</pre></div>"
-                            }
-                        ],
+                        "solutions": [],
                         "source_file": "lessons/linuxadmin/fd/index.md",
                         "title": "Soubory a deskriptory",
                         "vars": {
