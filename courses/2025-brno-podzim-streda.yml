@@ -121,7 +121,6 @@ sessions:
   - lesson: linuxadmin/process  # TODO procesy - ps, top, echo $$, pgrep
   - lesson: linuxadmin/fd
   - lesson: notes/signals
-  - lesson: notes/cron
   - lesson: hw/process-log
     type: homework
 
@@ -176,6 +175,7 @@ sessions:
     url: null
   - lesson: linuxadmin/set-firewall
   - lesson: linuxadmin/httpd-service
+  - lesson: notes/cron
   - lesson: linuxadmin/virtualbox-networking
     type: link
   - lesson: linuxadmin/ssh
