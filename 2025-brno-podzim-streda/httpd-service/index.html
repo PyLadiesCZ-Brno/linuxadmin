@@ -234,3 +234,27 @@ Nastavuje, že pokud má uživatel vytvořený adresář <code>public_html</code
 Na prvních unixových systémech to bylo skvělé – každý si mohl jednoduše dát na web co chtěl.
 Pak se zjistilo, že je to bezpečnostní riziko, protože se podle toho dá velmi jednoduše zjistit, jestli uživatel daného jména existuje na tom počítači a zkoušet se na ně připojit.
 Z tohoto důvodu je to standardně vypnuté, ale v případě potřeby můžeš tuto funkcionalitu opět zapnout.</p>
+<h2 id="signaly_a_demoni">Signály a démoni
+<a href="#signaly_a_demoni" class="header-link">#</a>
+</h2>
+<p>Démoni systémových služeb často reagují na signály.
+Když se podíváš na <code>systemctl cat httpd</code> a <code>systemctl cat sshd</code>,
+uvidíš řádky jako:</p>
+<ul>
+<li><code>KillSignal=SIGWINCH</code> – služba se ukončuje (<code>stop</code>) pomocí signálu
+<code>SIGWINCH</code>, po kterém se server ukončí „elegantně“: přestane přijímat
+nová spojení, ta co jsou otevřená zpracuje, a až potom se ukončí.</li>
+<li><code>ExecReload=/usr/sbin/httpd $OPTIONS -k graceful</code> – tady se pro <code>reload</code>
+volá speciální příkaz, který ale ve výsledku nedělá nic moc jiného než
+poslání signálu <code>SIGUSR1</code>.
+Když server tenhle signál dostane, dokončí otevřená spojení, ale mezitím
+znovu načte konfiguraci a nová spojení začne zpracovávat s novým nastavením.</li>
+<li><code>ExecReload=/bin/kill -HUP $MAINPID</code> – pro <code>reload</code> tohoto serveru se pošle
+signál <code>SIGHUP</code>, který server interpretuje jako žádost o to, aby znovu načetl
+nastavení.</li>
+</ul>
+<p>Co dělá který signál, to se dozvíš v dokumentaci konkrétního serveru.
+Signálů je málo, a tak se často „zneužívají“ – třeba <code>SIGWINCH</code> by se formálně
+měl posílat když se změní velikost terminálu; programy jako <code>vim</code> nebo
+<code>top</code> si po jeho přijetí zjistí novou velikost a překreslí výstup.
+Ale Apache <code>httpd</code> ho používá pro ukončení.</p>
