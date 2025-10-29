@@ -3460,11 +3460,6 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "notes/cron",
-                        "title": "Cron",
-                        "type": "lesson"
-                    },
-                    {
                         "lesson_slug": "hw/process-log",
                         "title": "Úkol - Zápis údajů o procesech",
                         "type": "homework"
@@ -3577,6 +3572,11 @@
                     {
                         "lesson_slug": "linuxadmin/httpd-service",
                         "title": "Webový server",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "notes/cron",
+                        "title": "Cron",
                         "type": "lesson"
                     },
                     {
