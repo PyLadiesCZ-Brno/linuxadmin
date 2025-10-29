@@ -1871,37 +1871,6 @@
                 "static_files": {},
                 "title": "Hledání: grep a find"
             },
-            "linuxadmin/hardware-basics": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "napsala Eliška Jégrová, 2025"
-                        ],
-                        "content": {
-                            "path": "hardware-basics/index.html"
-                        },
-                        "ids": [
-                            "hardware"
-                        ],
-                        "license": "cc-by-sa-40",
-                        "links": [
-                            "#hardware"
-                        ],
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/linuxadmin/hardware-basics/index.md",
-                        "title": "Hardware",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true,
-                            "user-gender": "f"
-                        }
-                    }
-                },
-                "source_file": "lessons/linuxadmin/hardware-basics/info.yml",
-                "static_files": {},
-                "title": "Hardware"
-            },
             "linuxadmin/httpd-service": {
                 "pages": {
                     "index": {
@@ -3434,11 +3403,6 @@
             {
                 "date": "2025-10-22",
                 "materials": [
-                    {
-                        "lesson_slug": "linuxadmin/hardware-basics",
-                        "title": "Hardware",
-                        "type": "lesson"
-                    },
                     {
                         "lesson_slug": "linuxadmin/bash-exit-code",
                         "title": "Návratová hodnota příkazů",
