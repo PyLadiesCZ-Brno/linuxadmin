@@ -1,6 +1,41 @@
 <h1 id="roury_a_filtry">Roury a filtry
 <a href="#roury_a_filtry" class="header-link">#</a>
 </h1>
+<h2 id="vybirani_vice_souboru_pomoci_zastupnych_znaku">Vybírání více souborů pomocí zástupných znaků
+<a href="#vybirani_vice_souboru_pomoci_zastupnych_znaku" class="header-link">#</a>
+</h2>
+<p>Hvězdička, <code>*</code>, je v Bashi <em>žolík</em> neboli <em>zástupný znak</em>, který odpovídá
+libovolnému počtu (0 nebo víc) znaků.
+Budeš-li v adresáři <code>data-shell/molecules</code>, pak „šablona“ <code>*.pdb</code> odpovídá
+souborům <code>ethane.pdb</code>, <code>propane.pdb</code> a všem ostatním, které končí na <code>.pdb</code>.
+Ale <code>p*.pdb</code> odpovídá jen <code>pentane.pdb</code> a <code>propane.pdb</code> – těm, které zároveň
+začínají písmenem <code>p</code>:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/Dokumenty/data-shell/molecules
+<span class="gp">$ </span>ls<span class="w"> </span>*.pdb
+<span class="go">cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</span>
+<span class="gp">$ </span>ls<span class="w"> </span>p*.pdb
+<span class="go">pentane.pdb  propane.pdb</span>
+</pre></div><p>Další zástupný znak je otazník, <code>?</code>, který odpovídá jen jednomu znaku.
+Takže šablona  <code>?ethane.pdb</code> odpovídá jen jménu <code>methane.pdb</code> – na rozdíl od
+<code>*ethane.pdb</code>, cemuž odpovídá jak <code>methane.pdb</code>, tak i <code>ethane.pdb</code>.</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>?ethane.pdb
+<span class="go">methane.pdb</span>
+<span class="gp">$ </span>ls<span class="w"> </span>*ethane.pdb
+<span class="go">ethane.pdb  methane.pdb</span>
+</pre></div><p>Zástupných znaků můžeš použít víc: <code>???ane.pdb</code> odpovídá třem znakům
+následovaným <code>ane.pdb</code>, tedy <code>cubane.pdb ethane.pdb octane.pdb</code>.</p>
+<p>Když Bash zástupné znaky zpracovává, vytvoří seznam odpovídajících souborů
+ještě předtím, než spustí příslušný příkaz.
+Když neodpovídá <em>žádný</em> soubor, pošle příkazu argument tak, jak je:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>*.pdf
+<span class="go">ls: nelze přistoupit k &#39;*.pdf&#39;: Adresář nebo soubor neexistuje</span>
+</pre></div><p>Když ale nějaké názvy odpovídají, dostane příkaz tyto příkazy jako jednotlivé
+argumenty.
+Zpracovává je tedy Bash; samotný příkaz jako <code>ls</code> nebo <code>cp</code> nemá
+k původní šabloně přístup.</p>
+<h2 id="dalsi_priklad">Další příklad
+<a href="#dalsi_priklad" class="header-link">#</a>
+</h2>
 <p>Teď, když znáš základní příkazy, si ukážeme nejmocnější vlastnost shellu:
 možnost příkazy jednoduše spojovat dohromady.
 Začni opět v adresáři <code>molecules</code>, kde je několik souborů s popisem molekul:</p>

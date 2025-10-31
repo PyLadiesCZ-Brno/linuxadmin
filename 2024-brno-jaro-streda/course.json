@@ -93,12 +93,15 @@
                         "ids": [
                             "co_uz_mame",
                             "kopirovani_souboru",
+                            "kopirovani_svice_cestami",
                             "odstranovani_souboru_a_adresaru",
                             "pojmenovavani_souboru_a_adresaru",
                             "prace_se_soubory_a_adresari",
                             "presouvani_do_adresare",
                             "presouvani_souboru_a_adresaru",
                             "presouvani_vice_souboru",
+                            "solution-0",
+                            "solution-1",
                             "vytvareni_souboru",
                             "vytvoreni_adresare"
                         ],
@@ -106,6 +109,7 @@
                         "links": [
                             "#co_uz_mame",
                             "#kopirovani_souboru",
+                            "#kopirovani_svice_cestami",
                             "#odstranovani_souboru_a_adresaru",
                             "#pojmenovavani_souboru_a_adresaru",
                             "#prace_se_soubory_a_adresari",
@@ -113,10 +117,19 @@
                             "#presouvani_souboru_a_adresaru",
                             "#presouvani_vice_souboru",
                             "#vytvareni_souboru",
-                            "#vytvoreni_adresare"
+                            "#vytvoreni_adresare",
+                            "naucse:solution?solution=0",
+                            "naucse:solution?solution=1"
                         ],
                         "slug": "index",
-                        "solutions": [],
+                        "solutions": [
+                            {
+                                "content": "<p>Zkopíruje soubory <code>amino-acids.txt</code> a <code>animals.txt</code>, tj. všechny argumenty\nkromě posledního, do adresáře <code>zaloha</code>.\nVytvoří tedy soubory <code>zaloha/amino-acids.txt</code> a <code>zaloha/animals.txt</code>.</p>"
+                            },
+                            {
+                                "content": "<p>Zkopíroval by první dva soubory (<code>amino-acids.txt</code> a <code>animals.txt</code>)\ndo adresáře <code>morse.txt/</code>.\nJenže <code>morse.txt</code> není adresářem, takže příkaz selže.\nDo souboru nelze dát další soubory.</p>\n<div class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>cp<span class=\"w\"> </span>amino-acids.txt<span class=\"w\"> </span>animals.txt<span class=\"w\"> </span>morse.txt\n<span class=\"go\">cp: cíl &#39;morse.txt&#39; není adresářem</span>\n</pre></div>"
+                            }
+                        ],
                         "source_file": "lessons/carpentry-unix/create/index.md",
                         "title": "Práce se soubory a adresáři",
                         "vars": {
@@ -243,6 +256,7 @@
                             "path": "pipefilter/index.html"
                         },
                         "ids": [
+                            "dalsi_priklad",
                             "datove_potrubi",
                             "hadi_odbocka",
                             "nejmensi_molekula",
@@ -251,10 +265,12 @@
                             "radky_a_podvodnici",
                             "razeni",
                             "roury_a_filtry",
-                            "stejny_vstup_a_vystup"
+                            "stejny_vstup_a_vystup",
+                            "vybirani_vice_souboru_pomoci_zastupnych_znaku"
                         ],
                         "license": "cc-by-sa-40",
                         "links": [
+                            "#dalsi_priklad",
                             "#datove_potrubi",
                             "#hadi_odbocka",
                             "#nejmensi_molekula",
@@ -264,6 +280,7 @@
                             "#razeni",
                             "#roury_a_filtry",
                             "#stejny_vstup_a_vystup",
+                            "#vybirani_vice_souboru_pomoci_zastupnych_znaku",
                             "naucse:static?filename=cat-file-arg.svg",
                             "naucse:static?filename=cat-from-file.svg",
                             "naucse:static?filename=cat.svg",
@@ -1896,13 +1913,8 @@
                             "hlavicky_a_ocasky",
                             "mene_je_vice",
                             "opakovaci_kocka",
-                            "opakovani_kopirovani_svice_cestami",
                             "pocitani_radku",
-                            "prace_s_vice_soubory_a_adresari",
                             "proc_codecatcode",
-                            "solution-0",
-                            "solution-1",
-                            "vybirani_vice_souboru_pomoci_zastupnych_znaku",
                             "vypisovaci_kocka",
                             "vypisovani_souboru"
                         ],
@@ -1911,25 +1923,13 @@
                             "#hlavicky_a_ocasky",
                             "#mene_je_vice",
                             "#opakovaci_kocka",
-                            "#opakovani_kopirovani_svice_cestami",
                             "#pocitani_radku",
-                            "#prace_s_vice_soubory_a_adresari",
                             "#proc_codecatcode",
-                            "#vybirani_vice_souboru_pomoci_zastupnych_znaku",
                             "#vypisovaci_kocka",
-                            "#vypisovani_souboru",
-                            "naucse:solution?solution=0",
-                            "naucse:solution?solution=1"
+                            "#vypisovani_souboru"
                         ],
                         "slug": "index",
-                        "solutions": [
-                            {
-                                "content": "<p>Zkopíruje soubory <code>amino-acids.txt</code> a <code>animals.txt</code>, tj. všechny argumenty\nkromě posledního, do adresáře <code>zaloha</code>.\nVytvoří tedy soubory <code>zaloha/amino-acids.txt</code> a <code>zaloha/animals.txt</code>.</p>"
-                            },
-                            {
-                                "content": "<p>Zkopíroval by první dva soubory (<code>amino-acids.txt</code> a <code>animals.txt</code>)\ndo adresáře <code>morse.txt/</code>.\nJenže <code>morse.txt</code> není adresářem, takže příkaz selže.\nDo souboru nelze dát další soubory.</p>\n<div class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span>cp<span class=\"w\"> </span>amino-acids.txt<span class=\"w\"> </span>animals.txt<span class=\"w\"> </span>morse.txt\n<span class=\"go\">cp: cíl &#39;morse.txt&#39; není adresářem</span>\n</pre></div>"
-                            }
-                        ],
+                        "solutions": [],
                         "source_file": "lessons/linuxadmin/output-files/index.md",
                         "title": "Vypisování souborů",
                         "vars": {

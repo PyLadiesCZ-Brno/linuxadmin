@@ -268,7 +268,46 @@ Protože se takhle dá rychle zaplnit disk, potřebuješ k tomu přepínač
 <span class="go">clanek_archiv:</span>
 <span class="go">kap1  notes.txt  plan.txt</span>
 </pre></div><div class="admonition note"><p>Příkaz <code>mv</code> takový přepínač nemá: pouhým přesouváním si disk nezaplníš.</p>
-</div><h2 id="odstranovani_souboru_a_adresaru">Odstraňování souborů a adresářů
+</div><h2 id="kopirovani_svice_cestami">Kopírování s více cestami
+<a href="#kopirovani_svice_cestami" class="header-link">#</a>
+</h2>
+<p>Přepni se do adresáře <code>data-shell/data</code>.
+Co udělá příkaz níže?</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>zaloha
+<span class="gp">$ </span>cp<span class="w"> </span>amino-acids.txt<span class="w"> </span>animals.txt<span class="w"> </span>zaloha/
+</pre></div><div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <p>Zkopíruje soubory <code>amino-acids.txt</code> a <code>animals.txt</code>, tj. všechny argumenty
+<span></span>kromě posledního, do adresáře <code>zaloha</code>.
+<span></span>Vytvoří tedy soubory <code>zaloha/amino-acids.txt</code> a <code>zaloha/animals.txt</code>.</p>
+    </div>
+</div>
+
+<p>Co udělá příkaz níže?</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F
+<span class="go">amino-acids.txt  animals.txt  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt  zaloha/</span>
+<span class="gp">$ </span>cp<span class="w"> </span>amino-acids.txt<span class="w"> </span>animals.txt<span class="w"> </span>morse.txt
+</pre></div><div class="solution" id="solution-1">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=1"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <p>Zkopíroval by první dva soubory (<code>amino-acids.txt</code> a <code>animals.txt</code>)
+<span></span>do adresáře <code>morse.txt/</code>.
+<span></span>Jenže <code>morse.txt</code> není adresářem, takže příkaz selže.
+<span></span>Do souboru nelze dát další soubory.</p>
+<span></span><div class="highlight"><pre><span></span><span class="gp">$ </span>cp<span class="w"> </span>amino-acids.txt<span class="w"> </span>animals.txt<span class="w"> </span>morse.txt
+<span></span><span class="go">cp: cíl &#39;morse.txt&#39; není adresářem</span>
+<span></span></pre></div>
+    </div>
+</div>
+
+<h2 id="odstranovani_souboru_a_adresaru">Odstraňování souborů a adresářů
 <a href="#odstranovani_souboru_a_adresaru" class="header-link">#</a>
 </h2>
 <p>Mít dvě kopie souboru <code>plan.txt</code> nakonec nebude to nejlepší rozhodnutí
