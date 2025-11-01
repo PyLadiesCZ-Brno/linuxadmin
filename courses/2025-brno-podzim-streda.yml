@@ -128,8 +128,8 @@ sessions:
   date: 2025-10-29
   slug: descriptors
   materials:
-  - lesson: linuxadmin/env-var
   - lesson: linuxadmin/var-loop
+  - lesson: linuxadmin/env-var
   - lesson: carpentry-unix/loop-nelle
     type: link
   - lesson: linuxadmin/script
