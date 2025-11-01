@@ -2,3 +2,20 @@
 /_compiled/
 venv
 *.cache
+.idea/
+
+# LaTeX pomocné soubory (presentation/)
+presentation/**/*.aux
+presentation/**/*.log
+presentation/**/*.nav
+presentation/**/*.out
+presentation/**/*.snm
+presentation/**/*.synctex.gz
+presentation/**/*.toc
+presentation/**/*.vrb
+presentation/**/*.fls
+presentation/**/*.fdb_latexmk
+presentation/**/*.lof
+presentation/**/*.lot
+presentation/**/*.bcf
+presentation/**/*.run.xml
