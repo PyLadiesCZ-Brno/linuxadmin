@@ -1,0 +1,146 @@
+<h1 id="ukoly_bash_ii">Úkoly – Bash II
+<a href="#ukoly_bash_ii" class="header-link">#</a>
+</h1>
+<h2 id="1_grepovani_yamlu">1. Grepování yamlů
+<a href="#1_grepovani_yamlu" class="header-link">#</a>
+</h2>
+<p>Procvič si příkazy jako <code>ls</code>, <code>wc</code>, <code>grep</code> a jak je spojit dohromady.</p>
+<p>Stáhni a rozbal si tyto archivy s informacemi o komunitních akcích: kurzech/srazech PyLadies a srazech Pyvo.</p>
+<div class="highlight"><pre><code>$ wget -O pyladies-cz.zip https://github.com/PyLadiesCZ/pyladies.cz/archive/master.zip
+$ unzip pyladies-cz.zip
+$ wget -O pyvo-data.zip https://github.com/pyvec/pyvo-data/archive/master.zip
+$ unzip pyvo-data.zip</code></pre></div><p>Data si prohlédni a zjisti, co se v nich skrývá za informace.
+Zvlášť doporučuju prohlédnout soubor <code>pyvo-data-master/series/brno-pyvo/events/2018-10-25-casove.yaml</code>
+který je použit na stránce <a href="https://pyvo.cz/brno-pyvo/2018-10/">pyvo.cz/brno-pyvo/2018-10/</a>,
+a soubor <code>pyladies.cz-master/teams/brno.yml</code>
+který je použit na stránce <a href="https://pyladies.cz/brno/#team">pyladies.cz/brno/#team</a>.</p>
+<p>Použij základní shellové příkazy (ne Python) na zodpovězení otázek níže.
+Hledáš jen orientační hodnoty; nemusí to být na 100% přesné.</p>
+<div class="admonition note"><p>YAML soubory by se správně měly číst knihovnou na YAML, aby byla zachována struktura. Ty je ale ber jako &quot;čistý text&quot;, kde hledané informace jsou na řádcích ve tvaru <code>klíč: hodnota</code> (případně s nějakýma mezerama a/nebo pomlčkama navíc).
+Proto odpovědi nemusí být na 100% přesné.</p>
+<p>&quot;Zakomentované&quot; informace (začínající <code>#</code>) můžeš pro jednoduchost počítat
+taky. (I když jich je po COVIDu často víc než těch nezakomentovaných.)</p>
+</div><ol>
+<li>Kolik bylo Pyv v Brně?<ul>
+<li><em>Pro každý sraz existuje soubor.</em></li>
+</ul>
+</li>
+<li>Kolik bylo Pyv celkem?</li>
+<li>Z kolika přednášek na Pyvech jsou videa?  <em>(Předpokládej že každá přednáška může mít max. 1 video)</em><ul>
+<li><em>Videa jsou označena <code>video:</code></em></li>
+</ul>
+</li>
+<li>Kolik bylo kurzů/srazů PyLadies?<ul>
+<li><em>Srazy jsou v adresáři <code>meetups/</code> a každý má jméno, <code>name:</code></em></li>
+</ul>
+</li>
+<li>(Bonusová výzva) Z kolika Pyv jsou videa?</li>
+</ol>
+<h3 id="napoveda">Nápověda
+<a href="#napoveda" class="header-link">#</a>
+</h3>
+<p>Šablonami jako <code>adresar/*/podadresar/*</code> můžeš vybrat soubory z více adresářů.</p>
+<p>Příkaz <code>grep</code> má zajímavé přepínače <code>-r</code>, <code>-l</code>/<code>-L</code>, <code>-h</code>/<code>-H</code> a <code>-e</code>.</p>
+<h2 id="2_uniq">2. Uniq
+<a href="#2_uniq" class="header-link">#</a>
+</h2>
+<p>Příkaz <code>uniq</code> odstraní <em>po sobě jdoucí</em> duplikované řádky:</p>
+<div class="highlight"><pre><span></span>$ echo &#39;
+&gt; jedna
+&gt; dva
+&gt; dva
+&gt; tři
+&gt; tři
+&gt; tři
+&gt; jedna
+&gt; &#39; | uniq
+
+jedna
+dva
+tři
+jedna
+</pre></div><p>Často se používá <code>sort | uniq</code>, aby se stejné řádky z celého souboru dostaly k sobě.</p>
+<p>Použij <code>uniq</code> k zodpovězení těchto otázek:</p>
+<ol start="6">
+<li>Vypiš všechna místa konání Pyv (stačí mít v rámci každého řádku identifikátor jako <code>artbar</code>).</li>
+<li>Přidej informaci o tom, kolikrát na kterém místě Pyvo bylo.</li>
+</ol>
+<p>Příkaz <code>uniq</code> má zajímavý přepínač <code>-c</code>.</p>
+<h3 id="bonusova_vyzva">Bonusová výzva
+<a href="#bonusova_vyzva" class="header-link">#</a>
+</h3>
+<p>Existuje zajímavý příkaz <code>cut</code>, který má zajímavé přepínače <code>-d</code> a <code>-f</code>.</p>
+<ol start="8">
+<li>Jaké jsou 3 nejčastější křestní jména organizátorů/koučů/atd. PyLadies?</li>
+</ol>
+<h2 id="3_zastupne_znaky_zkus_z_hlavy">3. Zástupné znaky (zkus z hlavy)
+<a href="#3_zastupne_znaky_zkus_z_hlavy" class="header-link">#</a>
+</h2>
+<p>Sam má následující soubory:</p>
+<div class="highlight"><pre><code>.
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   └── datasets
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    └── all_november_files
+</code></pre></div><p>Doplň následující příkazy...</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>cp<span class="w"> </span>*dataset*<span class="w"> </span>backup/datasets
+<span class="gp">$ </span>cp<span class="w"> </span>____calibration____<span class="w"> </span>backup/calibration
+<span class="gp">$ </span>cp<span class="w"> </span><span class="m">2015</span>-____-____<span class="w"> </span>send_to_bob/all_november_files/
+<span class="gp">$ </span>cp<span class="w"> </span>____<span class="w"> </span>send_to_bob/all_datasets_created_on_a_23rd/
+</pre></div><p>... aby výsledek vypadal takhle:</p>
+<div class="highlight"><pre><code>.
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   │   ├── 2015-10-23-calibration.txt
+│   │   ├── 2015-10-26-calibration.txt
+│   │   └── 2015-11-23-calibration.txt
+│   └── datasets
+│       ├── 2015-10-23-dataset1.txt
+│       ├── 2015-10-23-dataset2.txt
+│       ├── 2015-10-23-dataset_overview.txt
+│       ├── 2015-10-26-dataset1.txt
+│       ├── 2015-10-26-dataset2.txt
+│       ├── 2015-10-26-dataset_overview.txt
+│       ├── 2015-11-23-dataset1.txt
+│       ├── 2015-11-23-dataset2.txt
+│       └── 2015-11-23-dataset_overview.txt
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    │   ├── 2015-10-23-dataset1.txt
+    │   ├── 2015-10-23-dataset2.txt
+    │   ├── 2015-10-23-dataset_overview.txt
+    │   ├── 2015-11-23-dataset1.txt
+    │   ├── 2015-11-23-dataset2.txt
+    │   └── 2015-11-23-dataset_overview.txt
+    └── all_november_files
+        ├── 2015-11-23-calibration.txt
+        ├── 2015-11-23-dataset1.txt
+        ├── 2015-11-23-dataset2.txt
+        └── 2015-11-23-dataset_overview.txt
+</code></pre></div>

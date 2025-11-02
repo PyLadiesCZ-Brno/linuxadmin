@@ -1,0 +1,26 @@
+<h1 id="ukoly_-_odkazy">Úkoly - Odkazy
+<a href="#ukoly_-_odkazy" class="header-link">#</a>
+</h1>
+<h2 id="bezedny_adresar">Bezedný adresář
+<a href="#bezedny_adresar" class="header-link">#</a>
+</h2>
+<p>Vytvoř si nový, prázdný adresář, přejdi do něj a zadej:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>bezedny
+<span class="gp">$ </span>ln<span class="w"> </span>-s<span class="w"> </span>.<span class="w"> </span>bezedny/bezedny
+<span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>bezedny/
+</pre></div><p>Zkus si:</p>
+<p><code>$ ls -l bezedny/<kbd>tab</kbd><kbd>tab</kbd><kbd>tab</kbd></code></p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>tree<span class="w"> </span>bezedny
+<span class="gp">$ </span>tree<span class="w"> </span>-l<span class="w"> </span>bezedny
+</pre></div><p>Co se právě stalo?</p>
+<div class="admonition note"><p>Na tohle je dobré dávat pozor, až budeš psát program,
+který prochází adresářové struktury.
+Vždy si ověř, že neprocházíš donekonečna jeden adresář.</p>
+</div><h2 id="viz_zde">Viz zde
+<a href="#viz_zde" class="header-link">#</a>
+</h2>
+<p>A co se stane tady?</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ln<span class="w"> </span>-s<span class="w"> </span>tu<span class="w"> </span>tu
+<span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>tu
+<span class="gp">$ </span>cat<span class="w"> </span>tu
+</pre></div>
