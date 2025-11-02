@@ -1,0 +1,319 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\setbeamerfont{title}{size=\LARGE}
+
+\title{Procesy, Soubory a Signály}
+\author{Eliška Jégrová}
+\date{20. 10. 2025}
+
+% pro obrázky a kreslení
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{datetime}
+\usepackage{svg}
+\usepackage{listings}
+
+
+% vlastní příkaz pro tildy
+\newcommand{\ts}{\raisebox{-0.25em}{\textasciitilde}}
+
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	\begin{frame}{Obsah}
+		\tableofcontents
+	\end{frame}
+	
+	
+	\section{Návratová hodnota příkazů}
+
+\begin{frame}[fragile]{Návratová hodnota příkazů}
+	\begin{itemize}
+		\item Každý příkaz po dokončení vrátí číslo — tzv. \texttt{exit code}.
+		\item \texttt{0} = úspěch, jiná hodnota = chyba nebo jiný stav.
+		\item Poslední návratovou hodnotu zobrazí \texttt{\$?}
+	\end{itemize}
+	
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ echo Ahoj} \\
+	\hspace{2em}Ahoj \\
+	\hspace{2em}\texttt{\$ echo \$?} \\
+	\hspace{2em}0 \\[0.7em]
+	
+	\hspace{2em}\texttt{\$ ls neexistuje.txt} \\
+	\hspace{2em}ls: cannot access \textquotesingle neexistuje.txt\textquotesingle: No such file or directory \\
+	\hspace{2em}\texttt{\$ echo \$?} \\
+	\hspace{2em}2
+\end{frame}
+\begin{frame}{Samostatná práce – návratové hodnoty příkazů}
+	\begin{enumerate}
+		\item Vytvoř soubor s názvem \texttt{prvni.txt}.
+		\item Zkontroluj, zda existuje soubor \texttt{prvni.txt} (ls) 
+		\item Vypiš jeho návratovou hodnotu (\texttt{\$?}).
+		\item Zkus spustit příkaz \texttt{grep "něco" soubor.txt}
+		\item Vypiš návratovou hodnotu.
+	\end{enumerate}
+\end{frame}
+
+\section{Procesy}
+
+\begin{frame}[fragile]{Co je proces}
+	\begin{itemize}
+		\item Proces je termín pro běžící program
+		\item Každý proces má své PID (Process ID).
+		\item Procesy lze zobrazit příkazem \texttt{ps}.
+	\end{itemize}
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ ps} \\
+	\hspace{2em}PID\hspace{3em}TTY\hspace{2em}TIME\hspace{2em}CMD \\
+	\hspace{2em}2180\hspace{2em}pts/0\hspace{1em}00:00:00 bash \\
+	\hspace{2em}2215\hspace{2em}pts/0\hspace{1em}00:00:00 ps
+	
+	\vspace{2.5em}	
+	\hspace{2em}Všechny běžící procesy zobrazí: \texttt{ps -A}
+\end{frame}
+
+\begin{frame}[fragile]{Sledování procesů pomocí \texttt{top}}
+	\begin{itemize}
+		\item Příkaz \texttt{top} zobrazuje procesy v reálném čase.
+		\item Zobrazuje vytížení CPU, paměti a běžící procesy.
+		\item Ukončení programu: klávesa \texttt{q}.
+	\end{itemize}
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ top} \\[0.3em]
+	\texttt{top - 09:42:01 up 1:03, 1 user, load average: 0.10, 0.08, 0.02}\\
+	\texttt{PID USER \hspace{0.5em}PR \hspace{0.5em}NI \hspace{0.5em}VIRT \hspace{0.5em}RES \hspace{0.5em}S \hspace{0.5em}\%CPU \hspace{0.5em}\%MEM \hspace{0.5em}COMMAND}\\
+	\texttt{2180 pepa \hspace{0.6em}20 \hspace{0.5em}0 \hspace{0.1em} 1234 \hspace{0.5em}532 \hspace{0.5em}S \hspace{0.5em}0.0 \hspace{0.5em}0.1 \hspace{0.5em}bash}\\
+	\texttt{2250 pepa \hspace{0.6em}20 \hspace{0.5em}0 \hspace{0.5em} 980 \hspace{0.5em}400 \hspace{0.5em}S \hspace{0.5em}0.0 \hspace{0.5em}0.0 \hspace{0.5em}sleep}
+\end{frame}
+
+\begin{frame}[fragile]{Ukončení procesu}
+	\begin{itemize}
+		\item Proces lze ukončit příkazem \texttt{kill}.
+		\item Ukončení podle PID: \texttt{kill <pid>}
+		\item Násilné ukončení podle PID: \texttt{kill -9 <pid>}
+	\end{itemize}
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ ps} \\
+	\hspace{2em}2250 pts/0 00:00:00 top \\
+	\hspace{2em}\texttt{\$ kill 2250} \\
+\end{frame}
+
+\begin{frame}{Samostatná práce – procesy}
+	\begin{enumerate}
+		\item Zapni si dva terminály, v prvním spusť \texttt{top}.
+		\item Ve druhém terminálu zjisti PID procesu \texttt{top}. (ps)
+		\item Z druhého terminálu ukonči proces \texttt{top}. (kill)
+	\end{enumerate}
+\end{frame}
+	
+\begin{frame}[fragile]{Práce s procesy v popředí a na pozadí}
+	\begin{itemize}
+		\item Proces může běžet:
+		\begin{itemize}
+			\item \textbf{v popředí} (foreground) – blokuje terminál, dokud neskončí,
+			\hspace{2em}\texttt{\$ sleep 100} \\
+			\item \textbf{na pozadí} (background) – běží zároveň s ostatními příkazy.
+			\hspace{2em}\texttt{\$ sleep 100 \&} \\
+			\hspace{1em}[1] 1234  \textit{← číslo úlohy a PID procesu} \\[0.4em]
+		\end{itemize}
+		\vspace{1em}
+		\item Zobrazit běžící a pozastavené úlohy \\
+		\hspace{2em}\texttt{\$ jobs} \\
+		\item Spustit proces v popředí \\
+		\hspace{2em}\texttt{\$ fg} \\
+		\item Spustit proces v pozadí \\
+		\hspace{2em}\texttt{\$ bg} \\
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Samostatná práce – práce s procesy}
+	\begin{enumerate}
+		\item Spusť: \texttt{\$ sleep 1000 \&} 
+		\item Podívej se, že proces běží na pozadí. (jobs)
+		\item Přesuň úlohu do popředí. (fg)
+		\item Zastav běžící proces s \texttt{Ctrl+Z}
+		\item Zkontroluj, že je proces zastavený. (jobs)
+		\item Spusť proces na pozadí. (bg)
+		\item Zkontroluj, že proces běží na pozadí. (jobs, ps)
+	\end{enumerate}
+\end{frame}
+
+\section{Soubory}
+
+\begin{frame}[fragile]{Co je soubor}
+	\begin{itemize}
+		\item Soubor je něco, z čeho můžeme číst a/nebo do čeho můžeme zapisovat.
+	\end{itemize}
+
+	\vspace{1.8em}
+	\textbf{Druhy souborů co známe:}
+	\begin{itemize}
+		\item Normální soubor uložený na disku.
+	\end{itemize}
+	\hspace{2em}\texttt{\$ ps -Af > vystup.txt} \\
+
+	\begin{itemize}			
+		\item Terminál – soubor reprezentující klávesnici a obrazovku.
+		\item Roura – přenos dat mezi procesy.
+	\end{itemize}
+	
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ ps -Af | grep -w ps} \\
+	\hspace{2em}– výstup jednoho procesu proudí do druhého
+\end{frame}
+
+\begin{frame}[fragile]{Otevřené soubory procesu}
+	\begin{itemize}
+		\item Každý proces si může otevírat další soubory – např. pro čtení či zápis.
+		\item příkaz \texttt{lsof} - zjistíme, jaké soubory proces používá.
+		\item Proměnná \texttt{\$\$} obsahuje PID (číslo aktuálního procesu Bashu).
+	\end{itemize}
+	
+	\vspace{0.2em}
+	\hspace{2em}\texttt{\$ echo \$\$} \\
+	\hspace{2em}5236 \\[0.6em]
+	
+	\vspace{0.8em}
+	\textbf{Příklad zkráceného výstupu:} \hspace{1em}\texttt{\$ lsof -p \$\$} \\
+	\begin{verbatim}
+		COMMAND  PID USER  FD   TYPE DEVICE  NAME
+		bash    5236 user  cwd  DIR   8,1    /home/user
+		bash    5236 user  txt  REG   8,1    /bin/bash
+		bash    5236 user    0u  CHR  136,0  /dev/pts/0
+		bash    5236 user    1u  CHR  136,0  /dev/pts/0
+		bash    5236 user    2u  CHR  136,0  /dev/pts/0
+	\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Terminál jako soubor}
+	\begin{itemize}
+		\item Terminál má svůj název, např. \texttt{/dev/pts/0}.
+			\end{itemize}
+		\hspace{2em}V předchozím výpisu se jedná o otevřené soubory \texttt{0u, 1u, 2u}.
+	\begin{itemize}		
+		\item Je to běžný soubor, do kterého lze zapisovat.
+	\end{itemize}
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ echo abc > /dev/pts/0}
+\end{frame}
+
+\begin{frame}[fragile]{Chybový výstup}
+	\begin{itemize}
+		\item Každý proces má:
+		\begin{itemize}
+			\item \texttt{0} – standardní vstup,
+			\item \texttt{1} – standardní výstup,
+			\item \texttt{2} – chybový výstup.
+		\end{itemize}
+	\end{itemize}
+	\vspace{0.4em}
+	\hspace{2em}\texttt{\$ cp a b} \\
+	\hspace{2em}\texttt{cp: cannot stat 'a': No such file or directory} \\[0.4em]
+	\hspace{2em}\texttt{\$ cp a b > jiny.txt} \\
+	\hspace{2em}– chyba se vypíše stále do terminálu
+\end{frame}
+
+\begin{frame}[fragile]{Přesměrování chybového výstupu}
+	\begin{itemize}
+		\item Přesměrování chybového výstupu: \texttt{2>}.
+	\end{itemize}
+	\vspace{0.4em}
+	\hspace{2em}\texttt{\$ cp a b 2> jiny.txt} \\[0.4em]
+	\begin{itemize}
+		\item Přesměrování obojího:
+	\end{itemize}
+	\hspace{2em}\texttt{\$ ls existuje.txt neexistuje.txt > vystup.txt 2> chyby.txt} \\[0.4em]
+	\begin{itemize}
+		\item Nebo obojí do jednoho souboru:
+	\end{itemize}
+	\hspace{2em}\texttt{\$ ls existuje.txt neexistuje.txt > jiny.txt 2>\&1}
+\end{frame}
+
+\begin{frame}[fragile]{Zahození výstupu}
+	\begin{itemize}
+		\item Soubor \texttt{/dev/null} zahazuje vše, co se do něj zapíše.
+	\end{itemize}
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ ls existuje.txt neexistuje.txt 2> /dev/null} \\[0.3em]
+	\hspace{2em}– chybové hlášky se „vyhodí“ \\
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ find /var/cache > /dev/null} \\
+	\hspace{2em}– zobrazí jen chyby (Permission denied)
+\end{frame}
+	
+\begin{frame}{Samostatná práce – práce se soubory}
+	\begin{enumerate}
+		\item Zobraz si otevřené soubory procesu bash (lsof, proměnná \$\$).
+		\item Zjisti si z výpisu, jak se jmenuje soubor pro terminál.
+		\item Zapiš nějaký řetězec do souboru terminálu (echo).
+	\end{enumerate}	
+\end{frame}
+
+\begin{frame}{Samostatná práce – přesměrování}
+	\begin{enumerate}
+		\item Vytvoř soubor \texttt{vystup.log} a přesměruj do něj standardní výstup příkazu \texttt{\$ ls / (>)}.
+		\item Spusť neexistující příkaz, např. \texttt{\$ ls /neexistuje}, \\ a přesměruj chybový výstup do souboru \texttt{chyby.log (2>)}.
+		\item Spoj výstup a chyby do jednoho souboru \texttt{vse.log (>, 2>\&1)}.
+		\item Spusť příkaz: \texttt{\$ ls /etc /neexistuje} , \\ a přesměruj jeho standardní výstup do \texttt{/dev/null}. Co se zobrazilo?
+	\end{enumerate}
+\end{frame}
+	
+\section{Signály}
+	
+\begin{frame}[fragile]{Co je signál}
+	\begin{itemize}
+		\item Signál je krátká zpráva
+		\item Slouží k upozornění procesu, že se něco stalo (např. uživatel stiskl Ctrl-C). 
+		\vspace{1em}
+    		\item Typické signály: 
+    \begin{itemize}
+		\item \texttt{SIGINT} – přerušení (Ctrl + C)
+		\item \texttt{SIGTSTP} – zastavení (Ctrl + Z)
+		\item \texttt{SIGTERM} – žádost o ukončení
+		\item \texttt{SIGKILL} – okamžité ukončení
+	\end{itemize}
+	\end{itemize}
+	\vspace{3em}
+	\textit{Pozn.: Seznam všech signálů najdete v} \texttt{\$ man 7 signal}.
+
+\end{frame}
+
+\begin{frame}[fragile]{Zasílání signálů}
+	\begin{itemize}
+		\item Signály se posílají příkazem \texttt{kill}.
+		\item Syntaxe: \texttt{kill -SIGNÁL <PID>}
+	\end{itemize}
+	
+	\vspace{0.5em}
+	\hspace{2em}\texttt{\$ sleep 100 \&} \\
+	\hspace{2em}[1] 5423 \\
+	\hspace{2em}\texttt{\$ kill -SIGSTOP 5423} \\[0.5em]
+	
+	\begin{itemize}
+
+		\item Seznam všech signálů: \texttt{kill -l}
+	\end{itemize}
+\end{frame}
+	
+\begin{frame}[fragile]{Samostatná práce – práce se signály}
+	
+	\begin{enumerate}
+		\item Spusť: \texttt{\$ sleep 1000 \&} 
+		\item Podívej se, že proces běží na pozadí. (jobs)
+		\item Zastav běžící proces s pomocí \texttt{\$ kill -SIGSTOP PID}.
+		\item Zkontroluj, že je proces zastavený. (jobs)
+		\item Spusť proces pomocí \texttt{\$ kill -SIGCONT PID}.
+		\item Zkontroluj, že proces běží. (jobs, ps)
+		\item Ukonči proces pomocí \texttt{\$ kill -SIGKILL PID}.
+	\end{enumerate}			
+\end{frame}
+
+\end{document}
