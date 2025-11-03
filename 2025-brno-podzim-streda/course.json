@@ -3438,13 +3438,13 @@
                 "date": "2025-10-29",
                 "materials": [
                     {
-                        "lesson_slug": "linuxadmin/env-var",
-                        "title": "Proměnné Bashe a proměnné prostředí",
+                        "lesson_slug": "linuxadmin/var-loop",
+                        "title": "Proměnné a cyklus",
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "linuxadmin/var-loop",
-                        "title": "Proměnné a cyklus",
+                        "lesson_slug": "linuxadmin/env-var",
+                        "title": "Proměnné Bashe a proměnné prostředí",
                         "type": "lesson"
                     },
                     {
