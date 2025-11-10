@@ -19,7 +19,7 @@ pentane.pdb  propane.pdb
 
 Další zástupný znak je otazník, `?`, který odpovídá jen jednomu znaku.
 Takže šablona  `?ethane.pdb` odpovídá jen jménu `methane.pdb` – na rozdíl od
-`*ethane.pdb`, cemuž odpovídá jak `methane.pdb`, tak i `ethane.pdb`.
+`*ethane.pdb`, čemuž odpovídá jak `methane.pdb`, tak i `ethane.pdb`.
 
 ```console
 $ ls ?ethane.pdb
@@ -289,7 +289,7 @@ co se stalo?
 ^C
 ```
 
-Podobně jako u standatního výstupu existuje *standardní vstup*
+Podobně jako u standardního výstupu existuje *standardní vstup*
 (angl. *standard input*, *stdin*) – místo, odkud program získává textové
 informace.
 Normálně to je terminál, tedy „klávesnice“:
@@ -299,7 +299,7 @@ Normálně to je terminál, tedy „klávesnice“:
     alt='Diagram příkazu `cat`',
 ) }}
 
-Standartní vstup můžeš přesměrovat tak, aby místo toho, co napíšeš klávesnici,
+standardní vstup můžeš přesměrovat tak, aby místo toho, co napíšeš klávesnici,
 příkaz zpracoval daný soubor.
 
 ```console
@@ -329,7 +329,7 @@ Spousta programů standardní vstup nepoužívá:
     alt='Diagram příkazu `cat soubor.txt`',
   ) }}
 
-Spousta příkazů ale standardní vstup používá když je zavoláš *bez* argumentu:
+Spousta příkazů ale standardní vstup používá, když je zavoláš *bez* argumentu:
 
 ```console
 $ sort -n < delky.txt
@@ -380,7 +380,7 @@ Vstup a výstup ale můžeš přesměrovat i na jiné věci než jen soubory na 
 
 ## Datové potrubí
 
-Najdi na klávesnisi znak `|`, kterému budu říkat *svislítko*.
+Najdi na klávesnici znak `|`, kterému budu říkat *svislítko*.
 Tenhle znak nejspíš nemá oficiální české jméno.
 Formálně se mu dá říkat *svislá čára*, často ale uslyšíš pojmenování
 *roura* nebo *pajpa* (z angl. *pipe*, roura), která vychází z funkce tohoto
@@ -447,7 +447,7 @@ Nic tě nenutí používat *jen* příkazovou řádku, která je mnohem složit�
 na ovládnutí než „klikátko“ s předpřipravenou nabídkou akcí.
 Ale jakmile se Bash a malé nástroje naučíš efektivně používat,
 {{gnd('sám', 'sama')}} poznáš jak jsou užitečné.
-Ne všechno co potřebuješ je totiž v “klikátcích” předpřipravené.
+Ne všechno, co potřebuješ, je totiž v “klikátcích” předpřipravené.
 
 Modelu pospojovaných nástrojů se také říká *roury a filtry*
 (angl. *pipes and filters*).
@@ -514,10 +514,10 @@ writing/
 ```
 
 Když si to zkusíš, zjistíš že z výstupu zmizely i barvy.
-I to je vlastnost, která se špatně zpracovává filtrem, a tak ji `ls` přidává
+I to je vlastnost, která se špatně zpracovává filtrem, a tak ji `ls` přidává,
 jen pokud vypisuje do terminálu.
 
 > [note]
-> Budeš-li někdy psát *vlastní* program který něco vypisuje barevně, nezapomeň
+> Budeš-li někdy psát *vlastní* program, který něco vypisuje barevně, nezapomeň
 > dát uživatelům možnost barvy vypnout (viz `--color` v `man ls`).
 > A ideálně nastav výchozí chování podle toho, jestli je std. výstup terminálem.
