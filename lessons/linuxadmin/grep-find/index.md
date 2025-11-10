@@ -62,7 +62,7 @@ and the presence of absence:
 
 `grep` je velice užitečný program. Pokud pracuješ s Bashem, brzy se z něj stane tvůj nejlepší kamarád. 
 Pozor ale na to, co `grep` bere jako hledaný řetězec: je to totiž regulární výraz (angl. *regular expression*, *regex*).
-Pokud hledáš jen písmenka, nenarazíš na problém, ale u znaků jako tečky, hvězdičky, otazníky apod. může být výstup jiný než očekáváš.
+Pokud hledáš jen písmenka, nenarazíš na problém, ale u znaků jako tečky, hvězdičky, otazníky apod. může být výstup jiný, než očekáváš.
 
 Zkus několik příkazů:
 ```console
@@ -104,7 +104,7 @@ které odpovídají masce `*.txt`.
 Příkaz `find` má kromě `-name` spoustu jiných přepínačů.
 Až je budeš potřebovat, najdeš je v manuálové stránce.
 
-Podobného výsledku jako výše (ale bez jména adresáře) dosáhneš když zadáš:
+Podobného výsledku jako výše (ale bez jména adresáře) dosáhneš, když zadáš:
 
 ```console
 $ ls --recursive | grep txt
