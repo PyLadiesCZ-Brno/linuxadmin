@@ -9,8 +9,8 @@ $ echo haló haló
 haló haló
 ```
 
-K čemu je to dobré? Můžeš si takto otestovat, jestli operace které se chystáš
-provést na souborech dělají přesně to, co chceš.
+K čemu je to dobré? Můžeš si takto otestovat, jestli operace, které se chystáš
+provést na souborech, dělají přesně to, co chceš.
 Bash může jednotlivé argumenty trochu měnit, takže konkrétní program dostává
 trochu jiný seznam argumentů než to, co napíšeš.
 
@@ -18,11 +18,11 @@ Následující program říká Bashi: zavolej program `echo` a dej mu tři argum
 `ahoj`, `halo` a `halooo`.
 Všimni si, že mezery zde nehrají roli: oddělují jednotlivé argumenty,
 které Bash předá dál.
-Příkaz `echo` tak dostane jen ty tři slova a vypíše je oddělená mezerami.
+Příkaz `echo` tak dostane jen ta tři slova a vypíše je oddělená mezerami.
 
 ```console
 $ echo ahoj      halo halooo
-ahoj halo haloo
+ahoj halo halooo
 ```
 
 V následujícím příkazu `echo` dostane celkem 7 argumentů: `ahoj` a
@@ -35,7 +35,7 @@ ahoj cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb
 
 Pokud potřebuješ zachovat řetězec i včetně mezer, hvězdiček a dalších znaků,
 můžeš použít uvozovky.
-Bash bude všechno co je uvnitř jednoduchých uvozovek (`'`) brát jako
+Bash bude všechno, co je uvnitř jednoduchých uvozovek (`'`), brát jako
 jeden argument.
 
 ```console
@@ -56,8 +56,8 @@ $ echo '<o.o> je robot #1! :)'
 >
 > `cat` vypisuje *obsah* souboru, jehož jméno dostane jako argument.
 > Takový soubor musí existovat.
-> Příkaz `echo` vypisuje přímo argumenty které dostane – ať už to jsou jména
-> souborů nebo ne:
+> Příkaz `echo` vypisuje přímo argumenty, které dostane – ať už to jsou jména
+> souborů, nebo ne:
 >
 > ```console
 > echo soubor.txt
@@ -138,7 +138,7 @@ haló haló
 co se stalo?
 ```
 
-Jiný způsob jak napsat něco do souboru je přesměrovat výstup z `cat`.
+Jiný způsob, jak napsat něco do souboru, je přesměrovat výstup z `cat`.
 Text pak napíšeš přímo do příkazové řádky:
 
 ```console
@@ -150,7 +150,7 @@ ahoj ahoj
 jak se máš?
 ```
 
-Další způsob jak uložit text do souboru je použít `echo` a jednoduché uvozovky.
+Další způsob, jak uložit text do souboru, je použít `echo` a jednoduché uvozovky.
 Bash ti v rámci uvozovek dokonce umožní napsat víc řádků.
 Na konci je potřeba řetězec uzavřít a přesměrovat do souboru.
 
@@ -168,7 +168,7 @@ co se stalo
 > Když zadáváš víceřádkový příkaz, změní se výzva (prompt): místo `$`
 > je poslední znak většinou `>`.
 >
-> Znamená to že příkaz ještě není ukončený.
+> Znamená to, že příkaz ještě není ukončený.
 > Kdyby se ti ho nedařilo zavřít (zde jednoduchou uvozovkou),
 > zmáčkni <kbd>Ctrl</kbd>+<kbd>C</kbd> a začni znovu.
 
