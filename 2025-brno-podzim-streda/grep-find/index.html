@@ -47,7 +47,7 @@ Jak příkazem odstraníš z výpisu řádek se slovem <em>Thesis</em>?</p>
 <span class="go">and the presence of absence:</span>
 </pre></div><p><code>grep</code> je velice užitečný program. Pokud pracuješ s Bashem, brzy se z něj stane tvůj nejlepší kamarád.
 Pozor ale na to, co <code>grep</code> bere jako hledaný řetězec: je to totiž regulární výraz (angl. <em>regular expression</em>, <em>regex</em>).
-Pokud hledáš jen písmenka, nenarazíš na problém, ale u znaků jako tečky, hvězdičky, otazníky apod. může být výstup jiný než očekáváš.</p>
+Pokud hledáš jen písmenka, nenarazíš na problém, ale u znaků jako tečky, hvězdičky, otazníky apod. může být výstup jiný, než očekáváš.</p>
 <p>Zkus několik příkazů:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>grep<span class="w"> </span>-i<span class="w"> </span>the.i<span class="w"> </span>haiku.txt<span class="w"> </span>
 <span class="gp">$ </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;.*&#39;</span><span class="w"> </span>haiku.txt
@@ -76,7 +76,7 @@ Uvozovky říkají Bashi, aby příkazu <code>find</code> předal opravdu <code>
 <code>find</code> tak může odpovídající soubory hledat sám – i v podadresářích.</p>
 </div><p>Příkaz <code>find</code> má kromě <code>-name</code> spoustu jiných přepínačů.
 Až je budeš potřebovat, najdeš je v manuálové stránce.</p>
-<p>Podobného výsledku jako výše (ale bez jména adresáře) dosáhneš když zadáš:</p>
+<p>Podobného výsledku jako výše (ale bez jména adresáře) dosáhneš, když zadáš:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>--recursive<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>txt
 <span class="go">haiku.txt</span>
 <span class="go">LittleWomen.txt</span>
