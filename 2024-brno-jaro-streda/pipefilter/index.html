@@ -17,7 +17,7 @@ začínají písmenem <code>p</code>:</p>
 <span class="go">pentane.pdb  propane.pdb</span>
 </pre></div><p>Další zástupný znak je otazník, <code>?</code>, který odpovídá jen jednomu znaku.
 Takže šablona  <code>?ethane.pdb</code> odpovídá jen jménu <code>methane.pdb</code> – na rozdíl od
-<code>*ethane.pdb</code>, cemuž odpovídá jak <code>methane.pdb</code>, tak i <code>ethane.pdb</code>.</p>
+<code>*ethane.pdb</code>, čemuž odpovídá jak <code>methane.pdb</code>, tak i <code>ethane.pdb</code>.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>?ethane.pdb
 <span class="go">methane.pdb</span>
 <span class="gp">$ </span>ls<span class="w"> </span>*ethane.pdb
@@ -195,12 +195,12 @@ načítají informace „z klávesnice“:</p>
 <span class="go">co se stalo?</span>
 <span class="go">co se stalo?</span>
 <span class="go">^C</span>
-</pre></div><p>Podobně jako u standatního výstupu existuje <em>standardní vstup</em>
+</pre></div><p>Podobně jako u standardního výstupu existuje <em>standardní vstup</em>
 (angl. <em>standard input</em>, <em>stdin</em>) – místo, odkud program získává textové
 informace.
 Normálně to je terminál, tedy „klávesnice“:</p>
 <p><span class="figure"><a href="naucse:static?filename=cat.svg"><img src="naucse:static?filename=cat.svg" alt="Diagram příkazu `cat`"></a></span></p>
-<p>Standartní vstup můžeš přesměrovat tak, aby místo toho, co napíšeš klávesnici,
+<p>standardní vstup můžeš přesměrovat tak, aby místo toho, co napíšeš klávesnici,
 příkaz zpracoval daný soubor.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>cat<span class="w"> </span>&lt;<span class="w"> </span>delky.txt
 <span class="go">  20 cubane.pdb</span>
@@ -221,7 +221,7 @@ daný soubor. Klávesnici ignorují, i když jim je k dispozici:</p>
 <p><span class="figure"><a href="naucse:static?filename=cat-file-arg.svg"><img src="naucse:static?filename=cat-file-arg.svg" alt="Diagram příkazu `cat soubor.txt`"></a></span></p>
 </li>
 </ul>
-<p>Spousta příkazů ale standardní vstup používá když je zavoláš <em>bez</em> argumentu:</p>
+<p>Spousta příkazů ale standardní vstup používá, když je zavoláš <em>bez</em> argumentu:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>sort<span class="w"> </span>-n<span class="w"> </span>&lt;<span class="w"> </span>delky.txt
 <span class="go">   9 methane.pdb</span>
 <span class="go">  12 ethane.pdb</span>
@@ -252,7 +252,7 @@ nepotřebují na to od Bashe pomoc.</p>
 <h2 id="datove_potrubi">Datové potrubí
 <a href="#datove_potrubi" class="header-link">#</a>
 </h2>
-<p>Najdi na klávesnisi znak <code>|</code>, kterému budu říkat <em>svislítko</em>.
+<p>Najdi na klávesnici znak <code>|</code>, kterému budu říkat <em>svislítko</em>.
 Tenhle znak nejspíš nemá oficiální české jméno.
 Formálně se mu dá říkat <em>svislá čára</em>, často ale uslyšíš pojmenování
 <em>roura</em> nebo <em>pajpa</em> (z angl. <em>pipe</em>, roura), která vychází z funkce tohoto
@@ -291,7 +291,7 @@ Nic tě nenutí používat <em>jen</em> příkazovou řádku, která je mnohem s
 na ovládnutí než „klikátko“ s předpřipravenou nabídkou akcí.
 Ale jakmile se Bash a malé nástroje naučíš efektivně používat,
 sama poznáš jak jsou užitečné.
-Ne všechno co potřebuješ je totiž v “klikátcích” předpřipravené.</p>
+Ne všechno, co potřebuješ, je totiž v “klikátcích” předpřipravené.</p>
 <p>Modelu pospojovaných nástrojů se také říká <em>roury a filtry</em>
 (angl. <em>pipes and filters</em>).
 Roury už znáš; filtry jsou nástroje jako <code>wc</code> a <code>sort</code>, které nějak
@@ -338,9 +338,9 @@ zvláštní řádek, aby se výsledek dal dobře zpracovat dalšími filtry:</p>
 <span class="go">solar.pdf</span>
 <span class="go">writing/</span>
 </pre></div><p>Když si to zkusíš, zjistíš že z výstupu zmizely i barvy.
-I to je vlastnost, která se špatně zpracovává filtrem, a tak ji <code>ls</code> přidává
+I to je vlastnost, která se špatně zpracovává filtrem, a tak ji <code>ls</code> přidává,
 jen pokud vypisuje do terminálu.</p>
-<div class="admonition note"><p>Budeš-li někdy psát <em>vlastní</em> program který něco vypisuje barevně, nezapomeň
+<div class="admonition note"><p>Budeš-li někdy psát <em>vlastní</em> program, který něco vypisuje barevně, nezapomeň
 dát uživatelům možnost barvy vypnout (viz <code>--color</code> v <code>man ls</code>).
 A ideálně nastav výchozí chování podle toho, jestli je std. výstup terminálem.</p>
 </div>
