@@ -16,7 +16,7 @@ Třeba následující příkaz zapisuje do souboru `vystup.txt`:
 $ ps -Af > vystup.txt
 ```
 
-Tento příkaz znamená: Bashi, spusť `ps -Af` a řekni mu aby psal do souboru
+Tento příkaz znamená: Bashi, spusť `ps -Af` a řekni mu, aby psal do souboru
 `vystup.txt`.
 `ps` píše na svůj standardní výstup, což je soubor – v příkladu výše je to
 soubor `vystup.txt`.
@@ -45,7 +45,7 @@ druhého – ale přesto jde o soubor.
 
 Známe tedy už tři druhy souborů:
 
-* normální souboru uložené na disku,
+* normální soubory uložené na disku,
 * terminál,
 * rouru.
 
@@ -279,7 +279,7 @@ standardní výstup do `/dev/null` a v terminálu uvidíš jen chybová hláše
 
 ```console
 $ find /var/cache > /dev/null
-find: … Permision denied
+find: … Permission denied
 ```
 
 Nebo naopak můžeš mít tolik souborů k nimž nemáš přístup,
