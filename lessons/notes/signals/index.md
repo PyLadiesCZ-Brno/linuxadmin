@@ -7,7 +7,7 @@ Vlastně, jak si ukážeme, na signál zareagovat *musí*.
 Signály jsou docela minimalistické: obsahují jen jedno malé číslo,
 druh signálu.
 Větší „zprávy“ se musí procesům posílat jiným způsobem (třeba souborem,
-rourou nebo přes síť), ale i v těchto případech se dá signálem upozornit
+rourou nebo přes síť), ale i v těchto případech se dá signálem upozornit,
 že si proces má nějakou větší zprávu přečíst.
 Typickým příkladem je ukončení probíhajícího procesu pomocí `Ctrl+C`, kdy
 pošleme procesu signál žádající o jeho ukončení.
@@ -15,15 +15,15 @@ pošleme procesu signál žádající o jeho ukončení.
 
 ## Přijetí signálu
 
-Když procesu pošleš signál, tak ten proces *přeruší* to co zrovna dělá
+Když procesu pošleš signál, tak ten proces *přeruší* to, co zrovna dělá,
 a signál zpracuje.
-Co přesně se stane závisí na druhu signálu; možnosti jsou tyto:
+Co přesně se stane, závisí na druhu signálu; možnosti jsou tyto:
 
 * Ukončení (angl. *terminate*): proces se ukončí.
 * Ignorování (angl. *ignore*): nic se nestane.
 * Ukončení s chybou (angl. *core dump*): proces se ukončí. Pokud je na to
   systém nastaven, stav paměti ukončeného procesu se zapíše do speciálního
-  souboru, aby bylo jednodušší zjistit co se v momentě ukončení zrovna dělo.
+  souboru, aby bylo jednodušší zjistit, co se v momentě ukončení zrovna dělo.
 * Pozastavení (angl. *stop*): Proces se pozastaví.
   V shellu tohle dělá zkratka <kbd>Ctrl</kbd>+<kbd>Z</kbd>
 * Obnovení (angl. *continue*): Pozastavený proces se znovu spustí.
@@ -62,7 +62,7 @@ Přepínačem pojmenovaným podle signálu můžeš vybrat, který signál pošl
 
 Zkus si to!
 
-V jedom terminálu zadej:
+V jednom terminálu zadej:
 
 ```console
 $ sleep 1000
@@ -71,12 +71,12 @@ $ sleep 1000
 A ve druhém třeba:
 
 ```console
-$ ls -a | grep sleep
+$ ps -a | grep sleep
  12345678 pts/3   00:00:00 sleep
 $ kill -SIGABRT 12345678
 ```
 
-Signál `SIGABRT` proces dostane když se snaží provést neplatnou operaci –
+Signál `SIGABRT` proces dostane, když se snaží provést neplatnou operaci –
 instrukci, které procesor nerozumí.
 To je většinou hodně závažná chyba.
 Kdybys při instalaci systému zadal{{a}} „automatické hlášení chyb“,
@@ -87,13 +87,13 @@ pomocí `abrt-cli list` podívat, že chyba byla zaznamenána.
 
 Podobně si můžeš vyzkoušet jiné signály, třeba:
 
-* `SIGINT` se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>C</kbd>.
-* `SIGTERM` posílá `kill` když mu nezadáš jiný signál.
-* `SIGKILL` (9) se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>\\</kbd>;
+* `SIGINT` se posílá, když zmáčkneš <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+* `SIGTERM` posílá `kill`, když mu nezadáš jiný signál.
+* `SIGKILL` (9) se posílá, když zmáčkneš <kbd>Ctrl</kbd>+<kbd>\\</kbd>;
   proces se „natvrdo“ ukončí.
   U tohoto signálu si procesy nemůžou nastavit jiné chování:
   proces se vždy ukončí.
-* `SIGSTOP` se posílá když zmáčkneš <kbd>Ctrl</kbd>+<kbd>z</kbd>;
+* `SIGSTOP` se posílá, když zmáčkneš <kbd>Ctrl</kbd>+<kbd>z</kbd>;
   proces se pozastaví.
   Podobně jako u `SIGKILL` si i u tohoto signálu procesy nemůžou nastavit
   jiné chování.
@@ -102,12 +102,12 @@ Podobně si můžeš vyzkoušet jiné signály, třeba:
 
 ## Signály v Pythonu
 
-To, že se přijetí signálu přeruší cokoli co proces zrovna dělá,
+To, že se přijetím signálu přeruší cokoli, co proces zrovna dělá,
 se dá přirovnat k výjimkám v Pythonu.
 Koneckonců, výjimka `KeyboardInterrupt` je jen reakce Pythonu na signál
-`SIGINT`: vzniká tak, že so Python na `SIGINT` připravil: řekl operačnímu
-systému že pro `SIGINT` nemá ukončit proces,
-ale má se zavolat funkce která způsobí výjimku.
+`SIGINT`: vzniká tak, že se Python na `SIGINT` připravil: řekl operačnímu
+systému, že pro `SIGINT` nemá ukončit proces,
+ale má se zavolat funkce, která způsobí výjimku.
 
 Program v Pythonu můžeš „připravit“ na výjimky pomocí `try` a `except`.
 Na to, aby se program připravil na přijetí signálu, slouží funkce
