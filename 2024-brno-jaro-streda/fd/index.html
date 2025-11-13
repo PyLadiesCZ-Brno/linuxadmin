@@ -10,7 +10,7 @@ kurzu se jimi většinou nebudeme zabývat.</p>
 pod nějakým jménem.
 Třeba následující příkaz zapisuje do souboru <code>vystup.txt</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>ps<span class="w"> </span>-Af<span class="w"> </span>&gt;<span class="w"> </span>vystup.txt
-</pre></div><p>Tento příkaz znamená: Bashi, spusť <code>ps -Af</code> a řekni mu aby psal do souboru
+</pre></div><p>Tento příkaz znamená: Bashi, spusť <code>ps -Af</code> a řekni mu, aby psal do souboru
 <code>vystup.txt</code>.
 <code>ps</code> píše na svůj standardní výstup, což je soubor – v příkladu výše je to
 soubor <code>vystup.txt</code>.</p>
@@ -30,7 +30,7 @@ Ani obsah roury není uložen na disku – „proudí“ přímo z jednoho proc
 druhého – ale přesto jde o soubor.</p>
 <p>Známe tedy už tři druhy souborů:</p>
 <ul>
-<li>normální souboru uložené na disku,</li>
+<li>normální soubory uložené na disku,</li>
 <li>terminál,</li>
 <li>rouru.</li>
 </ul>
@@ -208,7 +208,7 @@ Pokud chceš vidět jen problémy, ale ne nalezené soubory, můžeš přesměro
 standardní výstup do <code>/dev/null</code> a v terminálu uvidíš jen chybová hlášení
 – tady o tom, že k některým souborům nemáš přístup:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>find<span class="w"> </span>/var/cache<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
-<span class="go">find: … Permision denied</span>
+<span class="go">find: … Permission denied</span>
 </pre></div><p>Nebo naopak můžeš mít tolik souborů k nimž nemáš přístup,
 že se ti ani nebude chtít o tom číst; chceš jen dostat ty ke kterým přístup máš.
 Pak si do <code>/dev/null</code> přesměruješ chybový výstup:</p>
