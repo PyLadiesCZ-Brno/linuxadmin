@@ -1,0 +1,631 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+
+\setbeamerfont{title}{size=\LARGE}
+
+\title{Souborové systémy}
+\author{Eliška Jégrová}
+\date{24. 11. 2025}
+
+% pro obrázky a kreslení
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{datetime}
+\usepackage{svg}
+\usepackage{listings}
+\usepackage{dirtree}
+
+
+% vlastní příkaz pro tildy
+\newcommand{\ts}{\raisebox{-0.25em}{\textasciitilde}}
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	\begin{frame}{Obsah}
+		\tableofcontents
+	\end{frame}
+
+
+\section{Adresářová struktura}
+
+\begin{frame}{Kořenový adresář /}
+	\begin{itemize}
+		\item V Linuxu jsou všechny soubory v jednom stromu pod \texttt{/}.
+		\item Na rozdíl od Windows (disky \texttt{C:}, \texttt{D:}, …)
+		je tu \textbf{jeden společný strom}.
+		\item Strukturu \texttt{/} popisuje standard
+		\textbf{Filesystem Hierarchy Standard (FHS)}.
+		\item Cíle:
+		\begin{itemize}
+			\item oddělit systémové soubory od dat uživatelů,
+			\item rozlišit soubory jen ke čtení vs. pro zápis,
+			\item umožnit sdílení částí systému mezi více počítači.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Adresářový strom – základní přehled}
+	\begin{columns}[t]
+		\column{0.45\textwidth}
+		\dirtree{%
+			.1 /.
+			.2 bin.
+			.2 boot.
+			.2 dev.
+			.2 etc.
+			.2 home.
+			.2 root.
+			.2 run.
+			.2 opt.
+			.2 tmp.
+			.2 usr.
+			.2 var.
+		}
+		
+		\column{0.55\textwidth}
+		\begin{itemize}
+		\item Tenhle základ najdeš \\(s drobnými rozdíly) na všech unixových systémech.
+        \item Uživatelé pracují nejčastěji \\s \texttt{/home},
+případně s \texttt{/etc} (konfigurace) a logy \\ve \texttt{/var/log}.
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{/bin, /usr/bin – programy}
+	\begin{itemize}
+		\item \texttt{/bin} – základní příkazy systému
+		(např. \texttt{bash}, \texttt{ls}, \texttt{cat}).
+		\item \texttt{/usr/bin} – „většina ostatních“ programů.
+		\item Na moderní Fedoře je \texttt{/bin} jen odkaz na \texttt{/usr/bin}.
+		\item Historicky bylo rozdělení důležité kvůli sdílení po síti;
+		dnes zůstalo hlavně kvůli kompatibilitě.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{/dev a /boot}
+	\begin{itemize}
+		\item \texttt{/dev} – speciální soubory reprezentující zařízení:
+		\begin{itemize}
+			\item např. \texttt{/dev/sda}, \texttt{/dev/tty0}, \texttt{/dev/null}.
+			\item platí „všechno je soubor“ – čtení/zápis se mapuje na zařízení.
+		\end{itemize}
+		\item \texttt{/boot} – soubory potřebné ke startu systému:
+		\begin{itemize}
+			\item linuxové jádro,
+			\item konfigurace zavaděče (bootloaderu),
+			\item případně více verzí jadra pro návrat „zpět“.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{/etc, /home, /root}
+	\begin{itemize}
+		\item \texttt{/etc} – konfigurace systému:
+		\begin{itemize}
+			\item např. \texttt{/etc/passwd}, \texttt{/etc/fstab}, \texttt{/etc/ssh/sshd\_config}.
+			\item většinou textové soubory, upravuje je jen \textbf{root}.
+		\end{itemize}
+		
+		\item \texttt{/home} – domovské adresáře běžných uživatelů:
+		\begin{itemize}
+			\item \texttt{/home/uzivatel}, zkráceně \texttt{\ts}.
+			\item sem si ukládají vlastní data a konfiguraci.
+		\end{itemize}
+		
+		\item \texttt{/root} – domovský adresář uživatele \textbf{root}:
+		\begin{itemize}
+			\item root nemá home v \texttt{/home}, ale právě v \texttt{/root},
+			\item běžný uživatel sem normálně nemá přístup.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{/var, /tmp, /run, /opt}
+	\begin{itemize}
+		\item \texttt{/var} – „proměnná“ data systému:
+		\begin{itemize}
+			\item logy (\texttt{/var/log}),
+			\item maily, spool tiskáren,
+			\item databáze a pracovní data služeb.
+		\end{itemize}
+		
+		\item \texttt{/tmp} – dočasné soubory:
+		\begin{itemize}
+			\item používají ho aplikace jako odkladiště,
+			\item obsah se často maže po restartu.
+		\end{itemize}
+		
+		\item \texttt{/run} – běhová data po startu systému:
+		\begin{itemize}
+			\item PID soubory, sockety, různé „stavové“ informace,
+			\item existují jen za běhu (po rebootu se vytváří znovu).
+		\end{itemize}
+		
+		\item \texttt{/opt} – „volitelné“ aplikace:
+		\begin{itemize}
+			\item typicky software třetích stran,
+			\item může mít vlastní podadresář, např. \texttt{/opt/firma/app}.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\section{Souborové systémy}
+
+\begin{frame}{Co je souborový systém}
+	\begin{itemize}
+		\item Na disku jsou data jako dlouhá řada jedniček a nul.
+		\item \textbf{Souborový systém} je dohoda, jak z toho udělat:
+		\begin{itemize}
+			\item soubory se jménem,
+			\item adresáře (strom),
+			\item informace o velikosti, vlastnících, právech, časech změny, …
+		\end{itemize}
+		\item Umožní:
+		\begin{itemize}
+			\item rychle najít soubor podle cesty,
+			\item přidávat/mazat soubory,
+			\item kontrolovat přístup pomocí práv.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Analogie: ZIP archiv}
+	\begin{itemize}
+		\item ZIP soubor:
+		\begin{itemize}
+			\item uvnitř jsou za sebou naskládaná \textbf{data souborů},
+			\item na konci je \textbf{seznam souborů} (centrální adresář ZIPu).
+		\end{itemize}
+		\item Seznam říká:
+		\begin{itemize}
+			\item jak se soubor jmenuje,
+			\item kde v ZIPu data začínají,
+			\item jak je soubor dlouhý.
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{ZIP-64_Internal_Layout}
+
+	\end{center}
+\end{frame}
+
+\section{Inode a odkazy}
+
+\begin{frame}{Inode – informace o souboru}
+	\begin{itemize}
+		\item Soubor má:
+		\begin{itemize}
+			\item \textbf{obsah} (data),
+			\item \textbf{jméno} (cesta v adresáři),
+			\item \textbf{metadata} (velikost, práva, čas změny, \dots).
+		\end{itemize}
+		\item V Linuxu jsou metadata uložená v \textbf{inode}:
+		\begin{itemize}
+			\item typ souboru (běžný, adresář, link),
+			\item práva, vlastník, skupina,
+			\item velikost, časy změny,
+			\item počet odkazů,
+			\item odkazy na datové bloky na disku.
+		\end{itemize}
+		\item Ke zjištění inode se používá příkaz \texttt{stat}
+
+		\texttt{\$ stat basnicka.txt}
+
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Inode vs. jméno souboru}
+	\begin{itemize}
+		\item \textbf{Jméno} souboru je jen záznam v adresáři.
+		\item Jméno ukazuje na \textbf{inode}, inode ukazuje na data.
+		\item Číslo inode zjistíš např.:
+		\begin{verbatim}
+			$ ls -i soubor.txt
+			123456 soubor.txt
+			
+			$ stat soubor.txt
+		\end{verbatim}
+		\item Když soubor \texttt{přejmenuješ}:
+		\begin{verbatim}
+			$ mv soubor.txt novy.txt
+		\end{verbatim}
+		inode zůstává stejné – změnilo se jen jméno v adresáři.
+	\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Odkazy - Hard link}
+	\begin{itemize}
+		\item \textbf{Hard link} = další jméno, které ukazuje na stejný inode.
+		\item Vytvoření:
+		\begin{verbatim}
+			$ ln puvodni.txt kopie.txt
+		\end{verbatim}
+		\item Oba názvy:
+		\begin{itemize}
+			\item mají \textbf{stejné číslo inode},
+			\item ukazují na stejná data,
+			\item jsou „rovnocenné“ – žádný není „ten původní“.
+		\end{itemize}
+		\item Když jeden z nich smažeš:
+		\begin{verbatim}
+			$ rm puvodni.txt
+		\end{verbatim}
+		data zůstanou – dokud existuje aspoň jeden hard link
+		na daný inode.
+	\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Odkazy - Symbolický (soft) link}
+	\begin{itemize}
+		\item \textbf{Symbolický link} (symlink, soft link):
+		\begin{itemize}
+			\item zvláštní soubor, který obsahuje \textbf{cestu}
+			k jinému souboru,
+			\item má své vlastní číslo inode.
+		\end{itemize}
+		\item Vytvoření:
+		\begin{verbatim}
+			$ ln -s cilovy_soubor link.txt
+		\end{verbatim}
+		\item Chování:
+		\begin{itemize}
+			\item když čteš \texttt{link.txt}, systém přesměruje
+			přístup na cílový soubor,
+			\item když se cílový soubor smaže, \texttt{link.txt}
+			zůstane, ale je „rozbitý“.
+		\end{itemize}
+		\item Na rozdíl od hard linku může symlink:
+		\begin{itemize}
+			\item mířit i na jiný souborový systém,
+			\item mířit na adresář.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Samostatná práce – inode a odkazy}
+	\begin{enumerate}
+		\item Vytvoř soubor \texttt{data.txt} s libovolným obsahem.
+		\item Zobraz jeho inode:
+		\begin{verbatim}
+			$ ls -i data.txt
+			$ stat data.txt
+		\end{verbatim}
+		\item Vytvoř hard link \texttt{data2.txt}. (ln)
+		\item Zobraz si inode (krok 2) pro \texttt{data2.txt} a porovnej s předešlými výpisy.
+		\item Vytvoř symlink \texttt{data-link.txt} (ln -s) a znovu se podívej na inode.
+		\item Zkus smazat \texttt{data.txt} a sleduj, co se stane
+		s \texttt{data2.txt} a \texttt{data-link.txt}.
+	\end{enumerate}
+\end{frame}
+
+\section{Zařízení a souborové systémy}
+
+\begin{frame}{Bloková zařízení a souborové systémy}
+	\begin{itemize}
+		\item Data jsou fyzicky uložená na \textbf{zařízeních}:
+		\begin{itemize}
+			\item pevné disky, SSD, USB flashky, virtuální disky ve VM, ISO obrazy…
+		\end{itemize}
+		\item V Linuxu jsou vidět jako \textbf{bloková zařízení} v \texttt{/dev}:
+		\begin{itemize}
+			\item např. \texttt{/dev/sda}, \texttt{/dev/sda1}, \texttt{/dev/vda}, \dots
+		\end{itemize}
+		\item Na zařízení může být:
+		\begin{itemize}
+			\item přímo souborový systém (např. \texttt{/dev/sda}),
+			\item nebo tabulka oddílů a souborový systém až na oddílu
+			(např. \texttt{/dev/sda1}).
+		\end{itemize}
+		\item \textbf{Souborový systém} (ext4, xfs, vfat, \dots) určuje,
+		jak jsou data a adresáře na zařízení uspořádané.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{lsblk – přehled disků a oddílů}
+	\begin{itemize}
+		\item Příkaz \texttt{lsblk} zobrazí bloková zařízení a jejich strukturu:
+		\begin{verbatim}
+			$ lsblk
+			NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+			vda    252:0    0   40G  0 disk
+			-vda1 252:1    0    1G  0 part /boot
+			-vda2 252:2    0   39G  0 part /
+		\end{verbatim}
+		\item Většinou uvidíš:
+		\begin{itemize}
+			\item disk (\texttt{TYPE disk}),
+			\item na něm oddíly (\texttt{TYPE part}),
+			\item u nich případně sloupec \texttt{MOUNTPOINTS}
+			– kam jsou připojené.
+		\end{itemize}
+		\item Hodí se před každou prací s mountem – ať víš, jak se zařízení jmenují.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{df – využití souborových systémů}
+	\begin{itemize}
+		\item \texttt{df} ukazuje, jak jsou souborové systémy velké a zaplněné:
+		\begin{verbatim}
+			$ df -h
+			Filesystem  Size  Used Avail Use% Mounted on
+			/dev/vda2    39G   15G   22G  41% /
+			tmpfs       2.0G     0  2.0G   0% /tmp
+		\end{verbatim}
+		\item Užitečné sloupce:
+		\begin{itemize}
+			\item \texttt{Filesystem} – zařízení nebo název FS,
+			\item \texttt{Size}, \texttt{Used}, \texttt{Avail} – velikost a využití,
+			\item \texttt{Mounted on} – kam je FS připojený.
+		\end{itemize}
+		\item Přepínač \texttt{-h} (human-readable) ukazuje velikosti
+		v MB/GB místo v blocích.
+	\end{itemize}
+\end{frame}
+
+
+\section{Připojování souborových systémů}
+
+\begin{frame}[fragile]{findmnt / – co je připojeno jako /}
+	\begin{itemize}
+		\item Příkaz \texttt{findmnt} ukáže, jaký souborový systém je
+		připojený na daném adresáři.
+		\item Začneme kořenovým adresářem:
+		\begin{verbatim}
+			$ findmnt /
+			TARGET SOURCE    FSTYPE OPTIONS
+			/      /dev/sda2 ext4   rw,relatime
+		\end{verbatim}
+		\item Sloupce:
+		\begin{itemize}
+			\item \texttt{TARGET} – kam je FS připojený (adresář),
+			\item \texttt{SOURCE} – odkud se bere (např. zařízení nebo jméno),
+			\item \texttt{FSTYPE} – typ souborového systému,
+			\item \texttt{OPTIONS} – základní připojovací volby.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{findmnt – další příklady}
+	\begin{itemize}
+		\item Stejným způsobem se můžeme podívat na další mountpointy:
+		\begin{verbatim}
+			$ findmnt /boot
+			TARGET SOURCE    FSTYPE OPTIONS
+			/boot  /dev/sda1 ext4   rw,relatime
+		\end{verbatim}
+		
+		\begin{verbatim}
+			$ findmnt /home
+			TARGET SOURCE      FSTYPE OPTIONS
+			/home  /dev/sda3   ext4   rw,relatime
+		\end{verbatim}
+		\item Dobré otázky pro studenty:
+		\begin{itemize}
+			\item Který souborový systém je připojený na \texttt{/boot}?
+			\item Který na \texttt{/home}?
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{findmnt – přehled připojených souborových systémů}
+	\begin{itemize}
+		\item \texttt{findmnt} ukazuje, co je kde připojeno, v podobě stromu:
+		\begin{verbatim}
+			$ findmnt
+			TARGET  SOURCE     FSTYPE OPTIONS
+			/       /dev/vda2  ext4   rw,relatime
+			|-/boot /dev/vda1  ext4   rw,relatime
+			`-/tmp  tmpfs      tmpfs  rw,nosuid,nodev
+		\end{verbatim}
+		\item Přehlednější než čistý výstup \texttt{mount}.
+		\item Hodí se pro ověření:
+		\begin{itemize}
+			\item jestli se souborový systém připojil tak, jak jsme chtěli,
+			\item co všechno je připojené pod \texttt{/mnt}, \texttt{/media}, \dots
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Mount point – princip}
+	\begin{itemize}
+		\item V Linuxu je jeden společný strom adresářů pod \texttt{/}.
+		\item \textbf{Mount point} je adresář, do kterého se připojí
+		souborový systém.
+		\item Příklady:
+		\begin{itemize}
+			\item \texttt{/} – hlavní souborový systém,
+			\item \texttt{/boot} – zvlášť připojený souborový systém,
+			\item dočasně můžeme něco připojit např. do \texttt{/mnt}.
+		\end{itemize}
+		\item Příkaz \texttt{findmnt} nám pomáhá zjistit, co je kam připojeno.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{mount – ruční připojení}
+	\begin{itemize}
+		\item Ruční připojení souborového systému:
+		\begin{verbatim}
+			# mount zdroj cílový_adresář
+		\end{verbatim}
+		\item Typický scénář v návodu:
+		\begin{itemize}
+			\item vytvoří se adresář pro připojení, např. \texttt{/mnt/test},
+			\begin{verbatim}
+				# mkdir /mnt/test
+			\end{verbatim}
+			\item použije se \texttt{mount}, aby byl obsah vidět v \texttt{/mnt/test}.
+		\end{itemize}
+		\item Po připojení můžeme zkontrolovat:
+		\begin{verbatim}
+			$ findmnt /mnt/test
+		\end{verbatim}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Mount point – připojení souborového systému}
+	\begin{itemize}
+		\item V Linuxu je jeden společný strom adresářů pod \texttt{/}.
+		\item \textbf{Mount point} = adresář, do kterého „vložíme“ jiný souborový systém.
+		\item Příklad:
+		\begin{itemize}
+			\item \texttt{/} – hlavní (kořenový) souborový systém,
+			\item \texttt{/boot} – může být jiný FS na jiném oddílu,
+			\item USB flashka může být připojená třeba do \texttt{/run/media/...}
+			nebo \texttt{/mnt/usb}.
+		\end{itemize}
+		\item Bez mountu zařízení existuje, ale není nikde vidět ve stromu souborů.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{mount – ruční připojení}
+	\begin{itemize}
+		\item Základní tvar:
+		\begin{verbatim}
+			# mount zařízení adresář
+		\end{verbatim}
+		\item Příklad (USB disk s jedním oddílem):
+		\begin{verbatim}
+			# mkdir /mnt/usb
+			# mount /dev/sdb1 /mnt/usb
+		\end{verbatim}
+		\item Po připojení uvidíš obsah flashky v \texttt{/mnt/usb}.
+		\item Typ souborového systému (\texttt{-t ext4}, \texttt{-t vfat}, \dots)
+		se většinou pozná automaticky.
+		\item Co je kde připojeno, zjistíš např.:
+		\begin{verbatim}
+			$ findmnt
+		\end{verbatim}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{umount – odpojení}
+	\begin{itemize}
+		\item Odpojení souborového systému:
+		\begin{verbatim}
+			# umount /mnt/test
+		\end{verbatim}
+		\item Lze odpojit i podle zdroje:
+		\begin{verbatim}
+			# umount zdroj
+		\end{verbatim}
+		\item Pokud je souborový systém používán (otevřený soubor,
+		shell v tom adresáři), \texttt{umount} selže.
+		\item Po odpojení \texttt{findmnt /mnt/test} nic nenajde.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{umount – odpojení souborového systému}
+	\begin{itemize}
+		\item Odpojení:
+		\begin{verbatim}
+			# umount /mnt/usb
+		\end{verbatim}
+		\item nebo podle zařízení:
+		\begin{verbatim}
+			# umount /dev/sdb1
+		\end{verbatim}
+		\item Když je souborový systém „zaneprázdněný“:
+		\begin{itemize}
+			\item někdo má otevřený soubor,
+			\item máš otevřený shell v tom adresáři,
+			\item bude hláška typu „target is busy“.
+		\end{itemize}
+		\item Řešení:
+		\begin{itemize}
+			\item přejít jinam (\texttt{cd}) a zavřít programy,
+			\item pak zkusit \texttt{umount} znovu.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{/etc/fstab – připojení při startu}
+	\begin{itemize}
+		\item Soubor \texttt{/etc/fstab} říká, které souborové systémy
+		se připojí automaticky při startu.
+		\item Ukázka jednoduché konfigurace:
+		\begin{verbatim}
+			/dev/sda2  /      ext4  defaults  1 1
+			/dev/sda1  /boot  ext4  defaults  1 2
+		\end{verbatim}
+		\item Základní sloupce:
+		\begin{itemize}
+			\item \textbf{zdroj} – napr. \texttt{/dev/sda2} nebo UUID,
+			\item \textbf{cílový adresář} – mount point,
+			\item \textbf{typ} – typ souborového systému,
+			\item \textbf{options} – základní volby (\texttt{defaults} apod.).
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{/etc/fstab – co se má připojit při startu}
+	\begin{itemize}
+		\item Soubor \texttt{/etc/fstab} říká, co a kam se má připojit
+		při startu systému.
+		\item Každý řádek popisuje jeden souborový systém:
+		\begin{verbatim}
+			/dev/vda2  /      ext4  defaults  1 1
+			/dev/vda1  /boot  ext4  defaults  1 2
+		\end{verbatim}
+		\item Důležité sloupce:
+		\begin{itemize}
+			\item \textbf{co} – zařízení nebo UUID,
+			\item \textbf{kde} – mount point,
+			\item \textbf{typ} – např. \texttt{ext4}, \texttt{xfs}, \texttt{vfat}, \dots
+			\item \textbf{options} – nastavení připojení (pro začátek stačí \texttt{defaults}).
+		\end{itemize}
+		\item Nemusíš znát všechny detaily, ale je dobré vědět,
+		že automatické mounty se řídí právě tímto souborem.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Samostatná práce – findmnt, mount, umount}
+	\begin{enumerate}
+		\item Pomocí \texttt{findmnt /} zjisti, jaký souborový systém je
+		připojený na kořenový adresář.
+		\item Zkus \texttt{findmnt /boot} a \texttt{findmnt /home}
+		(pokud existuje) a podívej se, jak se liší \texttt{SOURCE}
+		a \texttt{FSTYPE}.
+		\item Vytvoř adresář \texttt{/mnt/test} a podle návodu na cvičení
+		do něj připoj souborový systém. Ověř:
+		\begin{verbatim}
+			$ findmnt /mnt/test
+		\end{verbatim}
+		\item Souborový systém opatrně odpoj pomocí \texttt{umount}
+		a zkontroluj, že \texttt{findmnt /mnt/test} už nic nevrací.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Samostatná práce – mount a přehled FS}
+	\begin{enumerate}
+		\item Pomocí \texttt{lsblk} zjisti, jaká bloková zařízení a oddíly
+		má tvoje virtuálka.
+		\item Zobraz přehled souborových systémů a jejich využití:
+		\begin{verbatim}
+			$ df -h
+		\end{verbatim}
+		\item Podívej se, co je právě připojeno:
+		\begin{verbatim}
+			$ findmnt
+		\end{verbatim}
+		\item Otevři \texttt{/etc/fstab} (např. \texttt{less /etc/fstab})
+		a najdi, který řádek odpovídá kořenovému souborovému systému \texttt{/}
+		a který \texttt{/boot}.
+		\item Pokud máš v prostředí připravený další disk/oddíl,
+		zkus ho ručně připojit do \texttt{/mnt/test}
+		a ověř, že se objeví ve výstupu \texttt{findmnt}.
+	\end{enumerate}
+\end{frame}
+
+\end{document}
