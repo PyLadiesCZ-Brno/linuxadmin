@@ -1,0 +1,267 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+
+\setbeamerfont{title}{size=\LARGE}
+
+\title{Ansible – automatizace správy serverů}
+\author{Eliška Jégrová}
+\date{25. 11. 2025}
+
+% pro obrázky a kreslení
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes, shapes.geometric, positioning, arrows}
+\usepackage{graphicx}
+\usepackage{datetime}
+\usepackage{svg}
+\usepackage{listings}
+\usepackage{dirtree}
+
+\usepackage{listings}
+\usepackage{xcolor} % pokud chceš barvičky, jinak můžeš vynechat
+
+\lstdefinelanguage{yaml}{
+	basicstyle=\ttfamily\small,
+	keywords={true,false,null,y,n},
+	keywordstyle=\bfseries,
+	comment=[l]{\#},
+	commentstyle=\itshape,
+	stringstyle=\ttfamily,
+	morestring=[b]",
+	morestring=[b]',
+	sensitive=true
+}
+
+% vlastní příkaz pro tildy
+\newcommand{\ts}{\raisebox{-0.25em}{\textasciitilde}}
+
+\begin{document}
+	
+\frame{\titlepage}
+
+\begin{frame}{Obsah}
+	\tableofcontents
+\end{frame}
+
+
+
+\section{Úvod}
+
+\begin{frame}{Proč Ansible}
+	\begin{itemize}
+		\item Dosud: ruční správa přes SSH nebo konzoli
+		\item Pro jeden server to stačí, ale co budeme dělat v případě, kdy budeme mít serverů 1000?
+			\item Nebo budeme potřebovat zreplikovat specifické nastavení na další server?
+			\item Jak rychle dokážete nahradit nefunkční server?
+	\end{itemize}
+\end{frame}
+	
+	\begin{frame}{Co je Ansible}
+		\begin{itemize}
+			\item Ansible je nástroj pro \textbf{automatizaci}:
+			\begin{itemize}
+				\item \textbf{konfigurační management} – udržování konzistentního nastavení systémů
+				(balíčky, služby, konfiguráky, uživatelé)
+				\item \textbf{deploy aplikací} – nahrání nové verze, konfigurace,
+				restart služeb,
+				\item \textbf{orchestrace} více serverů.
+			\end{itemize}
+			
+			\item \textbf{Bezagentový nástroj} (\emph{agentless}):
+			\begin{itemize}
+				\item na spravovaných serverech není potřeba žádný démon,
+				\item používá \textbf{SSH} a Python.		
+			\end{itemize}
+
+			\item Typické použití:
+			\begin{itemize}
+				\item nastavení a správa webových serverů,
+				\item vytváření a správa uživatelů,
+				\item instalace balíčků,
+				\item úprava konfigurací a restart služeb.
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+\begin{frame}{Základní principy Ansible}
+	\begin{itemize}
+		
+		\item V Ansible konfiguraci popisujeme \textbf{deklarativně}:
+		\begin{itemize}
+			\item \textbf{jaký má být výsledný stav}, ne jednotlivé kroky,
+			\item např. „balíček \texttt{httpd} je nainstalovaný“,
+			„služba \texttt{httpd} běží a je povolená po startu“.
+		\end{itemize}
+		
+		\item \textbf{Idempotence}:
+		\begin{itemize}
+			\item opakované spuštění vede ke stejnému stavu:
+				\begin{itemize}
+					\item při prvním spuštění se něco změní,
+					\item při dalším spuštění už není co měnit.
+				\end{itemize}
+			\item Příklady idempotentního chování:
+			\begin{itemize}
+				\item \texttt{package: state=present} nainstaluje balíček jen pokud chybí,
+			\end{itemize}
+		\end{itemize}
+		
+		\item Konfigurace je psaná v souborech ve formátu \textbf{YAML} \\ (\texttt{.yml, .yaml}).
+	\end{itemize}
+\end{frame}
+
+
+	\section{Instalace}
+	
+	\begin{frame}[fragile]{Instalace Ansible a první playbook}
+		\begin{itemize}
+			\item Na řídicím serveru (naší virtuálce) nainstalujeme Ansible:
+		\end{itemize}
+		
+		\begin{verbatim}
+			# dnf install ansible
+		\end{verbatim}
+		
+		\begin{itemize}
+			\item V pracovním adresáři vytvoříme soubor \texttt{setup.yaml}, např.:
+		\end{itemize}
+		
+		\begin{verbatim}
+			    - hosts: localhost
+			      connection: local
+			      become_user: root
+			      tasks:
+			      - name: Install htop
+			        become: yes
+			        dnf:
+			          state: latest
+			          name:
+			          - htop
+		\end{verbatim}
+	\end{frame}
+	
+	\begin{frame}{Klíčová slova v setup.yaml}
+		\begin{itemize}
+
+			\item \texttt{hosts: localhost}
+			\begin{itemize}
+				\item na které hosty se playbook aplikuje (skupina \texttt{all} = všichni).
+			\end{itemize}
+			
+			\item \texttt{connection: local}
+			\begin{itemize}
+				\item způsob jak se připojit
+			\end{itemize}
+			
+			\item \texttt{become\_user: root}
+			\begin{itemize}
+				\item jaký uživatel bude použit
+			\end{itemize}
+
+			\item \texttt{tasks:}
+			\begin{itemize}
+				\item seznam kroků, které se mají provést.
+			\end{itemize}
+			
+			\item \texttt{name: Install htop}
+			\begin{itemize}
+				\item název konkrétní úlohy (tasku).
+			\end{itemize}
+
+			\item \texttt{become: yes}
+			\begin{itemize}
+				\item úlohy poběží s právy zadaného uživatele.
+			\end{itemize}
+
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}[fragile]{Spuštění playbooku setup.yaml}
+		\begin{itemize}
+			\item Playbook spouštíme příkazem \texttt{ansible-playbook}.
+		\end{itemize}
+		
+		\begin{verbatim}
+			$ ansible-playbook -K setup.yaml -i hosts.yaml 
+		\end{verbatim}
+		
+		\begin{itemize}
+			\item \texttt{-i } – určuje soubor s inventářem (seznam hostů).
+			\item \texttt{-K} – Ansible se zeptá na heslo pro \texttt{sudo}
+			(become heslo), aby mohl spouštět úlohy s vyššími právy.
+			\item Během běhu Ansible ukazuje pro každý task:
+			\begin{itemize}
+				\item jestli proběhl v pořádku (\texttt{ok}),
+				\item jestli něco změnil (\texttt{changed}),
+				\item případné chyby (\texttt{failed}).
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+\section{Inventář}
+	\begin{frame}[fragile]{Inventář – seznam spravovaných serverů}
+		\begin{itemize}
+			\item Inventář říká, \textbf{na které stroje} se mají playbooky pouštět.
+			\item Každý řádek = jeden server (jméno nebo IP adresa).
+		\end{itemize}
+		
+		\begin{verbatim}
+# hosts.yml - jednoduchý inventář v YAML
+web:
+  hosts:
+    192.168.122.101:
+    192.168.122.102:
+db:
+  hosts:
+    192.168.122.110:
+		\end{verbatim}
+		
+		\begin{itemize}
+			\item Jména \texttt{web} a \texttt{db} jsou \textbf{skupiny} hostů
+			\item V \texttt{setup.yaml} pak můžeme použít:\hspace{0.5em} \texttt{hosts: web} \\
+			a playbook se spustí na všech web serverech.
+		\end{itemize}
+	\end{frame}
+
+	\section{Samostatná práce}
+	
+\begin{frame}{Samostatná práce – první kroky s Ansible}
+	\begin{itemize}
+		\item Otevři soubor \texttt{setup.yaml},
+		\begin{enumerate}
+
+		\item Uprav task tak, aby instaloval víc „užitečných nástrojů“: keepassxc a gnome-tweaks.
+		
+		\item Spusť playbook:
+		\begin{itemize}
+			\item \texttt{ansible-playbook -K setup.yaml}
+		\end{itemize}
+		Sleduj, které balíčky mají stav \texttt{changed} a které jen \texttt{ok}.
+		
+		\item Do seznamu \texttt{tasks:} přidej úlohu, která:
+		\begin{itemize}
+			\item v systému vytvoří novou uživatelku \texttt{zuzana}.
+			\item použij k tomu modul user
+		\end{itemize}
+
+	
+		\item Přidej další úlohu, která:
+		\begin{itemize}
+			\item zajistí, že balíček \texttt{sl} \textbf{není} nainstalovaný
+		\end{itemize}
+			
+		\item Přidej úlohu, která:
+		\begin{itemize}
+			\item zajistí, že služba \texttt{sshd} běží,
+			\item a je \textbf{povolena po startu systému} (enabled).
+			\item použij modul systemd
+		\end{itemize}
+	\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\end{document}
