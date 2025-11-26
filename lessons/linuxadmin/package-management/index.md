@@ -568,7 +568,7 @@ Taky se můžeš např. podívat jaký  software máš nainstalovaný
 (což jde i bez `sudo`):
 
 ```
-$ sudo dnf list installed
+$ dnf list --installed
 ```
 
 Taky můžeš celý systém aktualizovat – DNF najde balíčky pro které
