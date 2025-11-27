@@ -1,0 +1,477 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+
+\setbeamerfont{title}{size=\LARGE}
+
+\title{Kontejnery}
+\author{Eliška Jégrová}
+\date{28. 11. 2025}
+
+% pro obrázky a kreslení
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{datetime}
+\usepackage{svg}
+\usepackage{listings}
+\usepackage{dirtree}
+
+% vlastní příkaz pro tildy
+\newcommand{\ts}{\raisebox{-0.25em}{\textasciitilde}}
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	\begin{frame}{Obsah}
+		\tableofcontents
+	\end{frame}
+
+\section{Úvod}
+
+\begin{frame}{It works on my machine!}
+	\begin{itemize}
+		\item Aplikace často funguje na vývojářově počítači, ale ne na serveru.
+		\item Na každém stroji může být jiná verze knihoven, balíčků nebo konfigurace.
+		\item Kontejner používá \textbf{vlastní souborový systém} oddělený od zbytku systému:
+		\begin{itemize}
+			\item obsahuje potřebné programy, knihovny a konfiguraci,
+			\item všude vypadá stejně, bez ohledu na konkrétní stroj.
+		\end{itemize}
+		\item Stejný kontejner tedy můžeme spustit na různých počítačích
+		a očekávat \textbf{stejné prostředí i chování aplikace}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Co je kontejner a jak se liší od virtuálky}
+	\begin{itemize}
+		\item \textbf{Kontejner}
+		\begin{itemize}
+			\item běžící proces s vlastním pohledem na souborový systém,
+			\item má izolované prostředí (procesy, síť),
+			\item sdílí stejný kernel s hostitelským systémem.
+		\end{itemize}
+		
+		\item \textbf{Virtuální stroj}
+		\begin{itemize}
+			\item běží v něm celý operační systém včetně vlastního kernelu,
+			\item emuluje „celý počítač“ (CPU, disk, síťová karta),
+			\item je těžší na zdroje a startuje pomaleji.
+		\end{itemize}
+		
+	\end{itemize}
+\end{frame}
+
+	\begin{frame}{Sjednocení a izolace}
+		\begin{itemize}
+			\item \textbf{Sjednocení prostředí}
+			\begin{itemize}
+				\item stejný obraz kontejneru můžeme použít na více strojích,
+				\item ve vývoji, testu i produkci běží aplikace ve stejném prostředí,
+				\item odpadá „u mě to funguje, ale na serveru ne“ kvůli rozdílným verzím balíčků.
+			\end{itemize}
+			
+			\item \textbf{Izolace služeb}
+			\begin{itemize}
+				\item každá služba může běžet ve svém vlastním kontejneru,
+				\item chyby nebo špatná konfigurace jedné služby méně ovlivní zbytek systému,
+				\item v každém kontejneru může být jiná verze programu nebo knihovny,
+				aniž by si navzájem překážely.
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+\begin{frame}{Sdílení vrstev}
+	\begin{itemize}
+		\item Vrstvy obrazu jsou \textbf{jen pro čtení} a dají se \textbf{sdílet}:
+		\begin{itemize}
+			\item více obrazů může používat stejné spodní vrstvy,
+			\item více kontejnerů z jednoho obrazu sdílí všechny jeho vrstvy.
+		\end{itemize}
+		
+		\item Každý kontejner má navíc jen svou \textbf{zapisovatelnou vrstvu}:
+		\begin{itemize}
+			\item tam se ukládají změny (nové soubory, logy, dočasná data),
+			\item spodní vrstvy zůstávají stejné pro všechny.
+		\end{itemize}
+		
+		\item Výhody sdílení vrstev:
+		\begin{itemize}
+			\item šetří místo na disku – stejné soubory nejsou uloženy vícekrát,
+			\item rychlejší stažení nových obrazů – znovu se stahují jen nové vrstvy,
+			\item rychlejší start kontejnerů – většina dat už je lokálně k dispozici.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Obraz, kontejner a vrstvy}
+	\begin{itemize}
+		\item \textbf{Kontejner}:
+		\begin{itemize}
+			\item běžící instance vytvořená z obrazu,
+			\item vypadá jako samostatný souborový systém,
+		\end{itemize}
+
+		\item \textbf{Obraz kontejneru} (image):
+		\begin{itemize}
+			\item obsahuje nainstalovaný systém / aplikaci a její závislosti,
+			\item je pouze pro čtení.
+		\end{itemize}
+
+
+		
+		\item \textbf{Vrstvy obrazu}:
+		\begin{itemize}
+			\item obraz je složený z několika \textbf{vrstev},
+			\item každá vrstva obsahuje změny oproti předchozí
+			(přidané soubory, úpravy, smazání),
+			\item všechny vrstvy obrazu jsou jen pro čtení.
+		\end{itemize}
+		
+		\item \textbf{Vrstva kontejneru}:
+		\begin{itemize}
+			\item kontejner používá všechny vrstvy obrazu,
+			\item navíc má svou \textbf{zapisovatelnou vrstvu} pro změny.
+		\end{itemize}
+		
+
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Vrstvy aplikací a systému}
+	\begin{itemize}
+		\item \textbf{Sdílení vrstev}:
+		\begin{itemize}
+			\item více obrazů může sdílet stejné spodní vrstvy,
+			\item více kontejnerů ze stejného obrazu sdílí všechny jeho vrstvy,
+		\end{itemize}
+	\end{itemize}
+	\vspace{1em}
+	
+	\centering
+	\begin{tikzpicture}[
+		box/.style={draw, thick, minimum width=3cm, minimum height=0.8cm, align=center},
+		smallbox/.style={draw, thick, minimum width=1.4cm, minimum height=0.6cm, align=center}
+		]
+		
+		% spodní vrstva – Základní systém uprostřed
+		\node[box, minimum width=4.5cm] (base) at (0,0) {Základní systém};
+		
+		% prostřední vrstva - Databáze / Web
+		\node[box, minimum width=4cm] (db)  at (-3,2) {Databáze};
+		\node[box, minimum width=4cm] (web) at ( 3,2) {Web};
+		
+		% horní aplikace – trochu dál od sebe nad Webem
+		\node[box] (flask)  at (0.6,4) {Flask};
+		\node[box] (django) at (4.2,4) {Django};
+		
+		% malé boxy pod Flask/Django (posunuté do stran, aby nelezly do čar)
+		\node[smallbox] (fmid) at (-0.6,3) {};
+		\node[smallbox] (dmid) at (5.7,3) {};
+		
+		% nové malé boxy pod Databází a Webem (jen vizuální, bez dalšího spojení)
+		\node[smallbox] (dbleft)   at (-4.5,1) {};   % "pod levým koncem" Databáze
+		\node[smallbox] (webright) at ( 4.5,1) {};   % "pod pravým koncem" Webu
+		
+		% Databáze/Web přímo na Základní systém
+		\draw (db.south)  -- (base.north west);
+		\draw (web.south) -- (base.north east);
+		
+		% Databáze -> levý prázdný obdélník
+		\draw (db.south)  -- (dbleft.north);
+		
+		% Web -> pravý prázdný obdélník
+		\draw (web.south) -- (webright.north);
+		
+		% Flask/Django -> jejich malé boxy
+		\draw (flask.south)  -- (fmid.north);
+		\draw (django.south) -- (dmid.north);
+		
+		% Flask/Django připojené přímo na Web
+		\draw (flask.south)  -- (web.north west);
+		\draw (django.south) -- (web.north east);
+		
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Docker Hub, Docker a Podman}
+	\begin{itemize}
+		\item \textbf{Docker}
+		\begin{itemize}
+			\item původní a nejznámější nástroj pro práci s kontejnery,
+			\item používá vlastní démon (\texttt{dockerd}), ke kterému se klient \texttt{docker} připojuje.
+		\end{itemize}
+		
+		\item \textbf{Podman}
+		\begin{itemize}
+			\item na Fedoře se používá místo Dockeru,
+			\item nástroj pro kontejnery, kde jsou příkazy velmi podobné (\texttt{podman run}, \texttt{podman ps}, \dots).
+
+		\end{itemize}
+		
+		\item \textbf{Docker Hub}
+		\begin{itemize}
+			\item veřejný server (registr), kde jsou uložené obrazy kontejnerů,
+			\item najdeme tam jak oficiální obrazy (distribuce, databáze, web servery),
+			\item tak i obrazy vytvořené uživateli.
+		\end{itemize}
+
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Stažení obrazu a první kontejner}
+	\begin{itemize}
+		\item Stažení obrazu (pokud ještě není lokálně):
+	\end{itemize}
+	\begin{verbatim}
+		$ podman pull ubuntu
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Spuštění kontejneru s interaktivním shellem:
+	\end{itemize}
+	\begin{verbatim}
+		$ podman run -it --rm ubuntu
+	\end{verbatim}
+	
+	\begin{itemize}
+	\begin{itemize}
+		\item \texttt{-it} – interaktivní režim (terminál),
+		\item \texttt{-{}-rm} – po ukončení shellu se kontejner smaže,
+		\item \texttt{ubuntu} – jméno obrazu,
+	\end{itemize}
+	\end{itemize}
+	\vspace{0.3em}
+	\begin{itemize}
+		\item Spuštění kontejneru na pozadí:
+	\end{itemize}
+	\begin{verbatim}
+		$ podman run -d --rm ubuntu
+	\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]{Seznam kontejnerů a obrazů}
+	\begin{itemize}
+		\item Běžící kontejnery:
+	\end{itemize}
+	\begin{verbatim}
+		$ podman ps
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Všechny kontejnery (včetně ukončených):
+	\end{itemize}
+	\begin{verbatim}
+		$ podman ps -a
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Lokálně dostupné obrazy:
+	\end{itemize}
+	\begin{verbatim}
+		$ podman images
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Hodí se pro kontrolu:
+		\begin{itemize}
+			\item jestli kontejner ještě běží,
+			\item z jakého obrazu byl vytvořen,
+			\item které obrazy už zabírají místo na disku.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Zastavení a mazání kontejnerů a obrazů}
+	\begin{itemize}
+		\item Zastavení běžícího kontejneru: \\
+		\vspace{0.6em}
+		\texttt{\$ podman stop <id\_nebo\_jmeno>} \\	
+		\vspace{0.4em}
+		
+		\begin{itemize}
+			\item \texttt{<id\_nebo\_jmeno>} získáš z \texttt{podman ps -a}
+		\end{itemize}
+		\vspace{0.4em}
+			
+		\item Smazání (ukončeného) kontejneru: \\
+ 		\vspace{0.6em}
+		\texttt{\$ podman rm <id\_nebo\_jmeno>} \\	
+		\vspace{0.8em}
+
+		\item Smazání obrazu: \\
+		\vspace{0.6em}
+		\texttt{\$ podman rmi <image>} \\	
+		\vspace{0.4em}
+		\begin{itemize}
+			\item \texttt{<image>} získáš z \texttt{podman images}
+			(může to být jméno nebo ID obrazu),
+			\item obraz nelze smazat, pokud z něj ještě existují kontejnery –
+			ty je potřeba nejdříve zastavit a odstranit.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Webový server – porty na hostitelském systému}
+	\begin{itemize}
+		\item Zpřístupnění portu \texttt{80} z kontejneru na portu \texttt{8080} hostitele:
+	\end{itemize}
+	\begin{verbatim}
+		$ podman run -p 8080:80 --rm httpd
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item znamená: \texttt{port\_hosta:port\_kontejneru} → \texttt{8080:80},
+		\item v prohlížeči otevři:
+	\end{itemize}
+	\begin{verbatim}
+		http://localhost:8080
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item nebo z terminálu:
+	\end{itemize}
+	\begin{verbatim}
+		$ curl localhost:8080
+		<html><body><h1>It works!</h1></body></html>
+	\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Webový server v kontejneru a vlastní obsah}
+
+	\begin{itemize}
+		\item \textbf{Připojení vlastního adresáře}:
+	\end{itemize}
+	\begin{verbatim}
+		$ mkdir ~/container_htdocs
+		$ cd ~/container_htdocs
+		$ echo Ahoj! > index.html
+		
+		$ podman run -p 8080:80 \
+		-v ~/container_htdocs:/usr/local/apache2/htdocs/:Z \
+		--rm httpd
+	\end{verbatim}
+	\begin{itemize}
+		\item \texttt{-v host\_adresar:cesta\_v\_kontejneru} – připojení adresáře,
+		\item \texttt{:Z} – úprava SELinux kontextu, aby měl kontejner k souborům přístup,
+		\item po obnovení stránky na \texttt{localhost:8080} uvidíš \texttt{Ahoj!}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Připojení adresáře do kontejneru}
+	\begin{itemize}
+		\item Na hostiteli si připrav vlastní obsah:
+	\end{itemize}
+	
+	\texttt{\$ mkdir \ts/container\_htdocs}\\
+	\texttt{\$ cd \ts/container\_htdocs}\\
+	\texttt{\$ echo Ahoj! > index.html}
+	
+	\vspace{0.7em}
+	\begin{itemize}
+		\item Spusť \texttt{httpd} s připojeným adresářem:
+	\end{itemize}
+	\texttt{\$ podman run -p 8080:80 \ \\
+		-v \ts/container\_htdocs:/usr/local/apache2/htdocs/:Z \
+		httpd }
+
+	\vspace{0.7em}
+	\begin{itemize}
+		\item \texttt{-v host\_adresar:cesta\_v\_kontejneru} – připojení adresáře,
+		\item \texttt{:Z} – nastaví SELinux kontext tak, aby měl kontejner
+		k souborům přístup (na Fedoře je to často potřeba),
+		\item po obnovení stránky \texttt{http://localhost:8080} uvidíš text \texttt{Ahoj!}
+		z hostitelského adresáře.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Dockerfile – vlastní obraz}
+	\begin{itemize}
+		\item \textbf{Dockerfile} (nebo neutrálněji \texttt{Containerfile}):
+		\begin{itemize}
+			\item textový soubor - popisuje jak vyrobit nový obraz,
+		\end{itemize}
+		
+		\item Příklad \texttt{Dockerfile} založeného na \texttt{httpd}:
+	\end{itemize}
+	
+	\begin{verbatim}
+		FROM httpd
+		RUN echo Ahoj > /usr/local/apache2/htdocs/index.html
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Vytvoření nového obrazu příkazem \texttt{build}:
+	\end{itemize}
+	
+	\begin{verbatim}
+		$ podman build -t mujhttpd .
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item \texttt{-t mujhttpd} – nově vzniklý obraz se označí jménem \texttt{mujhttpd},
+		\item tečka \texttt{.} – adresář, ve kterém je \texttt{Dockerfile}
+		(tzv. build context),
+		\item výsledný obraz \texttt{mujhttpd} je stejný jako \texttt{httpd},
+		jen má upravený \texttt{index.html} s textem \texttt{Ahoj}.
+	\end{itemize}
+\end{frame}
+
+\section{Samostatná práce}
+
+\begin{frame}{Samostatná práce I – základní práce s kontejnery}
+	\begin{itemize}
+		\item \textbf{1. Ubuntu kontejner}
+		\begin{itemize}
+			\item stáhni obraz \texttt{ubuntu},
+			\item spusť interaktivní kontejner s \texttt{-{}-rm},
+			\item kontejner ukonči (\texttt{exit}) a ověř pomocí \texttt{podman ps -a},
+			že kontejner po skončení zmizel.
+		\end{itemize}
+		
+		\item \textbf{2. Seznam kontejnerů a obrazů}
+		\begin{itemize}
+			\item spusť jeden kontejner \texttt{ubuntu} na pozadí (-d),
+			\item pomocí \texttt{podman ps} najdi jeho ID nebo jméno,
+			\item kontejner zastav a smaž,
+			\item pomocí \texttt{podman images} se podívej, jaké obrazy máš lokálně.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Samostatná práce II – webový server a vlastní obraz}
+	\begin{itemize}
+		\item \textbf{3. Webový server \texttt{httpd}}
+		\begin{itemize}
+			\item spusť kontejner s \texttt{httpd}, který zpřístupní port 80 kontejneru
+			na portu \texttt{8080} hostitele,
+			\item v prohlížeči nebo přes \texttt{curl} ověř, že se zobrazuje stránka
+			„It works!“.
+		\end{itemize}
+		
+		\item \textbf{4. Vlastní obsah přes připojený adresář}
+		\begin{itemize}
+			\item v adresáři \texttt{\ts/container\_htdocs} vytvoř soubor
+			\texttt{index.html} s vlastním textem,
+			\item spusť \texttt{httpd} tak, aby tento adresář byl připojený jako
+			\texttt{/usr/local/apache2/htdocs/} (použij \texttt{-v} a \texttt{:Z}),
+			\item ověř v prohlížeči, že se zobrazuje právě tvůj \texttt{index.html}.
+		\end{itemize}
+		
+		\item \textbf{5. Vlastní obraz z Dockerfile}
+		\begin{itemize}
+			\item v novém adresáři vytvoř \texttt{Dockerfile}, který vychází z \texttt{httpd}
+			a přepíše \texttt{index.html} vlastním textem,
+			\item obraz postav pomocí \texttt{podman build} a dej mu jméno
+			(např. \texttt{mujhttpd}),
+			\item spusť kontejner z nového obrazu a ověř, že se v prohlížeči
+			zobrazuje text z tvého \texttt{Dockerfile}.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\end{document}
