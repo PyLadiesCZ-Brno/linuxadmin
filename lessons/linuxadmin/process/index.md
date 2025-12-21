@@ -4,7 +4,7 @@
 Proces na počítači:
 
 * provádí akce
-* pracuje na datch
+* pracuje na datech
 * může ukazovat výsledky své činnosti v okýnkách nebo na příkazové řádce.
 
 Každý běžící program má svůj proces.
@@ -46,7 +46,7 @@ Výpis je uveden v textovém formátu, takže s ním můžeš dál pracovat pom
 nástrojů které už znáš: `cut`, `grep` atd.
 
 Občas se ti bude hodit více informací, které `ps` vypíše s přepínač `-f`.
-Mimojiné se takhle ve výstupu objeví argumenty každého procesu, např.
+Mimo jiné se takhle ve výstupu objeví argumenty každého procesu, např.
 `-Af` u samotné ho `ps -Af`:
 
 ```console
@@ -81,7 +81,7 @@ Ten ti ukáže tabulku podobnou příkladu níže, která se pravidelně aktuali
 ```
 
 Je to výpis procesů, které se vejdou na obrazovku.
-Jsou seřazeny podle podle vytížení procesoru (t.j. kolik zabírají prostředků),
+Jsou seřazeny podle vytížení procesoru (t.j. kolik zabírají prostředků),
 takže neaktivní procesy jsou níže (nebo nejsou vůbec vidět) a na prvních
 řádcích bývají typicky grafické aplikace (zvlášť prohlížeče).
 
@@ -185,7 +185,7 @@ Například ho ukončit, když předáš číslo jako argument příkazu `kill`:
 $ kill <číslo procesu>
 ```
 
-Zkontroluj na druhém terminálu, že se `top` opravdu ukončil a vidíš opět prompt.
+Zkontroluj na druhém terminálu, že se `top` opravdu ukončil, a vidíš opět prompt.
 
 > [note]
 > Pokud špatně opíšeš číslo procesu, ukončíš příkazem `kill` nějaký jiný proces.
@@ -198,7 +198,7 @@ Funguje to podobně jako <kbd>CTRL</kbd>+<kbd>C</kbd>.
 `top` tak má možnost uvést terminál do původního stavu a např. zavřít případné
 otevřené soubory.
 Některé procesy ale můžou tuhle “prosbu” úplně ignorovat;
-jak ukončit takové procesy (a co to znamená “signál” se dozvíme později.
+jak ukončit takové procesy (a co to znamená “signál”) se dozvíme později.
 
 > [note]
 > Některé grafické programy (např. Firefox) spouští víc procesů. 
